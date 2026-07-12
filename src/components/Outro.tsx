@@ -5,17 +5,27 @@ import { PROFILE } from "@/lib/universe";
 
 export default function Outro() {
   return (
-    <section className="relative flex min-h-[80svh] flex-col items-center justify-center px-6 py-32 text-center">
+    <section className="relative flex min-h-[80svh] flex-col items-center justify-center overflow-hidden px-6 py-32 text-center">
+      {/* Galactic-core glow rising behind the sign-off */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute left-1/2 top-[58%] h-[80vh] w-[120vw] -translate-x-1/2 mix-blend-screen blur-3xl"
+          style={{
+            background:
+              "radial-gradient(48% 42% at 50% 50%, rgba(168,85,247,0.22), rgba(99,102,241,0.12) 45%, transparent 72%), radial-gradient(30% 26% at 46% 46%, rgba(253,224,171,0.12), transparent 70%)",
+          }}
+        />
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-15% 0px" }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        className="flex flex-col items-center"
+        className="relative z-10 flex flex-col items-center"
       >
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">End of the map</p>
         <h2 className="text-balance mt-4 max-w-2xl font-display text-4xl font-bold leading-tight sm:text-5xl">
-          The universe is still <span className="text-gradient">expanding</span>.
+          The universe is still <span className="text-gradient animate-aurora">expanding</span>.
         </h2>
         <p className="mt-5 max-w-md text-balance text-white/55">
           Building Hanlu, studying economics, and exploring what language learning

@@ -38,6 +38,11 @@ const config: Config = {
           from: { transform: "rotate(0deg)" },
           to: { transform: "rotate(360deg)" },
         },
+        // Slides a 200%-wide seamless surface map by half its width → planet spin.
+        "planet-slide": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
         "fade-up": {
           from: { opacity: "0", transform: "translateY(16px)" },
           to: { opacity: "1", transform: "translateY(0)" },
@@ -50,12 +55,19 @@ const config: Config = {
           "0%, 100%": { transform: "translate3d(0,0,0)" },
           "50%": { transform: "translate3d(0,-14px,0)" },
         },
+        // Sweeps an oversized gradient through text → aurora shimmer.
+        aurora: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
       },
       animation: {
         "spin-slow": "spin-slow 80s linear infinite",
+        "planet-slide": "planet-slide 80s linear infinite",
         "fade-up": "fade-up 0.8s cubic-bezier(0.22,1,0.36,1) both",
         "pulse-soft": "pulse-soft 6s ease-in-out infinite",
         drift: "drift 9s ease-in-out infinite",
+        aurora: "aurora 9s ease-in-out infinite",
       },
     },
   },

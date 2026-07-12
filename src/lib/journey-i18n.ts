@@ -1,0 +1,290 @@
+import type { Destination } from "@/lib/journey";
+
+export type Language = "en" | "ja" | "zh";
+
+export const LANGUAGES: { id: Language; short: string; label: string; htmlLang: string }[] = [
+  { id: "ja", short: "日", label: "日本語", htmlLang: "ja" },
+  { id: "zh", short: "中", label: "中文", htmlLang: "zh-CN" },
+  { id: "en", short: "EN", label: "English", htmlLang: "en" },
+];
+
+export const UI_COPY = {
+  en: {
+    notes: "Notes",
+    journeyNotes: "Journey Notes",
+    stop: "Stop",
+    stepOff: (station: string) => `Step off at ${station}`,
+    arrived: "Arrived",
+    productStation: "Product station",
+    coreExperience: "Core experience",
+    explore: (product: string) => `Explore ${product}`,
+    inDevelopment: "In development",
+    backToWindow: "Back to the window",
+    nowStanding: "Now standing at",
+    journeyLog: "Journey log",
+    nowPassing: "Now passing",
+    nextHorizon: "The next horizon",
+    scrollToTravel: "Scroll to travel",
+    endOfLine: "End of line",
+    notesBadge: "Journey notes · collected along the way",
+    notesTitle: ["What I carry", "to the next stop."],
+    notesIntro: "Three principles behind the language tools and AI products I build.",
+    seeNext: "See what comes next",
+    language: "Language",
+    curtain: "Pull the window shade",
+    quietMode: "Quiet view",
+    timeLabels: { dawn: "Dawn service", day: "Day service", dusk: "Twilight service", night: "Night service" },
+    noteLabel: "Note",
+    bridgeLabels: ["Through the mountain", "Rain across the glass", "Approaching the city"],
+    bridgePlaces: [["Japan", "China"], ["Guilin", "Kyoto"], ["Kyoto", "Tokyo"]],
+    principles: [
+      ["Start with what feels familiar.", "Great learning tools connect new ideas to knowledge people already carry."],
+      ["Make complexity feel quiet.", "The interface should hold the hard parts, so the person can stay with the thought."],
+      ["Build toward the next horizon.", "Every product is a stop—not the destination. The route keeps moving forward."],
+    ],
+  },
+  ja: {
+    notes: "ノート",
+    journeyNotes: "旅のノート",
+    stop: "停車駅",
+    stepOff: (station: string) => `${station}で下車する`,
+    arrived: "到着",
+    productStation: "プロダクト駅",
+    coreExperience: "体験の中心",
+    explore: (product: string) => `${product}を見る`,
+    inDevelopment: "開発中",
+    backToWindow: "車窓へ戻る",
+    nowStanding: "現在地",
+    journeyLog: "旅の記録",
+    nowPassing: "通過中",
+    nextHorizon: "次の景色へ",
+    scrollToTravel: "横に進む",
+    endOfLine: "終点",
+    notesBadge: "旅の途中で集めたノート",
+    notesTitle: ["次の駅へ、", "持っていくもの。"],
+    notesIntro: "言語とAIのプロダクトをつくるうえで、大切にしている3つの考え方。",
+    seeNext: "この先のプロジェクトを見る",
+    language: "言語",
+    curtain: "ロールスクリーンを引く",
+    quietMode: "静かな車窓",
+    timeLabels: { dawn: "夜明けの便", day: "日中の便", dusk: "夕暮れの便", night: "夜行便" },
+    noteLabel: "記録",
+    bridgeLabels: ["山を抜けて", "雨の森を越えて", "街の灯りへ"],
+    bridgePlaces: [["日本", "中国"], ["桂林", "京都"], ["京都", "東京"]],
+    principles: [
+      ["知っていることから、始める。", "新しい知識は、すでに持っている感覚とつながったとき、学びやすくなる。"],
+      ["複雑さを、静けさに変える。", "難しい処理はインターフェースが引き受け、人は考えることに集中できるようにする。"],
+      ["次の景色へ向かってつくる。", "すべてのプロダクトは終点ではなく停車駅。路線は、この先も伸びていく。"],
+    ],
+  },
+  zh: {
+    notes: "札记",
+    journeyNotes: "旅途札记",
+    stop: "停靠站",
+    stepOff: (station: string) => `在${station}下车`,
+    arrived: "已到达",
+    productStation: "产品车站",
+    coreExperience: "核心体验",
+    explore: (product: string) => `了解 ${product}`,
+    inDevelopment: "开发中",
+    backToWindow: "返回车窗",
+    nowStanding: "当前所在",
+    journeyLog: "旅途记录",
+    nowPassing: "正在经过",
+    nextHorizon: "驶向下一片风景",
+    scrollToTravel: "横向前行",
+    endOfLine: "终点站",
+    notesBadge: "沿途收集的设计札记",
+    notesTitle: ["带往下一站的，", "三件事。"],
+    notesIntro: "构建语言学习与AI产品时，我始终坚持的三个原则。",
+    seeNext: "看看下一段旅程",
+    language: "语言",
+    curtain: "拉下遮阳帘",
+    quietMode: "静谧车窗",
+    timeLabels: { dawn: "晨间列车", day: "日间列车", dusk: "暮色列车", night: "夜间列车" },
+    noteLabel: "札记",
+    bridgeLabels: ["穿过群山", "掠过雨林", "驶向城市灯火"],
+    bridgePlaces: [["日本", "中国"], ["桂林", "京都"], ["京都", "东京"]],
+    principles: [
+      ["从熟悉之处出发。", "优秀的学习工具，会把新知识连接到人们已经拥有的经验。"],
+      ["让复杂变得安静。", "让界面承担复杂，让人把注意力留给思考与创造。"],
+      ["为下一片风景而创造。", "每个产品都只是停靠站，而非终点。路线仍在继续延伸。"],
+    ],
+  },
+} as const;
+
+type DestinationText = Pick<
+  Destination,
+  "eyebrow" | "location" | "title" | "description" | "cta" | "status"
+> & {
+  station: Pick<Destination["station"], "name" | "intro" | "note" | "features" | "facts">;
+};
+
+const DESTINATION_COPY: Record<"ja" | "zh", Record<string, DestinationText>> = {
+  ja: {
+    keyboard: {
+      eyebrow: "読みを見失わない、日本語入力",
+      location: "日本・山梨",
+      title: ["日本語を打つ。", "読みは、見失わない。"],
+      description: "手書きとローマ字入力に対応。確定する前に候補の読みを確認できる、日本語キーボードです。",
+      cta: "Keyboardを見る",
+      status: "まもなく発車",
+      station: {
+        name: "よみかた駅",
+        intro: "文章の一部になる、その直前。Keyboardは必要な瞬間に読みを見える状態に保ちます。",
+        note: "推測ではなく、確信を持って言葉を選ぶ。",
+        features: ["手書き・ローマ字入力", "読みを優先した候補表示", "毎日の日本語入力に対応"],
+        facts: [
+          { label: "入力方式", value: "手書き＋ローマ字" },
+          { label: "対象", value: "日本語を書く人" },
+          { label: "公開状況", value: "公開中" },
+        ],
+      },
+    },
+    hanlu: {
+      eyebrow: "日本語の感覚から学ぶ中国語",
+      location: "中国・桂林",
+      title: ["中国語を、", "日本語から学ぶ。"],
+      description: "日本語話者の漢字感覚を、北京語の音・意味・使い方へつなげる中国語学習アプリです。",
+      cta: "Hanluを見る",
+      status: "主要路線",
+      station: {
+        name: "漢字橋駅",
+        intro: "すでに持っている漢字の知識を、中国語の音・意味・使い方へ渡る橋に変えます。",
+        note: "知っている文字から始め、中国語の考え方と響きへ。",
+        features: ["漢字を活かした解説", "音・意味・文脈を一体化", "進歩を見える形に"],
+        facts: [
+          { label: "言語", value: "日本語 → 中国語" },
+          { label: "学習方法", value: "漢字から接続" },
+          { label: "公開状況", value: "公開中" },
+        ],
+      },
+    },
+    shiru: {
+      eyebrow: "言葉を静かに記憶へ残す",
+      location: "日本・京都",
+      title: ["言葉に出会い、", "自分のものにする。"],
+      description: "認識と想起を行き来しながら、新しい言葉が自然と身につく瞬間を大切にした語彙学習体験です。",
+      cta: "開発中",
+      status: "次の乗り換え",
+      station: {
+        name: "ことばの森駅",
+        intro: "見覚えのある言葉が、自分で使える言葉へ変わるまで。文脈と反復を丁寧に設計します。",
+        note: "日常の中で親しみを感じたとき、言葉は身につく。",
+        features: ["認識を助ける手がかり", "穏やかな想起ループ", "焦らせない学習リズム"],
+        facts: [
+          { label: "対象", value: "日本語の語彙" },
+          { label: "学習ループ", value: "認識 → 想起" },
+          { label: "公開状況", value: "開発中" },
+        ],
+      },
+    },
+    "ai-studio": {
+      eyebrow: "AIチームとつくるソフトウェア",
+      location: "日本・東京湾",
+      title: ["思考を共有し、", "同じ速度でつくる。"],
+      description: "複数のAIチームと協調し、最初の要件から動くプロダクトまでをつなぐAIネイティブな開発OSです。",
+      cta: "AI Studioへ",
+      status: "夜間運行",
+      station: {
+        name: "ベイ・ターミナル",
+        intro: "専門化されたAI、共有コンテキスト、開発フローを、ひとつの協調システムにまとめます。",
+        note: "明確な要件から動くプロダクトまで、文脈を失わずに進む。",
+        features: ["協調するAIチーム", "要件から実装まで", "共有されたプロダクト文脈"],
+        facts: [
+          { label: "システム", value: "協調型AIエージェント" },
+          { label: "流れ", value: "要件 → 実装" },
+          { label: "公開状況", value: "プレビュー" },
+        ],
+      },
+    },
+  },
+  zh: {
+    keyboard: {
+      eyebrow: "看得见读音的日语输入",
+      location: "日本·山梨",
+      title: ["输入日语，", "不再丢失读音。"],
+      description: "支持手写与罗马字输入，在确认前即可查看候选词读音的日语键盘。",
+      cta: "体验 Keyboard",
+      status: "即将发车",
+      station: {
+        name: "读音站",
+        intro: "就在候选词成为句子的一部分之前，Keyboard让读音始终清晰可见。",
+        note: "不靠猜测，更有把握地选择正确的词。",
+        features: ["手写与罗马字输入", "读音优先的候选词", "为日常日语输入而设计"],
+        facts: [
+          { label: "输入", value: "手写＋罗马字" },
+          { label: "适合", value: "日语书写者" },
+          { label: "状态", value: "已上线" },
+        ],
+      },
+    },
+    hanlu: {
+      eyebrow: "从日语视角学习中文",
+      location: "中国·桂林",
+      title: ["学习中文，", "从熟悉的汉字出发。"],
+      description: "为日语母语者设计，把熟悉的汉字直觉连接到普通话的声音、含义与真实用法。",
+      cta: "体验 Hanlu",
+      status: "主线路",
+      station: {
+        name: "汉字桥站",
+        intro: "Hanlu把日语学习者已有的汉字知识，变成通往中文发音、意义与用法的桥梁。",
+        note: "从认识的字出发，理解中文如何思考、如何发声。",
+        features: ["连接日语汉字的讲解", "声音、意义与语境", "看得见的学习进度"],
+        facts: [
+          { label: "语言", value: "日语 → 中文" },
+          { label: "方法", value: "连接汉字知识" },
+          { label: "状态", value: "已上线" },
+        ],
+      },
+    },
+    shiru: {
+      eyebrow: "用更安静的方式记住词语",
+      location: "日本·京都",
+      title: ["遇见一个词，", "让它真正属于你。"],
+      description: "围绕识别与回忆设计，让陌生词语在一次次自然相遇中逐渐变得熟悉。",
+      cta: "开发中",
+      status: "下一次换乘",
+      station: {
+        name: "言叶之森站",
+        intro: "通过足够的语境与重复，让一个似曾相识的词，最终成为你真正掌握的词。",
+        note: "当一个词在生活中变得熟悉，学习才真正发生。",
+        features: ["帮助识别的线索", "温和的回忆循环", "从容的学习节奏"],
+        facts: [
+          { label: "重点", value: "日语词汇" },
+          { label: "学习循环", value: "识别 → 回忆" },
+          { label: "状态", value: "开发中" },
+        ],
+      },
+    },
+    "ai-studio": {
+      eyebrow: "与AI团队共同构建软件",
+      location: "日本·东京湾",
+      title: ["共享思考，", "以同一种速度构建。"],
+      description: "面向软件构建的AI原生操作系统，让协作的AI团队把最初需求一路推进到可运行产品。",
+      cta: "进入 AI Studio",
+      status: "夜间线路",
+      station: {
+        name: "湾区终点站",
+        intro: "把专业AI代理、共享上下文与产品开发流程，整合为一个协调运行的系统。",
+        note: "从清晰需求到可用产品，始终保持同一份上下文。",
+        features: ["协作型AI团队", "从需求到可用产品", "统一的产品上下文"],
+        facts: [
+          { label: "系统", value: "协作型AI代理" },
+          { label: "流程", value: "需求 → 构建" },
+          { label: "状态", value: "预览版" },
+        ],
+      },
+    },
+  },
+};
+
+export function localizeDestination(destination: Destination, language: Language): Destination {
+  if (language === "en") return destination;
+  const copy = DESTINATION_COPY[language][destination.id];
+  return {
+    ...destination,
+    ...copy,
+    station: { ...destination.station, ...copy.station },
+  };
+}

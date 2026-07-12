@@ -1,9 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import {
+  Instrument_Serif,
+  Inter,
+  Noto_Sans_JP,
+  Noto_Sans_SC,
+  Noto_Serif_JP,
+  Noto_Serif_SC,
+} from "next/font/google";
 import "./globals.css";
 
-const display = Space_Grotesk({
+const display = Instrument_Serif({
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
 });
@@ -14,27 +23,58 @@ const body = Inter({
   display: "swap",
 });
 
+const japaneseDisplay = Noto_Serif_JP({
+  weight: "variable",
+  variable: "--font-ja-display",
+  display: "swap",
+  preload: false,
+});
+
+const japaneseBody = Noto_Sans_JP({
+  weight: "variable",
+  variable: "--font-ja-body",
+  display: "swap",
+  preload: false,
+});
+
+const chineseDisplay = Noto_Serif_SC({
+  weight: "variable",
+  variable: "--font-zh-display",
+  display: "swap",
+  preload: false,
+});
+
+const chineseBody = Noto_Sans_SC({
+  weight: "variable",
+  variable: "--font-zh-body",
+  display: "swap",
+  preload: false,
+});
+
 export const metadata: Metadata = {
-  title: "Takeru Fujii — Takeru Universe",
+  title: "Takeru Fujii — Products in Motion",
   description:
-    "An interactive universe of Takeru Fujii: building Hanlu, a Chinese-learning app for Japanese learners, and exploring language, AI, and product.",
-  keywords: ["Takeru Fujii", "Hanlu", "Chinese learning", "Waseda", "AI", "ChatGPT Lab"],
+    "A cinematic journey through the products of Takeru Fujii: Keyboard, Hanlu, Shiru, and AI Studio.",
+  keywords: ["Takeru Fujii", "Keyboard", "Hanlu", "Shiru", "AI Studio", "Product Design"],
   authors: [{ name: "Takeru Fujii" }],
   openGraph: {
-    title: "Takeru Fujii — Takeru Universe",
-    description: "Building tools for language learners. Explore my universe.",
+    title: "Takeru Fujii — Products in Motion",
+    description: "A journey through products built for language, learning, and AI.",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#03040a",
+  themeColor: "#111411",
   colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${body.variable} ${japaneseDisplay.variable} ${japaneseBody.variable} ${chineseDisplay.variable} ${chineseBody.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

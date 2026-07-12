@@ -1,68 +1,31 @@
-# Takeru Universe
+# Takeru — Products in Motion
 
-A cinematic, interactive personal site for **Takeru Fujii** — identity, projects, and
-interests rendered as a deep-space universe of planets, moons, stations, orbits, and
-nebulae rather than a standard portfolio.
+A fullscreen, cinematic portfolio for Takeru Fujii. Each product is a stop on a
+train journey, with a landscape chosen for its place and story:
 
-> Building tools for language learners. Explore my universe.
+- **Keyboard** — a spring morning below Mt. Fuji, Japan
+- **Hanlu** — the Li River and karst mountains, China
+- **Shiru** — a quiet autumn local line in Kyoto, Japan
+- **AI Studio** — Tokyo Bay after dark
 
 ## Stack
 
-- **Next.js 15** (App Router) · **React 19** · **TypeScript**
-- **Tailwind CSS** 3.4 (custom space theme + glass utilities)
-- **Framer Motion** 11 (scroll camera, parallax, transitions, panels)
-- Canvas-based parallax **starfield** + CSS **nebula** (2.5D — no heavy WebGL libs)
+- Next.js 15 / React 19 / TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- Instrument Serif and Inter via `next/font`
 
-## Getting started
+## Run locally
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build    # production build
-npm start        # serve the production build
+npm run dev
 ```
 
-## Experience
+The experience is intentionally contained in one viewport. Destinations can be
+changed from the top navigation, route switcher, mobile menu, or left/right arrow
+keys. Reduced-motion preferences disable the continuous train and scenery movement.
 
-- **Hero** — universe entrance: starfield, nebula, animated title + CTA.
-- **Universe map** — a scrollable constellation. Each celestial body rotates, floats,
-  reacts to the mouse, glows + reveals a label on hover, and opens a glass detail panel
-  on click. Connector lines trace the path between them.
-- **OrbitNav** — a side rail that highlights the body nearest center and jumps to any of them.
-- **Outro** — closing section with a GitHub link.
-
-### Celestial bodies
-
-| Body | Represents |
-| --- | --- |
-| **Hanlu** (planet) | Flagship: a Chinese-learning app for Japanese speakers |
-| **Language** (moon) | Mandarin, HSK, language-learning interest |
-| **AI Station** | ChatGPT Lab @ Waseda, AI projects + workshops |
-| **Economics** (orbit) | First-year economics at Waseda University |
-| **Future** (nebula) | Ideas and experiments to come |
-
-## Accessibility & performance
-
-- Full **`prefers-reduced-motion`** support — disables float, parallax, rotation, the
-  cursor glow, and renders a static starfield.
-- Mouse parallax + cursor glow are **disabled on touch** devices.
-- Canvas caps DPR, runs a single rAF loop, and pauses when the tab is hidden.
-- Responsive: bodies scale down via a CSS variable while their layout stays percentage-based.
-
-## Editing content
-
-All copy and visual config live in [`src/lib/universe.ts`](src/lib/universe.ts).
-
-> **TODO:** replace the placeholder URLs at the top of that file:
-> - `HANLU_URL` → the live Hanlu app / landing page
-> - `GITHUB_URL` → Takeru's real GitHub profile
-
-## Structure
-
-```
-src/
-  app/            layout (fonts, metadata) · page (composition) · globals.css
-  components/     Starfield · Nebula · CursorGlow · Hero · Planet
-                  UniverseMap · DetailPanel · OrbitNav · Outro
-  lib/            universe.ts (content) · hooks/ (mouse, touch)
-```
+Product content lives in [`src/lib/journey.ts`](src/lib/journey.ts), and the primary
+experience is implemented in [`src/components/JourneyHero.tsx`](src/components/JourneyHero.tsx).

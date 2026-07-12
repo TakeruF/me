@@ -39,6 +39,8 @@ export interface CelestialBody {
   gradient: [string, string, string];
   /** Glow / accent color. */
   glow: string;
+  /** Procedural surface style used to render the sphere. */
+  texture: import("@/lib/planetTexture").TextureKind;
   /** Diameter in px at depth 1 (desktop). Scaled by depth + viewport. */
   size: number;
   /** Render a planetary ring. */
@@ -67,7 +69,8 @@ export const UNIVERSE: CelestialBody[] = [
     tags: ["Chinese ↔ Japanese", "Product", "EdTech", "Mobile"],
     gradient: ["#c4b5fd", "#7c3aed", "#1e1b4b"],
     glow: "#a855f7",
-    size: 280,
+    texture: "banded",
+    size: 200,
     ring: true,
     moons: 1,
     align: "center",
@@ -87,7 +90,8 @@ export const UNIVERSE: CelestialBody[] = [
     tags: ["Mandarin", "HSK", "Linguistics", "Self-study"],
     gradient: ["#a7f3d0", "#14b8a6", "#0f3b3a"],
     glow: "#22d3ee",
-    size: 150,
+    texture: "rocky",
+    size: 112,
     moons: 0,
     align: "left",
     depth: 0.78,
@@ -104,7 +108,8 @@ export const UNIVERSE: CelestialBody[] = [
     tags: ["ChatGPT Lab", "LLMs", "Workshops", "Prototyping"],
     gradient: ["#bfdbfe", "#4f46e5", "#10142e"],
     glow: "#6366f1",
-    size: 180,
+    texture: "ice",
+    size: 132,
     moons: 2,
     align: "right",
     depth: 0.9,
@@ -121,7 +126,8 @@ export const UNIVERSE: CelestialBody[] = [
     tags: ["Waseda", "Economics", "First-year"],
     gradient: ["#bae6fd", "#2563eb", "#0a1733"],
     glow: "#3b82f6",
-    size: 160,
+    texture: "terran",
+    size: 124,
     align: "left",
     depth: 0.68,
   },
@@ -137,7 +143,8 @@ export const UNIVERSE: CelestialBody[] = [
     tags: ["Experiments", "Ideas", "What's next"],
     gradient: ["#f5d0fe", "#a21caf", "#2a0d3a"],
     glow: "#d946ef",
-    size: 220,
+    texture: "gas",
+    size: 152,
     align: "right",
     depth: 0.85,
   },
