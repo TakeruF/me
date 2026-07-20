@@ -54,18 +54,18 @@ const chineseBody = Noto_Sans_SC({
 export const metadata: Metadata = {
   title: "Takeru Fujii — Products in Motion",
   description:
-    "A cinematic journey through the products of Takeru Fujii: Keyboard, Hanlu, Shiru, and AI Studio.",
+    "A kinetic, generative portfolio of Takeru Fujii's products: Keyboard, Hanlu, Shiru, and AI Studio.",
   keywords: ["Takeru Fujii", "Keyboard", "Hanlu", "Shiru", "AI Studio", "Product Design"],
   authors: [{ name: "Takeru Fujii" }],
   openGraph: {
     title: "Takeru Fujii — Products in Motion",
-    description: "A journey through products built for language, learning, and AI.",
+    description: "A kinetic portfolio of products built for language, learning, and AI.",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#111411",
+  themeColor: "#050507",
   colorScheme: "dark",
 };
 

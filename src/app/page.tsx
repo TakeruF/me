@@ -1,5 +1,5 @@
-import JourneyHero from "@/components/JourneyHero";
+import MotionSite from "@/components/motion/MotionSite";
 
 export default function Page() {
-  return <JourneyHero />;
+  return <MotionSite />;
 }

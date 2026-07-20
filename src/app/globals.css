@@ -11,15 +11,19 @@
     box-sizing: border-box;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   html,
   body {
     min-height: 100%;
     margin: 0;
-    background: #111411;
+    background: #050507;
   }
 
   body {
-    overflow: hidden;
+    overflow-x: clip;
     font-family: var(--font-body), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
@@ -114,6 +118,102 @@
     box-shadow:
       inset 0 1px 1px rgba(255, 255, 255, 0.3),
       0 10px 35px rgba(43, 64, 51, 0.08);
+  }
+
+  /* --- Motion Field design (src/components/motion/*) --- */
+
+  .motion-site {
+    --font-locale-display: var(--font-display);
+    --font-locale-body: var(--font-body);
+    --accent: #818cf8;
+    background: #050507;
+    color: #f4f2ec;
+    font-family: var(--font-locale-body), system-ui, sans-serif;
+  }
+
+  .motion-site[data-language="ja"] {
+    --font-locale-display: var(--font-ja-display);
+    --font-locale-body: var(--font-ja-body);
+  }
+
+  .motion-site[data-language="zh"] {
+    --font-locale-display: var(--font-zh-display);
+    --font-locale-body: var(--font-zh-body);
+  }
+
+  .motion-title {
+    font-family: var(--font-locale-display), Georgia, serif;
+    font-weight: 400;
+  }
+
+  .motion-site[data-language="ja"] .motion-title,
+  .motion-site[data-language="zh"] .motion-title {
+    font-weight: 600;
+  }
+
+  /* CJK faces have no true italics — the synthesized slant reads poorly and
+     clips inside the masked characters of KineticText. Latin-only marks can
+     opt out with .keep-italic. */
+  .motion-site[data-language="ja"] .italic:not(.keep-italic),
+  .motion-site[data-language="zh"] .italic:not(.keep-italic) {
+    font-style: normal;
+  }
+
+  .motion-site[data-language] .keep-italic {
+    font-style: italic;
+  }
+
+  /* Elements tinted by the active chapter's accent (via --accent on .motion-site). */
+  .accent-text {
+    color: var(--accent);
+    transition: color 900ms ease;
+  }
+
+  /* Atmosphere layers: drifting accent-colored glows, edge vignette, film grain. */
+  .aurora-blob {
+    position: absolute;
+    border-radius: 9999px;
+    background-color: var(--accent);
+    filter: blur(110px);
+    will-change: transform;
+    transition: background-color 1200ms ease;
+  }
+
+  .aurora-blob-one {
+    top: -20%;
+    left: -14%;
+    width: 55vmax;
+    height: 55vmax;
+    opacity: 0.1;
+    animation: aurora-one 26s ease-in-out infinite;
+  }
+
+  .aurora-blob-two {
+    right: -16%;
+    bottom: -24%;
+    width: 46vmax;
+    height: 46vmax;
+    opacity: 0.08;
+    animation: aurora-two 34s ease-in-out infinite;
+  }
+
+  .aurora-blob-three {
+    top: 34%;
+    left: 52%;
+    width: 32vmax;
+    height: 32vmax;
+    opacity: 0.06;
+    animation: aurora-three 40s ease-in-out infinite;
+  }
+
+  .vignette {
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(2, 2, 4, 0.6) 100%);
+  }
+
+  .grain {
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
 }
@@ -530,6 +630,81 @@
   }
   to {
     transform: translate3d(90vw, 0, 0) skewX(-14deg);
+  }
+}
+
+/* --- Motion Field keyframes --- */
+
+@keyframes aurora-one {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(10vw, 7vh, 0) scale(1.18);
+  }
+}
+
+@keyframes aurora-two {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.1);
+  }
+  50% {
+    transform: translate3d(-8vw, -6vh, 0) scale(0.95);
+  }
+}
+
+@keyframes aurora-three {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  33% {
+    transform: translate3d(-12vw, 5vh, 0);
+  }
+  66% {
+    transform: translate3d(6vw, -7vh, 0);
+  }
+}
+
+.marquee-track {
+  animation: marquee 26s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.glyph-float {
+  animation: glyph-float 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes glyph-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) rotate(3deg);
+  }
+}
+
+.cue-dot {
+  animation: cue-drop 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes cue-drop {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(100%);
   }
 }
 
