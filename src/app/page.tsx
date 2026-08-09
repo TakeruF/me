@@ -1,5 +1,5 @@
-import MotionSite from "@/components/motion/MotionSite";
+import AnimeSite from "@/components/anime/AnimeSite";
 
 export default function Page() {
-  return <MotionSite />;
+  return <AnimeSite />;
 }

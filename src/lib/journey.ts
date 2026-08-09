@@ -36,16 +36,16 @@ export const DESTINATIONS: Destination[] = [
     id: "keyboard",
     index: "01",
     name: "Keyboard",
-    eyebrow: "Japanese input, made legible",
+    eyebrow: "Japanese input without the guesswork",
     location: "Yamanashi, Japan",
     coordinates: "35.3606° N · 138.7274° E",
-    title: ["Type Japanese,", "and keep the reading."],
+    title: ["Know the reading", "before you choose."],
     description:
-      "A Japanese keyboard for handwriting and romaji input, designed so every candidate can reveal its reading before you commit.",
+      "A Japanese keyboard that shows how every candidate is read before it enters the sentence—whether you write by hand or type in romaji.",
     image: "/journey/keyboard-japan.webp",
     href: "https://keyboard.hanlu.app",
-    cta: "Visit Keyboard",
-    status: "Now boarding",
+    cta: "Open Keyboard",
+    status: "Live",
     accent: "#f0aa8b",
     textTone: "dark",
     station: {
@@ -55,7 +55,7 @@ export const DESTINATIONS: Destination[] = [
       intro:
         "Keyboard keeps the reading visible at the exact moment it matters: before a candidate becomes part of your sentence.",
       note: "Choose the right word with confidence, not guesswork.",
-      features: ["Handwriting & romaji input", "Reading-first candidates", "Made for everyday Japanese"],
+      features: ["Handwriting + romaji", "Readings before confirmation", "Built for daily writing"],
       facts: [
         { label: "Input", value: "Handwriting + Romaji" },
         { label: "Designed for", value: "Japanese writers" },
@@ -70,16 +70,16 @@ export const DESTINATIONS: Destination[] = [
     id: "hanlu",
     index: "02",
     name: "Hanlu",
-    eyebrow: "Chinese, through a Japanese lens",
+    eyebrow: "Mandarin learning for Japanese speakers",
     location: "Guilin, China",
     coordinates: "25.2736° N · 110.2900° E",
-    title: ["Learn Chinese,", "the Japanese way."],
+    title: ["Use the kanji", "you already know."],
     description:
-      "A Chinese-learning app for Japanese speakers, connecting familiar kanji intuition with Mandarin sound, meaning, and usage.",
+      "Hanlu turns existing kanji intuition into a head start in Mandarin, connecting familiar characters to pronunciation, meaning, and real usage.",
     image: "/journey/hanlu-china.webp",
     href: "https://hanlu.app",
-    cta: "Visit Hanlu",
-    status: "Flagship route",
+    cta: "Explore Hanlu",
+    status: "Live",
     accent: "#bad5be",
     textTone: "dark",
     station: {
@@ -89,7 +89,7 @@ export const DESTINATIONS: Destination[] = [
       intro:
         "Hanlu turns the kanji knowledge Japanese learners already have into a bridge toward Mandarin sound, meaning, and use.",
       note: "Start from the characters you know, then learn how Chinese thinks and sounds.",
-      features: ["Kanji-aware explanations", "Sound, meaning & context", "Progress made visible"],
+      features: ["Built for Japanese speakers", "Sound, meaning + usage", "Kanji as a learning bridge"],
       facts: [
         { label: "Language", value: "Japanese → Mandarin" },
         { label: "Approach", value: "Kanji-connected" },
@@ -104,15 +104,15 @@ export const DESTINATIONS: Destination[] = [
     id: "shiru",
     index: "03",
     name: "Shiru",
-    eyebrow: "A quieter way to remember words",
+    eyebrow: "Vocabulary that stays with you",
     location: "Kyoto, Japan",
     coordinates: "35.0116° N · 135.7681° E",
-    title: ["Meet a word.", "Make it yours."],
+    title: ["From “I’ve seen it”", "to “I know it.”"],
     description:
-      "A Japanese vocabulary-learning experience built around recognition, recall, and the small moments when a new word finally feels familiar.",
+      "A Japanese vocabulary experience that moves words from recognition to recall with context, gentle repetition, and well-timed review.",
     image: "/journey/shiru-japan.webp",
     cta: "In development",
-    status: "Next connection",
+    status: "In development",
     accent: "#e98b5d",
     textTone: "light",
     station: {
@@ -122,7 +122,7 @@ export const DESTINATIONS: Destination[] = [
       intro:
         "Shiru gives vocabulary enough context and repetition to move from something you recognize into something you truly know.",
       note: "A word is learned when it begins to feel familiar in the wild.",
-      features: ["Recognition cues", "Gentle recall loops", "A calm learning rhythm"],
+      features: ["Context before memorization", "Recognition → recall", "Review at the right moment"],
       facts: [
         { label: "Focus", value: "Japanese vocabulary" },
         { label: "Learning loop", value: "Recognize → Recall" },
@@ -137,16 +137,16 @@ export const DESTINATIONS: Destination[] = [
     id: "ai-studio",
     index: "04",
     name: "AI Studio",
-    eyebrow: "Software, built with AI teams",
+    eyebrow: "An AI-native product workspace",
     location: "Tokyo Bay, Japan",
     coordinates: "35.6196° N · 139.7798° E",
-    title: ["Build together,", "at the speed of thought."],
+    title: ["Keep the context.", "Move from brief to build."],
     description:
-      "An AI-native operating system for building software with coordinated AI teams—from the first brief to working product.",
+      "A workspace where specialist AI teammates share the same product context and move one clear brief toward working software.",
     image: "/journey/ai-studio-tokyo.webp",
     href: "https://ai-studio-izgvxyyo.edgeone.dev",
-    cta: "Enter AI Studio",
-    status: "Night service",
+    cta: "Preview AI Studio",
+    status: "Preview",
     accent: "#94b9cb",
     textTone: "light",
     station: {
@@ -156,7 +156,7 @@ export const DESTINATIONS: Destination[] = [
       intro:
         "AI Studio brings specialized agents, shared context, and the product-building workflow into one coordinated operating system.",
       note: "Move from a clear brief to a working product without losing the shared context.",
-      features: ["Coordinated AI teams", "From brief to working build", "One shared product context"],
+      features: ["Specialist AI teammates", "One shared product context", "Brief → working software"],
       facts: [
         { label: "System", value: "Coordinated agents" },
         { label: "Workflow", value: "Brief → Build" },
