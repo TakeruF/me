@@ -1,9 +1,10 @@
+import { localize } from "@/lib/i18n";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import type { ProductStory as Story } from "@/lib/product-stories";
 
 export function ProductStory({ story }: { story: Story }) {
-  return (
+  return localize(
     <div className="product-story wrap">
       {story.sections.map((section, index) => (
         <section

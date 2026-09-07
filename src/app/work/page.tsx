@@ -1,25 +1,16 @@
+import { localize, localizedMetadata } from "@/lib/i18n";
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
 import { ProductVisual } from "@/components/product-visual";
 import { categories, categoryIds, products, productHref } from "@/lib/products";
 
-export const metadata: Metadata = {
-  title: "All work — Takeru",
-  description:
-    "日々の道具、語学学習アプリ、開発者ツール、MCP。Takeruがつくる16のプロダクトを紹介します。",
-  alternates: { canonical: "/work" },
-  openGraph: {
-    title: "All work — Takeru",
-    url: "https://takeruf.com/work",
-    description: "A collection of useful little things.",
-  },
-};
+export const metadata: Metadata = localizedMetadata("All work — Takeru", "日々の道具、語学学習アプリ、開発者ツール、MCP。Takeruがつくる16のプロダクトを紹介します。", "/work");
 
 export default function WorkPage() {
-  return (
+  return localize(
     <>
-      <SiteHeader />
+      <SiteHeader path="/work" />
       <main id="main">
         <section className="catalog-hero wrap" id="top">
           <span className="section-index">
@@ -93,7 +84,7 @@ export default function WorkPage() {
           </section>
         ))}
       </main>
-      <SiteFooter />
+      <SiteFooter path="/work" />
     </>
   );
 }

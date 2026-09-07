@@ -1,3 +1,6 @@
+import { SiteHeader } from "@/components/site-chrome";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { localize } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -151,7 +154,7 @@ function ExternalLink({
   children: React.ReactNode;
   className?: string;
 }) {
-  return (
+  return localize(
     <a
       href={href}
       target="_blank"
@@ -166,26 +169,9 @@ function ExternalLink({
 }
 
 export default function Page() {
-  return (
+  return localize(
     <>
-      <a className="skip-link" href="#main">
-        本文へ移動
-      </a>
-      <header className="site-header wrap">
-        <a className="wordmark" href="#top" aria-label="Takeru ホーム">
-          takeru<span className="logo-dot">.</span>
-        </a>
-        <nav aria-label="メインナビゲーション">
-          <Link href="/work">Work</Link>
-          <a href="#about">About</a>
-          <ExternalLink
-            href="https://github.com/TakeruF"
-            className="header-github"
-          >
-            GitHub
-          </ExternalLink>
-        </nav>
-      </header>
+      <SiteHeader />
       <main id="main">
         <section className="hero wrap" id="top" aria-labelledby="hero-title">
           <div className="hero-eyebrow">
@@ -448,9 +434,7 @@ export default function Page() {
             </a>
             <span>Made with curiosity in Tokyo.</span>
             <div>
-              <ExternalLink href="https://github.com/TakeruF/cn">
-                简体中文
-              </ExternalLink>
+              <LanguageSwitcher />
               <a href="#top">
                 Back to top <ArrowUpRight size={15} aria-hidden="true" />
               </a>

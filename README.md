@@ -1,7 +1,7 @@
 # Takeru — Portfolio
 
 A product-focused portfolio based on [TakeruF's GitHub profile](https://github.com/TakeruF/TakeruF).
-Japanese descriptions, expressive typography, real product screenshots, and a responsive layout.
+Complete English, Japanese and Simplified Chinese introductions, expressive typography, original product screenshots, and a responsive layout.
 
 ## Content
 
@@ -60,3 +60,15 @@ It does not require a running Node.js server, API keys, or runtime environment v
 Every push to `main` automatically triggers a new production deployment.
 
 The old Vercel portfolio uses `vercel.json` to permanently redirect to the matching path on takeruf.com. It uses the same static build and does not host another application.
+
+## Languages
+
+- `/en`, `/ja`, `/zh`: localized homepages, collections and product introductions.
+- The header and footer switch language while retaining the current product.
+- Original product names, screenshot contents and signature copy such as “Curiosity, made useful.” remain in their original language.
+- `src/lib/i18n/`: authored translations for visible copy, accessible labels and metadata. Server-rendered translation keeps content readable before JavaScript loads; only the gallery controls hydrate.
+- `scripts/build-locales.mjs`: builds three isolated static exports, assembles them under their locale prefixes, preserves legacy URLs, and creates the 51-URL sitemap with language alternates.
+- F1 Harmony uses the complete original standalone page with translated text and a matching language selector. Its original CSS, animation script and screenshots are preserved.
+- Hanlu continues to link directly to `hanlu.app/about`. Product applications and lightweight tools keep their original hosting.
+
+Run `npm run build:edgeone` then `npm run verify:export` to check the deployed artifact. A single-language development preview uses `SITE_LOCALE=zh SITE_BASE_PATH=/zh npm run dev` (replace `zh` as needed); use the assembled static output to test all three languages together.

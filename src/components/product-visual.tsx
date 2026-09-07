@@ -1,3 +1,4 @@
+import { localize } from "@/lib/i18n";
 import Image from "next/image";
 import type { Product } from "@/lib/products";
 
@@ -8,7 +9,7 @@ export function ProductVisual({
   product: Product;
   compact?: boolean;
 }) {
-  return (
+  return localize(
     <div
       className={`product-art tone-${product.tone} ${compact ? "art-compact" : ""} ${product.image?.portrait ? "art-portrait" : ""}`}
     >

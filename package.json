@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:edgeone": "EDGEONE_STATIC_EXPORT=1 next build",
+    "build:edgeone": "node scripts/build-locales.mjs",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "verify:export": "node scripts/verify-export.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

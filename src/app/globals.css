@@ -1732,3 +1732,17 @@ h2 {
     font-size: 15px;
   }
 }
+
+/* Language is a real page choice; keep it available on small screens too. */
+.language-switcher { display: flex; align-items: center; gap: 3px; font-size: 12px; white-space: nowrap; }
+.language-switcher a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 9px; border-radius: 999px; }
+.language-switcher a[aria-current] { color: var(--blue, #315bfa); background: #edf1ff; }
+.site-header > nav { margin-left: auto; }
+.site-header { gap: 24px; }
+html[lang="zh-CN"] body { font-family: var(--font-body), "PingFang SC", "Microsoft YaHei", sans-serif; }
+@media (max-width: 700px) {
+ .site-header { flex-wrap: wrap; gap: 0 12px; padding-top: 12px; padding-bottom: 12px; }
+ .site-header > .language-switcher { width: 100%; justify-content: flex-end; }
+ .site-header > nav { gap: 16px; }
+ .footer-bottom, .footer-bottom > div { flex-wrap: wrap; }
+}

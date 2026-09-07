@@ -7,6 +7,7 @@ const staticExport = process.env.EDGEONE_STATIC_EXPORT === "1";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  basePath: process.env.SITE_BASE_PATH || "",
   output: staticExport ? "export" : undefined,
   images: { unoptimized: staticExport },
   distDir: staticExport

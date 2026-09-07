@@ -1,8 +1,10 @@
+import { LanguageSwitcher } from "./language-switcher";
+import { localize } from "@/lib/i18n";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-export function SiteHeader() {
-  return (
+export function SiteHeader({ path = "/" }: { path?: string }) {
+  return localize(
     <>
       <a className="skip-link" href="#main">
         本文へ移動
@@ -24,13 +26,14 @@ export function SiteHeader() {
             <span className="sr-only">（新しいタブで開く）</span>
           </a>
         </nav>
+        <LanguageSwitcher path={path} />
       </header>
     </>
   );
 }
 
-export function SiteFooter() {
-  return (
+export function SiteFooter({ path = "/" }: { path?: string }) {
+  return localize(
     <footer className="site-footer">
       <div className="wrap">
         <div className="footer-top">
@@ -52,13 +55,7 @@ export function SiteFooter() {
           </Link>
           <span>Made with curiosity in Tokyo.</span>
           <div>
-            <a
-              href="https://github.com/TakeruF/cn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              简体中文 <ArrowUpRight size={15} aria-hidden="true" />
-            </a>
+            <LanguageSwitcher path={path} />
             <a href="#top">Back to top ↑</a>
           </div>
         </div>

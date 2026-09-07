@@ -1,3 +1,4 @@
+import { localize, localizedMetadata } from "@/lib/i18n";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -25,26 +26,15 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = findProduct((await params).slug);
   if (!product) notFound();
-  return {
-    title: `${product.name} — Takeru`,
-    description: product.description,
-    alternates: { canonical: productHref(product.slug) },
-    openGraph: {
-      title: `${product.name} — Takeru`,
-      description: product.description,
-      url: `https://takeruf.com${productPath(product.slug)}`,
-      ...(product.image
-        ? { images: [{ url: product.image.src, alt: product.image.alt }] }
-        : {}),
-    },
-  };
+  if (product.slug === "hanlu") return { title: "Hanlu", alternates: { canonical: "https://hanlu.app/about" }, robots: { index: false } };
+  return localizedMetadata(`${product.name} — Takeru`, product.description, productPath(product.slug));
 }
 
 export default async function ProductPage({ params }: Props) {
   const product = findProduct((await params).slug);
   if (!product) notFound();
   if (product.slug === "hanlu") {
-    return (
+    return localize(
       <>
         <meta httpEquiv="refresh" content="0;url=https://hanlu.app/about" />
         <main className="wrap">
@@ -60,9 +50,9 @@ export default async function ProductPage({ params }: Props) {
   const related = products
     .filter((p) => p.category === product.category && p.slug !== product.slug)
     .slice(0, 3);
-  return (
+  return localize(
     <>
-      <SiteHeader />
+      <SiteHeader path={productPath(product.slug)} />
       <main id="main">
         <section className="detail-hero wrap" id="top">
           <Link className="back-to-work" href="/work">
@@ -230,7 +220,7 @@ export default async function ProductPage({ params }: Props) {
           </section>
         )}
       </main>
-      <SiteFooter />
+      <SiteFooter path={productPath(product.slug)} />
     </>
   );
 }
