@@ -1,15 +1,15 @@
 {
-  "name": "takeru-universe",
+  "name": "takeru-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:edgeone": "EDGEONE_STATIC_EXPORT=1 next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "framer-motion": "^11.11.17",
     "lucide-react": "^0.468.0",
     "next": "^16.3.0",
     "react": "^19.0.0",
@@ -21,7 +21,7 @@
     "@types/react-dom": "^19.0.3",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.18.0",
-    "eslint-config-next": "^15.1.6",
+    "eslint-config-next": "^16.3.0",
     "postcss": "^8.5.23",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3"

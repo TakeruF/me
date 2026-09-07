@@ -1,40 +1,53 @@
-# Takeru — Products in Motion
+# Takeru — Portfolio
 
-A kinetic, generative portfolio for Takeru Fujii. No photography: the page is
-driven by a flow-field particle canvas that reacts to the pointer and scroll
-velocity, kinetic typography, and per-product "glyph fields" — each product is
-drawn in its own writing system:
+A product-focused portfolio based on [TakeruF's GitHub profile](https://github.com/TakeruF/TakeruF).
+Japanese descriptions, expressive typography, real product screenshots, and a responsive layout.
 
-- **Keyboard** — floating kana and romaji
-- **Hanlu** — drifting hanzi
-- **Shiru** — Japanese vocabulary in slow orbit
-- **AI Studio** — code fragments and nodes
+## Content
 
-Each product chapter re-tints the whole page (particles, accents, cursor) with
-its own color as you scroll.
+- **Products:** Hanlu, Token Meter, Furigana Keyboard, Per-App Language
+- **Open source:** China Rail MCP, Japan Rail MCP, MCP Mail Core, Silkroad MCP
+- **About:** introduction and technology stack
 
-## Stack
+Product descriptions and destinations were checked against the profile README on 2026-09-07.
+Screenshots in `public/projects/` come from the product assets linked in that README.
 
-- Next.js 15 / React 19 / TypeScript
-- Tailwind CSS
-- Framer Motion
-- Lucide React
-- Instrument Serif and Inter via `next/font`
-
-## Run locally
+## Development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-The experience is a single vertical scroll: hero statement, product marquee,
-four chapters, principles, and contact. English / 日本語 / 中文 are switchable
-from the header. Reduced-motion preferences still the canvas, the skew, and
-the character reveals.
+```bash
+npm run lint
+npm run build
+npm start
+```
 
-Product content lives in [`src/lib/journey.ts`](src/lib/journey.ts), UI copy in
-[`src/lib/motion-i18n.ts`](src/lib/motion-i18n.ts), and the experience is
-implemented in [`src/components/motion/`](src/components/motion/). The previous
-"train journey" design (`src/components/JourneyHero.tsx`) and the earlier
-"universe" components are kept for reference but no longer rendered.
+Built with Next.js, React, TypeScript, and Lucide. Typography uses DM Sans and Noto Sans JP through `next/font`.
+The page is rendered as a Server Component. Motion uses CSS and respects reduced-motion preferences.
+
+- `src/app/page.tsx`: product content, links, and page sections
+- `src/app/globals.css`: visual system and responsive layouts
+- `src/app/layout.tsx`: fonts, document language, and metadata
+- `public/projects/`: optimized WebP versions of the original product screenshots
+
+Development and production use separate build directories so running a build does not corrupt a live preview.
+
+## EdgeOne deployment
+
+Production domain: **https://takeruf.com**
+
+EdgeOne Makers project `takeruf` is connected to `TakeruF/me`, production branch `main`.
+
+- Framework preset: Next SSG
+- Root directory: `./`
+- Install command: `npm ci`
+- Build command: `npm run build:edgeone`
+- Output directory: `out`
+- Acceleration region: Global (Chinese mainland excluded)
+
+The EdgeOne build exports static HTML, CSS, JavaScript, fonts, and optimized images.
+It does not require a running Node.js server, API keys, or runtime environment variables.
+Every push to `main` automatically triggers a new production deployment.
