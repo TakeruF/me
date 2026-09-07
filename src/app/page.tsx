@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowDown,
@@ -18,7 +19,7 @@ const projects = [
     description:
       "HSK単語、クイズ、音声で学ぶ中国語アプリ。学習の記録はデバイスを越えて、いつもの続きから。",
     platforms: ["Web", "iOS", "Android"],
-    url: "https://hanlu.app/about",
+    url: "/projects/hanlu",
     image: "/projects/hanlu.webp",
     alt: "Hanluの学習統計を表示したパソコン、タブレット、スマートフォン",
     width: 2880,
@@ -43,8 +44,8 @@ const projects = [
     headline: "AIの使用量を、ひと目で。",
     description:
       "Claude Code、Codex、Copilot CLIの利用状況を可視化。日々の使用量からレート制限まで、ネイティブアプリで確認。",
-    platforms: ["macOS", "Windows"],
-    url: "https://takeruf.github.io/token_meter/",
+    platforms: ["macOS"],
+    url: "/projects/token-meter",
     image: "/projects/token-meter.webp",
     alt: "Token Meterのメニューバーとウィジェットに表示されたClaude CodeとCodexの使用量",
     width: 2880,
@@ -66,7 +67,7 @@ const projects = [
     description:
       "手書きとローマ字に対応する日本語キーボード。ふりがな付きの変換候補で、読みを確かめながら入力。オフラインでも使えます。",
     platforms: ["Android", "iOS"],
-    url: "https://keyboard.hanlu.app/en",
+    url: "/projects/furigana-keyboard",
     image: "/projects/furigana.webp",
     alt: "手書きの日本語とふりがな付き変換候補を表示するFurigana Keyboard",
     width: 1080,
@@ -88,7 +89,7 @@ const projects = [
     description:
       "Androidのアプリごとに表示言語を設定。標準の言語設定に表示されないアプリも、Shizukuを通じて切り替えられます。",
     platforms: ["Android 13+", "Shizuku"],
-    url: "https://github.com/TakeruF/android-perapp-language-selector",
+    url: "/projects/per-app-language",
     image: "/projects/per-app-list.webp",
     alt: "Per-App Languageのアプリ一覧と、それぞれに設定された表示言語",
     width: 538,
@@ -175,7 +176,7 @@ export default function Page() {
           takeru<span className="logo-dot">.</span>
         </a>
         <nav aria-label="メインナビゲーション">
-          <a href="#work">Work</a>
+          <Link href="/work">Work</Link>
           <a href="#about">About</a>
           <ExternalLink
             href="https://github.com/TakeruF"
@@ -244,9 +245,7 @@ export default function Page() {
                 <a
                   className="project-visual"
                   href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${project.name}の公式ページ（新しいタブで開く）`}
+                  aria-label={`${project.name}の紹介ページ`}
                 >
                   <div className="visual-topline">
                     <span>
@@ -303,14 +302,7 @@ export default function Page() {
                 <div className="project-info">
                   <div className="project-title-row">
                     <h3>
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {project.name}
-                        <span className="sr-only">（新しいタブで開く）</span>
-                      </a>
+                      <a href={project.url}>{project.name}</a>
                     </h3>
                     <span className="platform-label">
                       {project.platforms.join(" · ")}
@@ -329,6 +321,10 @@ export default function Page() {
               </article>
             ))}
           </div>
+          <Link className="all-work-link" href="/work">
+            すべてのプロダクトを見る{" "}
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
         </section>
         <section
           className="open-section"
@@ -362,9 +358,7 @@ export default function Page() {
                 <a
                   key={repo.repo}
                   className="repo-row"
-                  href={`https://github.com/TakeruF/${repo.repo}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`/projects/${repo.repo}`}
                 >
                   <span className="repo-icon">
                     <repo.icon size={22} strokeWidth={1.5} aria-hidden="true" />
@@ -379,7 +373,6 @@ export default function Page() {
                     size={22}
                     aria-hidden="true"
                   />
-                  <span className="sr-only">（新しいタブで開く）</span>
                 </a>
               ))}
             </div>

@@ -1,0 +1,12 @@
+{
+  "framework": null,
+  "buildCommand": "npm run build:edgeone",
+  "outputDirectory": "out",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://takeruf.com/:path*",
+      "permanent": true
+    }
+  ]
+}

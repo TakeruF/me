@@ -8,9 +8,13 @@ Japanese descriptions, expressive typography, real product screenshots, and a re
 - **Products:** Hanlu, Token Meter, Furigana Keyboard, Per-App Language
 - **Open source:** China Rail MCP, Japan Rail MCP, MCP Mail Core, Silkroad MCP
 - **About:** introduction and technology stack
+- **All work:** `/work` lists 16 products by category
+- **Product introductions:** `/projects/<slug>` explains features, supported platforms and requirements, then links to the existing app, documentation or download destination
 
 Product descriptions and destinations were checked against the profile README on 2026-09-07.
-Screenshots in `public/projects/` come from the product assets linked in that README.
+Screenshots in `public/projects/` come from the product assets linked in that README and the corresponding repositories. Current product READMEs were checked on 2026-09-07; Token Meter is supported on macOS only.
+
+This domain is for product introductions. Application hosting, local browser data, OAuth settings, release feeds and privacy-policy URLs are preserved. See [migration decisions](docs/domain-migration.md).
 
 ## Development
 
@@ -29,6 +33,9 @@ Built with Next.js, React, TypeScript, and Lucide. Typography uses DM Sans and N
 The page is rendered as a Server Component. Motion uses CSS and respects reduced-motion preferences.
 
 - `src/app/page.tsx`: product content, links, and page sections
+- `src/lib/products.ts`: the 16-product introduction catalog
+- `src/app/work/page.tsx`: product directory
+- `src/app/projects/[slug]/page.tsx`: statically generated product introductions
 - `src/app/globals.css`: visual system and responsive layouts
 - `src/app/layout.tsx`: fonts, document language, and metadata
 - `public/projects/`: optimized WebP versions of the original product screenshots
@@ -51,3 +58,5 @@ EdgeOne Makers project `takeruf` is connected to `TakeruF/me`, production branch
 The EdgeOne build exports static HTML, CSS, JavaScript, fonts, and optimized images.
 It does not require a running Node.js server, API keys, or runtime environment variables.
 Every push to `main` automatically triggers a new production deployment.
+
+The old Vercel portfolio uses `vercel.json` to permanently redirect to the matching path on takeruf.com. It uses the same static build and does not host another application.
