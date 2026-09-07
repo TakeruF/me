@@ -4,6 +4,11 @@
   "outputDirectory": "out",
   "redirects": [
     {
+      "source": "/",
+      "destination": "https://takeruf.com",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "destination": "https://takeruf.com/:path*",
       "permanent": true
