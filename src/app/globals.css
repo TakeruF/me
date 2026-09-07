@@ -1733,16 +1733,23 @@ h2 {
   }
 }
 
-/* Language is a real page choice; keep it available on small screens too. */
-.language-switcher { display: flex; align-items: center; gap: 3px; font-size: 12px; white-space: nowrap; }
-.language-switcher a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 9px; border-radius: 999px; }
-.language-switcher a[aria-current] { color: var(--blue, #315bfa); background: #edf1ff; }
+/* Language selection stays quiet until it is needed. */
+.language-switcher { position: relative; font-size: 12px; white-space: nowrap; }
+.language-switcher summary { display: flex; align-items: center; min-height: 44px; padding: 0 3px; color: inherit; cursor: pointer; list-style: none; border-bottom: 1px solid currentColor; }
+.language-switcher summary::-webkit-details-marker { display: none; }
+.language-switcher summary::after { width: 5px; height: 5px; margin: -3px 0 0 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; content: ""; transform: rotate(45deg); transition: transform 180ms ease; }
+.language-switcher[open] summary::after { margin-top: 3px; transform: rotate(225deg); }
+.language-switcher summary:focus-visible { outline: 2px solid var(--blue, #315bfa); outline-offset: 4px; }
+.language-menu { position: absolute; z-index: 20; top: calc(100% + 8px); right: 0; display: grid; min-width: 112px; padding: 5px; background: #fff; border: 1px solid var(--line, #dededb); box-shadow: 0 12px 28px rgba(20, 22, 20, .12); }
+.language-menu a { display: flex; align-items: center; min-height: 40px; padding: 0 10px; color: inherit; text-decoration: none; }
+.language-menu a:hover, .language-menu a:focus-visible { color: var(--blue, #315bfa); background: #edf1ff; outline: none; }
+.language-menu a[aria-current] { color: var(--blue, #315bfa); }
 .site-header > nav { margin-left: auto; }
 .site-header { gap: 24px; }
 html[lang="zh-CN"] body { font-family: var(--font-body), "PingFang SC", "Microsoft YaHei", sans-serif; }
 @media (max-width: 700px) {
  .site-header { flex-wrap: wrap; gap: 0 12px; padding-top: 12px; padding-bottom: 12px; }
- .site-header > .language-switcher { width: 100%; justify-content: flex-end; }
+ .site-header > .language-switcher { margin-left: auto; }
  .site-header > nav { gap: 16px; }
  .footer-bottom, .footer-bottom > div { flex-wrap: wrap; }
 }
