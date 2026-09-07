@@ -1,6 +1,6 @@
 import { localize } from "@/lib/i18n";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ResourceLink } from "@/components/resource-link";
 import type { ProductStory as Story } from "@/lib/product-stories";
 
 export function ProductStory({ story }: { story: Story }) {
@@ -22,16 +22,7 @@ export function ProductStory({ story }: { story: Story }) {
             {section.links && (
               <div className="story-links">
                 {section.links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link.label}
-                    <ArrowUpRight size={15} aria-hidden="true" />
-                    <span className="sr-only">（新しいタブで開く）</span>
-                  </a>
+                  <ResourceLink key={link.href} {...link} />
                 ))}
               </div>
             )}

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
 import { ProductStory } from "@/components/product-story";
+import { ResourceLink } from "@/components/resource-link";
 import { ScreenshotGallery } from "@/components/screenshot-gallery";
 import { productStories } from "@/lib/product-stories";
 import { ProductVisual } from "@/components/product-visual";
@@ -97,16 +98,7 @@ export default async function ProductPage({ params }: Props) {
               </a>
               <div className="detail-links">
                 {product.links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link.label}
-                    <ArrowUpRight size={13} aria-hidden="true" />
-                    <span className="sr-only">（新しいタブで開く）</span>
-                  </a>
+                  <ResourceLink key={link.href} {...link} size={13} />
                 ))}
               </div>
             </div>

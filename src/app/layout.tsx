@@ -19,6 +19,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://takeruf.com"),
   ...localizedMetadata("Takeru — Developer & Product Builder", "東京を拠点にWeb・モバイル・AIのプロダクトをつくる学生開発者、Takeruのポートフォリオ。Hanlu、Token Meter、Furigana Keyboard、Per-App Languageとオープンソースの取り組み。", "/"),
   authors: [{ name: "Takeru", url: "https://github.com/TakeruF" }],
+  creator: "Takeru",
+  publisher: "Takeru",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 export const viewport: Viewport = {
   themeColor: "#fcfdfb",

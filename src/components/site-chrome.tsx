@@ -13,19 +13,24 @@ export function SiteHeader({ path = "/" }: { path?: string }) {
         <Link className="wordmark" href="/" aria-label="Takeru ホーム">
           takeru<span className="logo-dot">.</span>
         </Link>
-        <nav aria-label="メインナビゲーション">
-          <Link href="/work">Work</Link>
-          <Link href="/#about">About</Link>
-          <a
-            href="https://github.com/TakeruF"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="header-github"
-          >
-            GitHub <ArrowUpRight size={16} aria-hidden="true" />
-            <span className="sr-only">（新しいタブで開く）</span>
-          </a>
-        </nav>
+        <details className="nav-menu">
+          <summary className="nav-toggle" aria-label="メニュー">
+            <span className="nav-toggle-icon" aria-hidden="true" />
+          </summary>
+          <nav aria-label="メインナビゲーション">
+            <Link href="/work">Work</Link>
+            <Link href="/#about">About</Link>
+            <a
+              href="https://github.com/TakeruF"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="header-github"
+            >
+              GitHub <ArrowUpRight size={16} aria-hidden="true" />
+              <span className="sr-only">（新しいタブで開く）</span>
+            </a>
+          </nav>
+        </details>
         <LanguageSwitcher path={path} />
       </header>
     </>

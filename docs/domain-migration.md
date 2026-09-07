@@ -42,3 +42,20 @@ Application repositories and application UI were not migrated. The changes outsi
 - The sitemap now contains 17 canonical pages: home, directory, and 15 product introductions.
 
 Content restoration checks: Token Meter's three-slide gallery was verified with next/previous controls, Home/End keys and pointer drag at a 390px viewport. It contains seven original screenshots and six full detail sections. F1 Harmony was checked at desktop and 390px widths, including navigation from the catalog. A source comparison confirms its styles/scripts and all assets are unchanged from `TakeruF/f1-harmony` commit `1ae8d4a`; only asset URLs and canonical metadata differ. Hanlu's directory entry goes directly to its original about page.
+
+## Korean locale and the Token Meter document move
+
+The site builds a fourth locale, `ko`, alongside `en`, `ja` and `zh`. Phrase dictionaries, the language switcher, `hreflang` alternates, JSON-LD, the sitemap and the F1 Harmony standalone page all cover it, and `html[lang="ko"]` gets its own font stack because Noto Sans JP carries no Hangul.
+
+With four languages in place, Token Meter's separate GitHub Pages site is no longer needed. Its browsable pages now live here:
+
+| Was | Now |
+|---|---|
+| `takeruf.github.io/token_meter/` | `/{locale}/projects/token-meter` |
+| `takeruf.github.io/token_meter/releases.html` | `/{locale}/projects/token-meter/releases` |
+| `docs/privacy.md` in the app repository | `/{locale}/projects/token-meter/privacy` |
+| `docs/claude-sign-in.md` in the app repository | `/{locale}/projects/token-meter/claude-sign-in` |
+
+The documents are authored in `TakeruF/token_meter` and synced into `src/content/token-meter`; `src/lib/token-meter-docs.ts` picks the section for the locale being built and renders it at build time, so the pages carry no client-side Markdown fetching. In the app repository, `docs/index.html` and `docs/releases.html` became redirects to takeruf.com.
+
+`docs/release-notes/v<version>.html` stays on GitHub Pages: Sparkle's update alert loads that page from the published `appcast.xml`, so it is an application surface rather than a website page. `docs/data-sources.md` also stays there — it is an internal investigation record, not a page the old site linked.

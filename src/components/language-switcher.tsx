@@ -2,7 +2,7 @@ import { currentLocale, locales, localeNames } from "@/lib/i18n";
 
 export function LanguageSwitcher({ path = "/" }: { path?: string }) {
   const current = currentLocale();
-  const label = { en: "Language", ja: "言語", zh: "语言" }[current];
+  const label = { en: "Language", ja: "言語", zh: "语言", ko: "언어" }[current];
 
   return (
     <details className="language-switcher">

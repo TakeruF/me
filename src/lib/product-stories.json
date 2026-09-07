@@ -88,7 +88,8 @@
         "links": [
           {
             "label": "プライバシーポリシーを読む",
-            "href": "https://github.com/TakeruF/token_meter/blob/main/docs/privacy.md"
+            "href": "/projects/token-meter/privacy",
+            "internal": true
           }
         ]
       },
@@ -108,7 +109,8 @@
         "links": [
           {
             "label": "Claude Codeのサインインとキーチェーン許可を手動で行う",
-            "href": "https://github.com/TakeruF/token_meter/blob/main/docs/claude-sign-in.md"
+            "href": "/projects/token-meter/claude-sign-in",
+            "internal": true
           }
         ]
       },
@@ -125,12 +127,9 @@
             "href": "https://github.com/TakeruF/token_meter/releases/latest"
           },
           {
-            "label": "4言語の紹介ページ",
-            "href": "https://takeruf.github.io/token_meter/"
-          },
-          {
             "label": "更新履歴",
-            "href": "https://takeruf.github.io/token_meter/releases.html"
+            "href": "/projects/token-meter/releases",
+            "internal": true
           },
           {
             "label": "ライセンス",

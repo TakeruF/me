@@ -351,5 +351,17 @@
   "Hanluの紹介ページを開く →": "查看 Hanlu 介绍 →",
   "ページが見つかりません。": "找不到此页面。",
   "プロダクト一覧から、お探しのページをご覧ください。": "请前往作品集，查找您需要的页面。",
-  "プロダクト一覧へ →": "查看全部作品 →"
+  "プロダクト一覧へ →": "查看全部作品 →",
+  "Token Meterに戻る": "返回 Token Meter",
+  "リリースノート": "发行说明",
+  "Token Meterの全バージョンの変更点、動作環境、インストール方法。": "Token Meter 每个版本的变更内容、运行环境与安装方法。",
+  "リリースノート — Token Meter": "发行说明 — Token Meter",
+  "プライバシーポリシー — Token Meter": "隐私政策 — Token Meter",
+  "Token Meterが扱うデータ、外部送信、ローカル保存、ユーザーによる制御について。": "Token Meter 处理的数据、对外发送、本地存储与用户的控制权。",
+  "Claude Codeのサインイン — Token Meter": "Claude Code 登录 — Token Meter",
+  "Claude Codeのサインインとキーチェーン許可": "Claude Code 登录与钥匙串访问",
+  "Token MeterのClaude連携で使う、サインインとキーチェーン許可の手順。": "Token Meter 的 Claude 集成所需的登录与钥匙串授权步骤。",
+  "RELEASE HISTORY": "更新历史",
+  "PRIVACY": "隐私",
+  "SETUP GUIDE": "设置指南"
 }

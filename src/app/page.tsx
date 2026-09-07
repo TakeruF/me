@@ -1,5 +1,5 @@
 import { SiteHeader } from "@/components/site-chrome";
-import { localize } from "@/lib/i18n";
+import { currentLocale, localize, t } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -169,8 +169,31 @@ function ExternalLink({
 }
 
 export default function Page() {
+  const locale = currentLocale();
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Takeru",
+    url: `https://takeruf.com/${locale}`,
+    jobTitle: {
+      en: "Student Developer & Product Builder",
+      ja: "学生開発者・プロダクトビルダー",
+      zh: "学生开发者与产品构建者",
+      ko: "학생 개발자 · 프로덕트 빌더",
+    }[locale],
+    description: t("東京を拠点にWeb・モバイル・AIのプロダクトをつくる学生開発者、Takeruのポートフォリオ。Hanlu、Token Meter、Furigana Keyboard、Per-App Languageとオープンソースの取り組み。"),
+    sameAs: ["https://github.com/TakeruF"],
+    homeLocation: { "@type": "City", name: "Tokyo, Japan" },
+  };
+
   return localize(
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <SiteHeader />
       <main id="main">
         <section className="hero wrap" id="top" aria-labelledby="hero-title">

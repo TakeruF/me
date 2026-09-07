@@ -1,7 +1,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
 const read = path => readFileSync(path, 'utf8');
-const locales = ['en', 'ja', 'zh'];
+const locales = ['en', 'ja', 'zh', 'ko'];
 const f1 = read('public/projects/f1-harmony.html');
 const originalStyle = f1.match(/<style>([\s\S]*?)<\/style>/)[1];
 const originalScript = f1.match(/<script>([\s\S]*?)<\/script>/)[1];
@@ -40,6 +40,23 @@ for (const locale of locales) {
  }
  assert.equal((renderedWork.match(/UNDER DEVELOPMENT/g)||[]).length,3);
 }
-assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,42);
-assert.ok(read('out/index.html').includes('0;url=/ja'));
+for (const locale of locales) {
+ for (const doc of ['releases', 'privacy', 'claude-sign-in']) {
+  const route = `/projects/token-meter/${doc}`;
+  const html = read(`out/${locale}${route}.html`);
+  assert.ok(html.includes(`<html lang="${locale==='zh'?'zh-CN':locale}"`), `${locale}${route} document language`);
+  assert.ok(html.includes(`href="https://takeruf.com/${locale}${route}"`), `${locale}${route} canonical`);
+  for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${route} switch to ${language}`);
+  assert.ok(html.includes(`href="/${locale}/projects/token-meter"`), `${route} links back to the product page`);
+ }
+ const notes = read(`out/${locale}/projects/token-meter/releases.html`);
+ assert.equal((notes.match(/class="release-card"/g)||[]).length, 22, `${locale} release notes`);
+ assert.ok(!read(`out/${locale}/projects/token-meter.html`).includes('takeruf.github.io/token_meter'));
+}
+assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,68);
+assert.ok(read('out/index.html').includes('0;url=/en'));
+assert.ok(read('out/index.html').includes('<html lang="en">'));
+assert.ok(read('out/index.html').includes("navigator.languages"));
+assert.ok(read('out/index.html').includes("['en','ja','zh','ko']"));
+assert.ok(read('out/sitemap.xml').includes('hreflang="x-default" href="https://takeruf.com/en"'));
 console.log(`Verified ${checked} localized pages, links/assets, language alternates, original galleries and F1 design.`);

@@ -12,7 +12,7 @@ export type StorySection = {
   title: string;
   paragraphs: string[];
   image?: StoryImage;
-  links?: { label: string; href: string }[];
+  links?: { label: string; href: string; internal?: boolean }[];
 };
 export type ProductStory = {
   facts?: string[];

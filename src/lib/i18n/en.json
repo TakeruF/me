@@ -297,5 +297,14 @@
   "Hanluの紹介ページを開く →": "Visit the Hanlu introduction →",
   "ページが見つかりません。": "Page not found.",
   "プロダクト一覧から、お探しのページをご覧ください。": "Find what you’re looking for in the product collection.",
-  "プロダクト一覧へ →": "Explore all products →"
+  "プロダクト一覧へ →": "Explore all products →",
+  "Token Meterに戻る": "Back to Token Meter",
+  "リリースノート": "Release notes",
+  "Token Meterの全バージョンの変更点、動作環境、インストール方法。": "What changed in every Token Meter release, with system requirements and installation steps.",
+  "リリースノート — Token Meter": "Release notes — Token Meter",
+  "プライバシーポリシー — Token Meter": "Privacy policy — Token Meter",
+  "Token Meterが扱うデータ、外部送信、ローカル保存、ユーザーによる制御について。": "The data Token Meter handles, what leaves your device, local storage and your control over it.",
+  "Claude Codeのサインイン — Token Meter": "Claude Code sign-in — Token Meter",
+  "Claude Codeのサインインとキーチェーン許可": "Claude Code sign-in and Keychain access",
+  "Token MeterのClaude連携で使う、サインインとキーチェーン許可の手順。": "The sign-in and Keychain steps behind Token Meter's Claude integration."
 }

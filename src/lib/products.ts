@@ -11,7 +11,7 @@ export type Product = {
   description: string;
   platforms: string;
   primary: { label: string; href: string };
-  links: { label: string; href: string }[];
+  links: { label: string; href: string; internal?: boolean }[];
   features: { title: string; text: string }[];
   notes: string[];
   image?: {
@@ -477,10 +477,8 @@ export const products: Product[] = [
       href: "https://github.com/TakeruF/token_meter/releases/latest",
     },
     links: [
-      {
-        label: "リリースノート・4言語の案内",
-        href: "https://takeruf.github.io/token_meter/releases.html",
-      },
+      { label: "更新履歴", href: "/projects/token-meter/releases", internal: true },
+      { label: "プライバシーポリシー", href: "/projects/token-meter/privacy", internal: true },
       { label: "GitHub", href: "https://github.com/TakeruF/token_meter" },
     ],
     features: [
