@@ -24,6 +24,7 @@ export type Product = {
   motif: string;
   visualLabel: string;
   tone: string;
+  workState?: "hidden" | "under-development";
 };
 
 export const categories = [
@@ -113,6 +114,7 @@ export const products: Product[] = [
     motif: "Aa / #",
     visualLabel: "WRITE. PREVIEW. KEEP GOING.",
     tone: "cream",
+    workState: "under-development",
   },
   {
     slug: "flight-market",
@@ -150,6 +152,7 @@ export const products: Product[] = [
     motif: "↗",
     visualLabel: "A LITTLE CONTEXT FOR YOUR NEXT TRIP.",
     tone: "blue",
+    workState: "under-development",
   },
   {
     slug: "magcup",
@@ -183,6 +186,7 @@ export const products: Product[] = [
     motif: "M / G",
     visualLabel: "SMALL DISCOVERIES. BETTER EVERYDAYS.",
     tone: "mint",
+    workState: "hidden",
   },
   {
     slug: "f1-harmony",
@@ -417,6 +421,7 @@ export const products: Product[] = [
     motif: "word.",
     visualLabel: "A LITTLE MORE, EVERY DAY.",
     tone: "mint",
+    workState: "hidden",
   },
   {
     slug: "ai-dict",
@@ -592,6 +597,7 @@ export const products: Product[] = [
     motif: "駅 → 駅",
     visualLabel: "STRUCTURED DATA. CLEAR BOUNDARIES.",
     tone: "cream",
+    workState: "under-development",
   },
   {
     slug: "waseda-portal-mcp",
@@ -720,6 +726,19 @@ export function findProduct(slug: string) {
   return products.find((product) => product.slug === slug);
 }
 
+export const workProducts = products.filter(
+  (product) => product.workState !== "hidden",
+);
+
+export function hasDetailPage(product: Product) {
+  return (
+    product.slug !== "f1-harmony" &&
+    product.workState !== "under-development"
+  );
+}
+
 export function productHref(slug: string) {
-  return slug === "hanlu" ? "https://hanlu.app/about" : productPath(slug);
+  if (slug === "hanlu") return "https://hanlu.app/about";
+  if (slug === "f1-harmony") return "https://takeruf.github.io/f1-harmony/";
+  return productPath(slug);
 }

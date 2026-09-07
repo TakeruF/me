@@ -2,10 +2,14 @@ import { localize, localizedMetadata } from "@/lib/i18n";
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
-import { ProductVisual } from "@/components/product-visual";
-import { categories, categoryIds, products, productHref } from "@/lib/products";
+import {
+  categories,
+  categoryIds,
+  productHref,
+  workProducts,
+} from "@/lib/products";
 
-export const metadata: Metadata = localizedMetadata("All work — Takeru", "日々の道具、語学学習アプリ、開発者ツール、MCP。Takeruがつくる16のプロダクトを紹介します。", "/work");
+export const metadata: Metadata = localizedMetadata("All work — Takeru", "日々の道具、語学学習アプリ、開発者ツール、MCP。Takeruがつくるプロダクトを紹介します。", "/work");
 
 export default function WorkPage() {
   return localize(
@@ -14,7 +18,7 @@ export default function WorkPage() {
       <main id="main">
         <section className="catalog-hero wrap" id="top">
           <span className="section-index">
-            THE COLLECTION / {String(products.length).padStart(2, "0")} PROJECTS
+            THE COLLECTION / {String(workProducts.length).padStart(2, "0")} PROJECTS
           </span>
           <h1>
             Made to be <em>used.</em>
@@ -36,7 +40,7 @@ export default function WorkPage() {
               <a href={`#${categoryIds[index]}`} key={category}>
                 {category}
                 <span>
-                  {products.filter((p) => p.category === category).length}
+                  {workProducts.filter((p) => p.category === category).length}
                 </span>
               </a>
             ))}
@@ -60,26 +64,54 @@ export default function WorkPage() {
                 </h2>
               </div>
             </div>
-            <div className="catalog-grid">
-              {products
+            <div className="catalog-list">
+              {workProducts
                 .filter((p) => p.category === category)
-                .map((product) => (
-                  <a
-                    href={productHref(product.slug)}
-                    key={product.slug}
-                    className="catalog-card"
-                  >
-                    <ProductVisual product={product} compact />
-                    <div className="catalog-card-title">
-                      <h3>{product.name}</h3>
-                      <ArrowUpRight size={23} aria-hidden="true" />
-                    </div>
-                    <p>{product.headline}</p>
-                    <span className="catalog-platform">
-                      {product.platforms}
-                    </span>
-                  </a>
-                ))}
+                .map((product, productIndex) => {
+                  const underDevelopment =
+                    product.workState === "under-development";
+                  const content = (
+                    <>
+                      <span className="catalog-row-number">
+                        {String(productIndex + 1).padStart(2, "0")}
+                      </span>
+                      <div className="catalog-row-copy">
+                        <h3>{product.name}</h3>
+                        <p>{product.headline}</p>
+                      </div>
+                      <div className="catalog-row-meta">
+                        {underDevelopment && (
+                          <span className="development-badge">
+                            UNDER DEVELOPMENT
+                          </span>
+                        )}
+                        <span className="catalog-platform">
+                          {product.platforms}
+                        </span>
+                        {!underDevelopment && (
+                          <ArrowUpRight size={21} aria-hidden="true" />
+                        )}
+                      </div>
+                    </>
+                  );
+
+                  return underDevelopment ? (
+                    <article
+                      key={product.slug}
+                      className="catalog-row is-under-development"
+                    >
+                      {content}
+                    </article>
+                  ) : (
+                    <a
+                      href={productHref(product.slug)}
+                      key={product.slug}
+                      className="catalog-row"
+                    >
+                      {content}
+                    </a>
+                  );
+                })}
             </div>
           </section>
         ))}

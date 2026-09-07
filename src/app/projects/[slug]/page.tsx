@@ -11,6 +11,7 @@ import { ProductVisual } from "@/components/product-visual";
 import {
   products,
   findProduct,
+  hasDetailPage,
   productPath,
   productHref,
 } from "@/lib/products";
@@ -18,21 +19,21 @@ import {
 export const dynamicParams = false;
 export function generateStaticParams() {
   return products
-    .filter(({ slug }) => slug !== "f1-harmony")
+    .filter(hasDetailPage)
     .map(({ slug }) => ({ slug }));
 }
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = findProduct((await params).slug);
-  if (!product) notFound();
+  if (!product || !hasDetailPage(product)) notFound();
   if (product.slug === "hanlu") return { title: "Hanlu", alternates: { canonical: "https://hanlu.app/about" }, robots: { index: false } };
   return localizedMetadata(`${product.name} — Takeru`, product.description, productPath(product.slug));
 }
 
 export default async function ProductPage({ params }: Props) {
   const product = findProduct((await params).slug);
-  if (!product) notFound();
+  if (!product || !hasDetailPage(product)) notFound();
   if (product.slug === "hanlu") {
     return localize(
       <>
@@ -48,7 +49,13 @@ export default async function ProductPage({ params }: Props) {
   }
   const story = productStories[product.slug];
   const related = products
-    .filter((p) => p.category === product.category && p.slug !== product.slug)
+    .filter(
+      (p) =>
+        p.category === product.category &&
+        p.slug !== product.slug &&
+        p.workState !== "hidden" &&
+        hasDetailPage(p),
+    )
     .slice(0, 3);
   return localize(
     <>

@@ -8,7 +8,7 @@ const originalScript = f1.match(/<script>([\s\S]*?)<\/script>/)[1];
 let checked = 0;
 for (const locale of locales) {
  const pages = ['index.html', 'work.html', ...readdirSync(`out/${locale}/projects`).filter(p=>p.endsWith('.html')&&p!=='hanlu.html').map(p=>`projects/${p}`)];
- assert.equal(pages.length, 17);
+ assert.equal(pages.length, 14);
  for (const page of pages) {
   const html = read(`out/${locale}/${page}`);
   assert.ok(html.includes(`<html lang="${locale==='zh'?'zh-CN':locale}"`), `${locale}/${page} document language`);
@@ -30,7 +30,16 @@ for (const locale of locales) {
  assert.ok(racing.includes(originalScript),'F1 original motion');
  assert.equal((racing.match(/<section\b/g)||[]).length,6);
  assert.ok(read(`out/${locale}/index.html`).includes('https://hanlu.app/about'));
+ const work = read(`out/${locale}/work.html`);
+ const renderedWork = work.match(/<body[^>]*>([\s\S]*?)<script/)[1];
+ assert.ok(!work.includes('MAGcup'));
+ assert.ok(!work.includes('英単語マスター'));
+ for (const slug of ['markdown-docs', 'flight-market', 'japan-rail-mcp']) {
+  assert.ok(!existsSync(`out/${locale}/projects/${slug}.html`));
+  assert.ok(!work.includes(`href="/${locale}/projects/${slug}"`));
+ }
+ assert.equal((renderedWork.match(/UNDER DEVELOPMENT/g)||[]).length,3);
 }
-assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,51);
+assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,42);
 assert.ok(read('out/index.html').includes('0;url=/ja'));
 console.log(`Verified ${checked} localized pages, links/assets, language alternates, original galleries and F1 design.`);

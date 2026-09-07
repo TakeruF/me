@@ -55,7 +55,6 @@ export function SiteFooter({ path = "/" }: { path?: string }) {
           </Link>
           <span>Made with curiosity in Tokyo.</span>
           <div>
-            <LanguageSwitcher path={path} />
             <a href="#top">Back to top ↑</a>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import { SiteHeader } from "@/components/site-chrome";
-import { LanguageSwitcher } from "@/components/language-switcher";
 import { localize } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
@@ -126,6 +125,7 @@ const openSource = [
       "新幹線を中心に日本の鉄道を検索。駅カタログに加え、駅すぱあとAPIキーで時刻表や運賃を取得。",
     icon: TrainFront,
     repo: "japan-rail-mcp",
+    underDevelopment: true,
   },
   {
     name: "MCP Mail Core",
@@ -340,27 +340,48 @@ export default function Page() {
               </ExternalLink>
             </div>
             <div className="repo-list">
-              {openSource.map((repo) => (
-                <a
-                  key={repo.repo}
-                  className="repo-row"
-                  href={`/projects/${repo.repo}`}
-                >
-                  <span className="repo-icon">
-                    <repo.icon size={22} strokeWidth={1.5} aria-hidden="true" />
-                  </span>
-                  <div className="repo-copy">
-                    <span className="repo-category">{repo.category}</span>
-                    <h3>{repo.name}</h3>
-                    <p>{repo.description}</p>
-                  </div>
-                  <ArrowUpRight
-                    className="repo-arrow"
-                    size={22}
-                    aria-hidden="true"
-                  />
-                </a>
-              ))}
+              {openSource.map((repo) => {
+                const content = (
+                  <>
+                    <span className="repo-icon">
+                      <repo.icon size={22} strokeWidth={1.5} aria-hidden="true" />
+                    </span>
+                    <div className="repo-copy">
+                      <span className="repo-category">{repo.category}</span>
+                      <h3>{repo.name}</h3>
+                      <p>{repo.description}</p>
+                    </div>
+                    {repo.underDevelopment ? (
+                      <span className="development-badge">
+                        UNDER DEVELOPMENT
+                      </span>
+                    ) : (
+                      <ArrowUpRight
+                        className="repo-arrow"
+                        size={22}
+                        aria-hidden="true"
+                      />
+                    )}
+                  </>
+                );
+
+                return repo.underDevelopment ? (
+                  <article
+                    key={repo.repo}
+                    className="repo-row is-under-development"
+                  >
+                    {content}
+                  </article>
+                ) : (
+                  <a
+                    key={repo.repo}
+                    className="repo-row"
+                    href={`/projects/${repo.repo}`}
+                  >
+                    {content}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -434,7 +455,6 @@ export default function Page() {
             </a>
             <span>Made with curiosity in Tokyo.</span>
             <div>
-              <LanguageSwitcher />
               <a href="#top">
                 Back to top <ArrowUpRight size={15} aria-hidden="true" />
               </a>
