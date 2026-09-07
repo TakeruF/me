@@ -3,12 +3,22 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
+import { ProductStory } from "@/components/product-story";
+import { ScreenshotGallery } from "@/components/screenshot-gallery";
+import { productStories } from "@/lib/product-stories";
 import { ProductVisual } from "@/components/product-visual";
-import { products, findProduct, productPath } from "@/lib/products";
+import {
+  products,
+  findProduct,
+  productPath,
+  productHref,
+} from "@/lib/products";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return products.map(({ slug }) => ({ slug }));
+  return products
+    .filter(({ slug }) => slug !== "f1-harmony")
+    .map(({ slug }) => ({ slug }));
 }
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${product.name} — Takeru`,
     description: product.description,
-    alternates: { canonical: productPath(product.slug) },
+    alternates: { canonical: productHref(product.slug) },
     openGraph: {
       title: `${product.name} — Takeru`,
       description: product.description,
@@ -33,6 +43,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductPage({ params }: Props) {
   const product = findProduct((await params).slug);
   if (!product) notFound();
+  if (product.slug === "hanlu") {
+    return (
+      <>
+        <meta httpEquiv="refresh" content="0;url=https://hanlu.app/about" />
+        <main className="wrap">
+          <h1>Hanlu</h1>
+          <p>
+            <a href="https://hanlu.app/about">Hanluの紹介ページを開く →</a>
+          </p>
+        </main>
+      </>
+    );
+  }
+  const story = productStories[product.slug];
   const related = products
     .filter((p) => p.category === product.category && p.slug !== product.slug)
     .slice(0, 3);
@@ -91,36 +115,62 @@ export default async function ProductPage({ params }: Props) {
             </div>
           </div>
         </section>
-        <div className="wrap detail-image">
-          <ProductVisual product={product} />
-        </div>
-        <section
-          className="detail-features wrap"
-          aria-labelledby="features-title"
-        >
-          <div className="detail-section-label">
-            <span className="section-index">01 / THE DETAILS</span>
-            <h2 id="features-title">
-              Small details.
-              <br />
-              <em>Real difference.</em>
-            </h2>
-          </div>
-          <div>
-            {product.features.map((feature, i) => (
-              <article className="feature-row" key={feature.title}>
-                <span className="feature-number">0{i + 1}</span>
-                <div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.text}</p>
-                </div>
-              </article>
+        {story?.facts && (
+          <ul className="story-facts wrap">
+            {story.facts.map((fact) => (
+              <li key={fact}>{fact}</li>
             ))}
+          </ul>
+        )}
+        {story?.intro && (
+          <section className="story-intro wrap">
+            <h2>{story.intro.title}</h2>
+            <p>{story.intro.text}</p>
+          </section>
+        )}
+        {story?.gallery ? (
+          <ScreenshotGallery name={product.name} images={story.gallery} />
+        ) : (
+          <div className="wrap detail-image">
+            <ProductVisual product={product} />
           </div>
-        </section>
+        )}
+        {story ? (
+          <ProductStory story={story} />
+        ) : (
+          <section
+            className="detail-features wrap"
+            aria-labelledby="features-title"
+          >
+            <div className="detail-section-label">
+              <span className="section-index">01 / THE DETAILS</span>
+              <h2 id="features-title">
+                Small details.
+                <br />
+                <em>Real difference.</em>
+              </h2>
+            </div>
+            <div>
+              {product.features.map((feature, i) => (
+                <article className="feature-row" key={feature.title}>
+                  <span className="feature-number">0{i + 1}</span>
+                  <div>
+                    <h3>{feature.title}</h3>
+                    <p>{feature.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
         <section className="detail-notes wrap" aria-labelledby="notes-title">
           <div>
-            <span className="section-index">02 / BEFORE YOU START</span>
+            <span className="section-index">
+              {story
+                ? String(story.sections.length + 1).padStart(2, "0")
+                : "02"}{" "}
+              / BEFORE YOU START
+            </span>
             <h2 id="notes-title">
               Good to know<span className="blue-period">.</span>
             </h2>
@@ -164,9 +214,9 @@ export default async function ProductPage({ params }: Props) {
             </div>
             <div className="related-grid">
               {related.map((p) => (
-                <Link
+                <a
                   className="related-card"
-                  href={productPath(p.slug)}
+                  href={productHref(p.slug)}
                   key={p.slug}
                 >
                   <span>
@@ -174,7 +224,7 @@ export default async function ProductPage({ params }: Props) {
                     <ArrowUpRight size={18} aria-hidden="true" />
                   </span>
                   <p>{p.headline}</p>
-                </Link>
+                </a>
               ))}
             </div>
           </section>

@@ -1,6 +1,6 @@
 # Product introductions on takeruf.com
 
-The site is a product-introduction portfolio, not an application host. `/work` lists 16 products and `/projects/<slug>` provides their features, requirements, screenshots and links to their existing application or download destinations.
+The site is a product-introduction portfolio, not an application host. `/work` lists 16 products. Hanlu links directly to `hanlu.app/about`; the remaining products have introductions under `/projects/<slug>` with their existing application and download destinations.
 
 ## Hosting decisions
 
@@ -31,3 +31,14 @@ Verified on 2026-09-07:
 - The paused Vercel `me` project was resumed for legacy redirects. Its public alias is `me-teal-alpha.vercel.app`; the team/preview aliases keep their existing access protection. Path redirects preserve the query string. An explicit root redirect is included alongside the wildcard rule.
 
 Application repositories and application UI were not migrated. The changes outside this repository are limited to product-entry links, portfolio READMEs and the legacy portfolio root redirect.
+
+## Content and product identity
+
+- Preserve the substance and distinctive interactions of existing product introductions. The common visual system is not a reason to compress each product into three short features.
+- Token Meter retains all three original promotional slides in a horizontal, manually controlled gallery, plus four original feature/setup screenshots. Its original overview, provider selection, menu-bar modes, widgets, privacy, setup and download guidance remain visible. The original four-language page and release notes stay linked.
+- Per-App Language retains all four screenshots, setup steps, application/reset behavior and compatibility limits. AI Dict and Furigana Keyboard retain fuller feature and privacy explanations.
+- Hanlu is an outbound introduction link only. There is no duplicated Hanlu feature or FAQ page; the previously published `/projects/hanlu` URL forwards to `https://hanlu.app/about` and is omitted from the sitemap.
+- F1 Harmony keeps its complete original page and visual identity as a standalone static document at `/projects/f1-harmony`. The HTML, CSS, motion and all 14 source assets are preserved; only relative asset URLs and the canonical URL change. It is deliberately excluded from the shared Next page template. Catalog links use full document navigation so the standalone page receives its own styles and scripts.
+- The sitemap now contains 17 canonical pages: home, directory, and 15 product introductions.
+
+Content restoration checks: Token Meter's three-slide gallery was verified with next/previous controls, Home/End keys and pointer drag at a 390px viewport. It contains seven original screenshots and six full detail sections. F1 Harmony was checked at desktop and 390px widths, including navigation from the catalog. A source comparison confirms its styles/scripts and all assets are unchanged from `TakeruF/f1-harmony` commit `1ae8d4a`; only asset URLs and canonical metadata differ. Hanlu's directory entry goes directly to its original about page.

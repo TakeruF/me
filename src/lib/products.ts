@@ -108,7 +108,6 @@ export const products: Product[] = [
     ],
     notes: [
       "文書は利用中のブラウザ・端末に保存されます。端末間の自動同期はありません。",
-      "アプリの公開先はそのまま。いつものブラウザで開くと、保存していた文書を引き続き使えます。",
       "ブラウザのサイトデータを削除すると保存内容も失われます。大切な文書は別の場所にも保管してください。",
     ],
     motif: "Aa / #",
@@ -496,7 +495,7 @@ export const products: Product[] = [
     notes: [
       "現在のサポート対象はmacOSです。Windows版の開発・配布は停止しています。",
       "履歴はローカルで集計します。Claudeの残量取得は、設定で有効にした場合に限り公式の使用量エンドポイントへアクセスします。",
-      "日本語・English・中文・한국어に対応。既存の自動更新フィードとリリース配布先は維持しています。",
+      "日本語・English・中文・한국어に対応しています。",
     ],
     image: {
       src: "/projects/token-meter-detail.webp",
@@ -719,4 +718,8 @@ export function productPath(slug: string) {
 }
 export function findProduct(slug: string) {
   return products.find((product) => product.slug === slug);
+}
+
+export function productHref(slug: string) {
+  return slug === "hanlu" ? "https://hanlu.app/about" : productPath(slug);
 }

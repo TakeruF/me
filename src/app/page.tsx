@@ -19,7 +19,7 @@ const projects = [
     description:
       "HSK単語、クイズ、音声で学ぶ中国語アプリ。学習の記録はデバイスを越えて、いつもの続きから。",
     platforms: ["Web", "iOS", "Android"],
-    url: "/projects/hanlu",
+    url: "https://hanlu.app/about",
     image: "/projects/hanlu.webp",
     alt: "Hanluの学習統計を表示したパソコン、タブレット、スマートフォン",
     width: 2880,

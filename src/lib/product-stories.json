@@ -1,0 +1,281 @@
+{
+  "token-meter": {
+    "facts": [
+      "macOS 14+ · Apple Silicon / Intel",
+      "3プロバイダー · 4言語対応",
+      "ローカルファースト"
+    ],
+    "intro": {
+      "title": "必要な数字だけを、いつでも見える場所に。",
+      "text": "メニューバーでは残量をすばやく確認。詳しく見たいときはダッシュボードとウィジェットから、5時間枠、週次枠、今日のトークン数を追えます。ダッシュボードは最長90日間の推移と、前日・前7日・前30日・前90日との比較にも対応します。"
+    },
+    "gallery": [
+      {
+        "src": "/projects/token-meter-detail.webp",
+        "alt": "メニューバーのポップオーバーと3サイズのウィジェットでClaudeとCodexの残量を表示するMac",
+        "caption": "メニューバーとウィジェットで、残量をひと目で。",
+        "portrait": false,
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "/projects/token-meter-dashboard.webp",
+        "alt": "日別の推移、トークン内訳、モデル別使用量を表示するToken Meterのダッシュボード",
+        "caption": "ダッシュボードで、日別・モデル別の内訳まで。",
+        "portrait": false,
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "/projects/token-meter-languages.webp",
+        "alt": "英語・日本語・中国語・韓国語を選べるToken Meterの設定画面",
+        "caption": "日本語 / English / 中文 / 한국어に対応。",
+        "portrait": false,
+        "width": 1600,
+        "height": 1000
+      }
+    ],
+    "sections": [
+      {
+        "title": "3つのAIを、同じ場所で。",
+        "paragraphs": [
+          "Claude CodeとCodexを並べて表示。GitHub Copilot CLIにも対応します（トークン数のみの集計、デフォルトはオフ）。使うプロバイダーだけを選べます。"
+        ],
+        "image": {
+          "src": "/projects/token-meter-providers.webp",
+          "alt": "ClaudeとCodexを選択するプロバイダー設定画面",
+          "caption": "プロバイダー選択",
+          "portrait": false,
+          "width": 1472,
+          "height": 1144
+        }
+      },
+      {
+        "title": "メニューバーは、あなたの見やすさで。",
+        "paragraphs": [
+          "Full、Compact、Icon onlyから選択。Claude CodeとCodexに表示する5時間枠または週次枠を選べます。5時間枠を選んだ際、Codex Proに5時間枠がなければ週次枠を自動表示します。"
+        ],
+        "image": {
+          "src": "/projects/token-meter-display.webp",
+          "alt": "メニューバーの表示形式を選択する画面",
+          "caption": "Full / Compact / アイコンのみ",
+          "portrait": false,
+          "width": 1472,
+          "height": 1144
+        }
+      },
+      {
+        "title": "残量を、デスクトップの定位置に。",
+        "paragraphs": [
+          "Claude CodeとCodexの残量、5時間枠のリセット、今日のトークン数を、アプリを開かずに確認できます。",
+          "3つのサイズ：Small / Medium / Large。そのままダッシュボードへ。"
+        ],
+        "image": {
+          "src": "/projects/token-meter-widget.webp",
+          "alt": "ClaudeとCodexの利用状況を折れ線グラフで表示するToken Meterウィジェット",
+          "caption": "Largeウィジェット · 7日間の利用推移",
+          "portrait": false,
+          "width": 688,
+          "height": 688
+        }
+      },
+      {
+        "title": "使用履歴は、このMacから出さない。",
+        "paragraphs": [
+          "ローカルのセッションログから、トークン数・日時・モデル名だけを集計します。プロンプト本文や応答本文、認証情報は保存しません。",
+          "Claude Pro / Maxの残量確認は任意です。有効にした場合のみ、Claude Codeのサインイン情報を使ってAnthropicの使用量エンドポイントへ問い合わせます。"
+        ],
+        "links": [
+          {
+            "label": "プライバシーポリシーを読む",
+            "href": "https://github.com/TakeruF/token_meter/blob/main/docs/privacy.md"
+          }
+        ]
+      },
+      {
+        "title": "数分で準備完了。",
+        "paragraphs": [
+          "初期設定では、選んだプロバイダーの使用量を実際に読み取れるかまで確認します。読み取れない場合は、未ログインやセッションログ未作成など、直すべき点を具体的に表示。今は設定を終えて、あとから接続しても構いません。"
+        ],
+        "image": {
+          "src": "/projects/token-meter-ready.webp",
+          "alt": "初期設定の完了を示すToken Meterの画面",
+          "caption": "セットアップで、選んだプロバイダーの接続状態を確認。",
+          "portrait": false,
+          "width": 1472,
+          "height": 1144
+        },
+        "links": [
+          {
+            "label": "Claude Codeのサインインとキーチェーン許可を手動で行う",
+            "href": "https://github.com/TakeruF/token_meter/blob/main/docs/claude-sign-in.md"
+          }
+        ]
+      },
+      {
+        "title": "ダウンロードして、使いはじめる。",
+        "paragraphs": [
+          "ZIPを展開し、Token Meter.appをアプリケーションフォルダへ移動してください。",
+          "macOS 14以降、Apple Silicon / Intelに対応。現在配布中のmacOS版はDeveloper ID署名・Apple公証済みです。",
+          "Windows版は開発凍結済みで、配布・サポートしていません。"
+        ],
+        "links": [
+          {
+            "label": "最新版・ダウンロード",
+            "href": "https://github.com/TakeruF/token_meter/releases/latest"
+          },
+          {
+            "label": "4言語の紹介ページ",
+            "href": "https://takeruf.github.io/token_meter/"
+          },
+          {
+            "label": "更新履歴",
+            "href": "https://takeruf.github.io/token_meter/releases.html"
+          },
+          {
+            "label": "ライセンス",
+            "href": "https://github.com/TakeruF/token_meter/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  },
+  "per-app-language": {
+    "gallery": [
+      {
+        "src": "/projects/per-app-list.webp",
+        "alt": "アプリ一覧：変更済みのアプリを確認",
+        "caption": "アプリ一覧：変更済みのアプリを確認",
+        "portrait": true,
+        "width": 538,
+        "height": 1200
+      },
+      {
+        "src": "/projects/per-app-picker.webp",
+        "alt": "言語選択：プリセットと任意の言語タグ",
+        "caption": "言語選択：プリセットと任意の言語タグ",
+        "portrait": true,
+        "width": 538,
+        "height": 1200
+      },
+      {
+        "src": "/projects/per-app-setup.webp",
+        "alt": "Shizukuのセットアップガイド",
+        "caption": "Shizukuのセットアップガイド",
+        "portrait": true,
+        "width": 538,
+        "height": 1200
+      },
+      {
+        "src": "/projects/per-app-help.webp",
+        "alt": "できること・できないことのヘルプ",
+        "caption": "できること・できないことのヘルプ",
+        "portrait": true,
+        "width": 538,
+        "height": 1200
+      }
+    ],
+    "sections": [
+      {
+        "title": "端末の言語は、そのままに。",
+        "paragraphs": [
+          "端末は日本語のまま、WeChatやTaobaoを簡体字中国語に、ChatGPTを英語に。Androidの「アプリの言語」に現れないアプリにも、個別の言語設定を書き込めます。",
+          "翻訳を行うアプリではありません。対象アプリがその言語の表示データを持っていない場合、画面は変わりません。"
+        ]
+      },
+      {
+        "title": "4つのステップで、設定する。",
+        "paragraphs": [
+          "1. Shizukuをインストールします。",
+          "2. ワイヤレスデバッグまたはパソコンを使って、Shizukuを起動します。",
+          "3. Per-App Languageを開き、Shizukuの許可を与えます。",
+          "4. アプリと言語を選び、「Apply & Restart」で適用します。",
+          "設定済みの言語は、Shizukuの停止や端末の再起動後もAndroid側に残ります。root化していない端末で再び変更・解除する際は、再起動後にShizukuを起動し直してください。"
+        ],
+        "links": [
+          {
+            "label": "Shizukuの導入ガイド",
+            "href": "https://shizuku.rikka.app/guide/setup/"
+          }
+        ]
+      },
+      {
+        "title": "適用と、元に戻す操作。",
+        "paragraphs": [
+          "「Apply」は言語だけを変更し、「Apply & Restart」はアプリを終了・起動し直します。起動時にしか言語を読み込まないアプリには、再起動が必要です。",
+          "「System Default」を選ぶと個別の指定を解除します。OEMの制限で強制停止を実行できない場合は、その理由を画面に表示します。"
+        ]
+      },
+      {
+        "title": "対応範囲を、はっきりと。",
+        "paragraphs": [
+          "Android 13以降とShizuku（root化済み端末ではSui）が必要です。通常の利用にroot化は不要です。",
+          "アプリ独自の言語設定や、アカウント・サーバー側で決まる表示、WebView内のコンテンツには効かない場合があります。仕事用プロファイルなど、別ユーザーを跨ぐ管理には対応しません。",
+          "インストール済みアプリの一覧は端末内でのみ扱います。インターネット権限はなく、一覧を外部に送信しません。"
+        ]
+      }
+    ]
+  },
+  "ai-dict": {
+    "sections": [
+      {
+        "title": "検索結果から、例文まで。",
+        "paragraphs": [
+          "中国語→日本語、中国語→英語、日本語→中国語の辞書検索に対応。簡体字・繁体字、ピンイン、品詞、語義、使用上の注意と3つの例文を生成します。",
+          "Claude、Gemini、OpenAI、DeepSeek、OpenRouterから、自分が使うAIプロバイダーを選べます。日本語・English・中文のUIに対応しています。"
+        ]
+      },
+      {
+        "title": "調べた言葉を、覚えるところまで。",
+        "paragraphs": [
+          "HSK 1〜6の5,456語を収録し、絞り込み検索と発音再生ができます。HSK単語や自分で登録した単語から、4択クイズに進めます。",
+          "SM-2ベースの間隔反復で復習期限を管理。最大200件の検索履歴とフラッシュカードで、調べた言葉を振り返れます。"
+        ]
+      },
+      {
+        "title": "最初に選ぶのは、言語とAI。",
+        "paragraphs": [
+          "Web版を開くかAndroid版をインストールし、初回画面で利用目的を選びます。「設定」でAIプロバイダーと自分のAPIキーを保存すると、単語や表現を検索できます。",
+          "キー・設定・履歴・学習データは端末内に保存。検索時には検索語とAPIキーを選択したプロバイダーへ直接送り、AI Dictの管理者が中継・保存することはありません。"
+        ],
+        "links": [
+          {
+            "label": "プライバシーポリシー",
+            "href": "https://aidict.me/privacy/"
+          }
+        ]
+      }
+    ]
+  },
+  "furigana-keyboard": {
+    "sections": [
+      {
+        "title": "手書きから、読みと単語の候補へ。",
+        "paragraphs": [
+          "続けて書く入力と、同じパッドに1〜2文字を横並びで書く入力に対応。端末内で左から右に認識し、辞書に登録された正確な読みを単語候補として表示します。",
+          "Zinnia認識器と、KANJIDIC2・JMdict・JMnedictの読みデータを同梱。ひらがな・カタカナに加え、6,356のJIS X 0208漢字ラベルを扱い、人名・地名・駅名の候補も補います。"
+        ]
+      },
+      {
+        "title": "手書き以外の入力も、一緒に。",
+        "paragraphs": [
+          "日本語・英語のQWERTY、記号、ローマ字入力からのかな漢字変換を利用できます。変換候補は最大8件を端末内で順位付けし、ひらがな・カタカナの候補も残します。",
+          "読みの表示は、かな・ローマ字・非表示から選択。ライト・ダークの配色、触覚フィードバック、長押し削除なども設定できます。"
+        ]
+      },
+      {
+        "title": "認識と辞書検索は、端末内で。",
+        "paragraphs": [
+          "Android・iOSのどちらも、同梱された認識器と辞書でオフライン入力ができます。手書きの筆跡や入力した文字を送信しません。",
+          "AndroidのFurigana PlusはGoogle ML Kitの日本語モデルを利用し、初回に約20 MBをダウンロードします。利用できない場合は同梱のZinniaへ戻り、設定からオフにもできます。通信はこのモデル取得と署名付き辞書更新に使います。"
+        ],
+        "links": [
+          {
+            "label": "認識・辞書の対応範囲とライセンス",
+            "href": "https://github.com/TakeruF/furigana_keyboard#on-device-recognition-and-licensing"
+          }
+        ]
+      }
+    ]
+  }
+}

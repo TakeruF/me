@@ -6,7 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     "/",
     "/work",
-    ...products.map((product) => productPath(product.slug)),
+    ...products
+      .filter((product) => product.slug !== "hanlu")
+      .map((product) => productPath(product.slug)),
   ].map((path) => ({
     url: `https://takeruf.com${path}`,
     changeFrequency: "monthly",

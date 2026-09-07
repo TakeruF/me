@@ -1410,3 +1410,325 @@ h2 {
     gap: 25px;
   }
 }
+
+/* Product introductions retain their own depth and original media. */
+.story-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 50px;
+  list-style: none;
+  margin-block: 0 70px;
+  padding-block: 24px;
+  border-block: 1px solid var(--line);
+  font-size: 14px;
+}
+.story-facts li::before {
+  content: "✳";
+  color: var(--blue);
+  margin-right: 12px;
+}
+.story-intro {
+  max-width: 900px;
+  margin-block: 70px;
+}
+.story-intro h2 {
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.45;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+}
+.story-intro p {
+  color: var(--muted);
+  line-height: 2;
+  font-size: 17px;
+}
+.screen-gallery {
+  margin-block: 60px 90px;
+}
+.gallery-heading-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.gallery-heading-row h2 {
+  margin-top: 16px;
+  font-size: clamp(23px, 3vw, 34px);
+  letter-spacing: -0.04em;
+}
+.gallery-heading-row p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.screen-viewport {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+  cursor: grab;
+  overscroll-behavior-x: contain;
+}
+.screen-viewport.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+.screen-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin: 0;
+  scroll-snap-align: start;
+}
+.screen-image {
+  background: #edf0ed;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.screen-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+.screen-portrait .screen-image {
+  height: 620px;
+  padding: 30px;
+}
+.screen-portrait .screen-image img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin: auto;
+}
+.screen-slide figcaption {
+  padding: 20px 0;
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.screen-slide figcaption span {
+  color: var(--blue);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.screen-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  margin-top: 8px;
+}
+.screen-arrow {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    background-color 0.16s ease,
+    color 0.16s ease;
+}
+.screen-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.screen-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.screen-dots button {
+  padding: 0;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.screen-dots button span {
+  width: 6px;
+  height: 6px;
+  background: #abb3ac;
+  border-radius: 50%;
+  transition: background-color 0.16s ease;
+}
+.screen-dots button[aria-current="true"] span {
+  background: var(--blue);
+  width: 18px;
+  border-radius: 5px;
+}
+.screen-counter {
+  position: absolute;
+  right: 0;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+.screen-gallery :is(button, .screen-viewport):focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: -3px;
+}
+.story-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 60px;
+  padding-block: 80px;
+  border-top: 1px solid var(--line);
+}
+.story-with-media {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+}
+.story-section:nth-child(even).story-with-media .story-copy {
+  order: 2;
+}
+.story-copy {
+  max-width: 800px;
+}
+.story-copy h2 {
+  font-size: clamp(27px, 3.1vw, 42px);
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+  margin-block: 18px 25px;
+}
+.story-copy p {
+  color: var(--muted);
+  line-height: 2;
+  font-size: 16px;
+}
+.story-copy p + p {
+  margin-top: 16px;
+}
+.story-media {
+  margin: 0;
+  background: #f0f2ed;
+  border-radius: 6px;
+  padding: 24px;
+  min-width: 0;
+}
+.story-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.story-media figcaption {
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 18px;
+}
+.story-portrait img {
+  max-height: 600px;
+  width: auto;
+  max-width: 100%;
+  margin: auto;
+  object-fit: contain;
+}
+.story-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-top: 24px;
+}
+.story-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  line-height: 1.8;
+}
+@media (hover: hover) and (pointer: fine) {
+  .screen-arrow:not(:disabled):hover {
+    background: var(--blue);
+    color: white;
+  }
+  .story-links a:hover {
+    color: var(--blue);
+  }
+}
+@media (max-width: 800px) {
+  .story-with-media {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .story-section:nth-child(even).story-with-media .story-copy {
+    order: 0;
+  }
+  .story-section {
+    padding-block: 50px;
+  }
+  .screen-portrait .screen-image {
+    height: 530px;
+  }
+  .gallery-heading-row {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .screen-counter {
+    position: static;
+  }
+  .screen-controls {
+    gap: 10px;
+  }
+  .screen-dots button {
+    width: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .story-facts {
+    margin-bottom: 40px;
+    gap: 16px;
+    font-size: 12px;
+  }
+  .story-intro {
+    margin-block: 40px;
+  }
+  .story-intro p {
+    font-size: 15px;
+  }
+  .screen-gallery {
+    margin-block: 40px 60px;
+  }
+  .screen-slide figcaption {
+    font-size: 12px;
+    gap: 12px;
+  }
+  .screen-portrait .screen-image {
+    height: 480px;
+    padding: 20px;
+  }
+  .screen-controls {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .screen-dots button {
+    width: 22px;
+  }
+  .screen-counter {
+    width: 100%;
+    text-align: center;
+  }
+  .story-media {
+    padding: 16px;
+  }
+  .story-copy p {
+    font-size: 15px;
+  }
+}

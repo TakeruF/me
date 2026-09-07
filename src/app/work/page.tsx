@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SiteHeader, SiteFooter } from "@/components/site-chrome";
 import { ProductVisual } from "@/components/product-visual";
-import { categories, categoryIds, products, productPath } from "@/lib/products";
+import { categories, categoryIds, products, productHref } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "All work — Takeru",
@@ -74,8 +73,8 @@ export default function WorkPage() {
               {products
                 .filter((p) => p.category === category)
                 .map((product) => (
-                  <Link
-                    href={productPath(product.slug)}
+                  <a
+                    href={productHref(product.slug)}
                     key={product.slug}
                     className="catalog-card"
                   >
@@ -88,7 +87,7 @@ export default function WorkPage() {
                     <span className="catalog-platform">
                       {product.platforms}
                     </span>
-                  </Link>
+                  </a>
                 ))}
             </div>
           </section>
