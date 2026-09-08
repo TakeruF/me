@@ -20,8 +20,9 @@ const f1 = readFileSync('public/projects/f1-harmony.html', 'utf8');
 const translations = JSON.parse(readFileSync('src/lib/i18n/f1.json', 'utf8'));
 const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const paths = ['/', '/work', ...readdirSync('out/ja/projects').filter(x => x.endsWith('.html') && x !== 'hanlu.html').map(x => `/projects/${x.slice(0, -5)}`),
- // Token Meter's own documents, moved here from its GitHub Pages site.
- '/projects/token-meter/releases', '/projects/token-meter/privacy', '/projects/token-meter/claude-sign-in'];
+ // Product documents are indexable public pages with localized canonical URLs.
+ '/projects/token-meter/releases', '/projects/token-meter/privacy', '/projects/token-meter/claude-sign-in',
+ '/projects/furigana-keyboard/privacy', '/projects/furigana-keyboard/terms'];
 for (const locale of locales) {
  let html = f1;
  // Translate text and accessible metadata only. The original CSS and scripts stay intact.
