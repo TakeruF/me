@@ -118,7 +118,11 @@ export default async function ProductPage({ params }: Props) {
           </section>
         )}
         {story?.gallery ? (
-          <ScreenshotGallery name={product.name} images={story.gallery} />
+          <ScreenshotGallery
+            name={product.name}
+            images={story.gallery}
+            comparison={product.slug === "china-rail-mcp"}
+          />
         ) : (
           <div className="wrap detail-image">
             <ProductVisual product={product} />

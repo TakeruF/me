@@ -215,6 +215,69 @@
       }
     ]
   },
+  "china-rail-mcp": {
+    "facts": [
+      "12306公開情報 · 読み取り専用",
+      "駅・時刻・参考運賃・空席・停車駅",
+      "ログイン・Cookie不要"
+    ],
+    "intro": {
+      "title": "旅の質問を、そのまま列車の検索へ。",
+      "text": "行き先や時間帯をいつものAIに伝えると、China Rail MCPが駅を特定し、12306の公開情報から列車、所要時間、参考運賃、空席を読み取ります。予約ではなく、旅の候補を具体的に比較するための読み取り専用の入口です。"
+    },
+    "gallery": [
+      {
+        "src": "/projects/china-rail-without-mcp.webp",
+        "alt": "China Rail MCPなしのChatGPTが12306での確認を案内する画面",
+        "caption": "接続前：一般的な案内で止まる。",
+        "portrait": true,
+        "width": 1080,
+        "height": 2354
+      },
+      {
+        "src": "/projects/china-rail-with-mcp.webp",
+        "alt": "China Rail MCPを接続したChatGPTが17時以降の列車、時刻、運賃、空席を表示する画面",
+        "caption": "接続後：条件に合う列車を、その場で比較。",
+        "portrait": true,
+        "width": 1080,
+        "height": 2354
+      },
+      {
+        "src": "/projects/china-rail-12306-reference.webp",
+        "alt": "12306アプリで広州南から長沙南を検索した画面",
+        "caption": "参照：同じ条件を12306アプリでも確認。",
+        "portrait": true,
+        "width": 1080,
+        "height": 2354
+      }
+    ],
+    "sections": [
+      {
+        "title": "曖昧な駅名も、検索条件に変える。",
+        "paragraphs": [
+          "会話の中の駅名から候補を解決し、出発駅・到着駅・日付・時間帯を具体的な検索条件へ。駅名が似ているときは、推測で進めず候補を示して確認できます。"
+        ]
+      },
+      {
+        "title": "比較に必要な情報を、ひとつの返答に。",
+        "paragraphs": [
+          "列車番号、発着時刻、所要時間、参考運賃、席種、空席、停車駅を構造化して返します。自然な質問から、次の候補を選べる情報へつなげます。"
+        ]
+      },
+      {
+        "title": "予約はせず、情報を確かめる。",
+        "paragraphs": [
+          "12306のアカウント、ログイン、個人のCookieは不要です。予約・決済・キャンセル待ち・アカウント操作は扱わず、公開情報の検索だけに範囲を絞っています。"
+        ],
+        "links": [
+          {
+            "label": "セットアップと対応クライアントを見る",
+            "href": "https://takeruf.github.io/silkroad-mcp/en/guides/china-rail/"
+          }
+        ]
+      }
+    ]
+  },
   "ai-dict": {
     "sections": [
       {
