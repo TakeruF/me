@@ -287,6 +287,53 @@ export const products: Product[] = [
     tone: "mint",
   },
   {
+    slug: "hanlu-dict",
+    name: "Hanlu Dict",
+    category: "Learning & language",
+    eyebrow: "LOOK IT UP. KEEP IT.",
+    headline: "調べた中国語を、そのまま覚える。",
+    description:
+      "日本語・簡体字・ピンインからすぐ引ける中国語辞書。意味、発音、例文、HSKレベルをひとつの画面で確かめ、気になった語はHanluで復習できます。",
+    platforms: "Web · iOS",
+    primary: { label: "Hanlu Dictを引く", href: "https://dict.hanlu.app" },
+    links: [
+      {
+        label: "App Store",
+        href: "https://apps.apple.com/jp/app/hanlu-dict/id6776096856",
+      },
+      { label: "Hanluで復習する", href: "https://hanlu.app/learn" },
+      { label: "Hanlu Dictについて", href: "https://dict.hanlu.app/about" },
+    ],
+    features: [
+      {
+        title: "ことばを、すぐ引く。",
+        text: "日本語・簡体字・ピンインから検索。声調記号がなくても、知りたい一語にまっすぐ辿り着けます。",
+      },
+      {
+        title: "使い方まで、確かめる。",
+        text: "意味だけでなく、発音、例文、HSKレベルを並べて表示。単語が実際にどう使われるかまで読めます。",
+      },
+      {
+        title: "調べた先を、覚える。",
+        text: "気になった語はスターに保存。Hanluの学習画面で、クイズと音声を使って復習できます。",
+      },
+    ],
+    notes: [
+      "調べるだけならアカウント登録は不要です。",
+      "スターの保存とHanluへの引き継ぎにはログインが必要です。",
+      "対応する配布先・動作環境はリンク先で確認してください。",
+    ],
+    image: {
+      src: "/projects/hanlu-dict.webp",
+      alt: "Hanlu Dictを表示するパソコン、タブレット、スマートフォン",
+      width: 2880,
+      height: 1800,
+    },
+    motif: "词 / 典",
+    visualLabel: "LOOK IT UP. KEEP IT.",
+    tone: "cream",
+  },
+  {
     slug: "furigana-keyboard",
     name: "Furigana Keyboard",
     category: "Learning & language",
@@ -733,12 +780,15 @@ export const workProducts = products.filter(
 export function hasDetailPage(product: Product) {
   return (
     product.slug !== "f1-harmony" &&
+    product.slug !== "hanlu" &&
+    product.slug !== "hanlu-dict" &&
     product.workState !== "under-development"
   );
 }
 
 export function productHref(slug: string) {
   if (slug === "hanlu") return "https://hanlu.app/about";
+  if (slug === "hanlu-dict") return "https://dict.hanlu.app/about";
   if (slug === "f1-harmony") return "https://takeruf.github.io/f1-harmony/";
   return productPath(slug);
 }

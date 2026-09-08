@@ -40,6 +40,28 @@ const projects = [
   },
   {
     number: "02",
+    name: "Hanlu Dict",
+    kind: "CHINESE DICTIONARY",
+    theme: "dict",
+    headline: "調べた中国語を、そのまま覚える。",
+    description:
+      "日本語・簡体字・ピンインからすぐ引ける中国語辞書。意味、発音、例文、HSKレベルを確認し、気になった語はHanluで復習できます。",
+    platforms: ["Web", "iOS"],
+    url: "https://dict.hanlu.app/about",
+    image: "/projects/hanlu-dict.webp",
+    alt: "Hanlu Dictを表示するパソコン、タブレット、スマートフォン",
+    width: 2880,
+    height: 1800,
+    links: [
+      { label: "Web dictionary", url: "https://dict.hanlu.app" },
+      {
+        label: "App Store",
+        url: "https://apps.apple.com/jp/app/hanlu-dict/id6776096856",
+      },
+    ],
+  },
+  {
+    number: "03",
     name: "Token Meter",
     kind: "DEVELOPER TOOL",
     theme: "token",
@@ -61,7 +83,7 @@ const projects = [
     ],
   },
   {
-    number: "03",
+    number: "04",
     name: "Furigana Keyboard",
     kind: "JAPANESE INPUT",
     theme: "furigana",
@@ -83,7 +105,7 @@ const projects = [
     ],
   },
   {
-    number: "04",
+    number: "05",
     name: "Per-App Language",
     kind: "ANDROID UTILITY",
     theme: "language",
@@ -242,7 +264,7 @@ export default function Page() {
               </h2>
             </div>
             <span className="section-note">
-              4 products, a little less friction.
+              5 products, a little less friction.
             </span>
           </div>
           <div className="project-grid">
