@@ -245,6 +245,9 @@ h2 {
 .project-hanlu .project-visual {
   background: #e7ebe4;
 }
+.project-dict .project-visual {
+  background: #efebee;
+}
 .project-token .project-visual {
   background: #e7e9f5;
 }
@@ -1972,6 +1975,25 @@ html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Ma
 .doc-body p {
   margin: 12px 0;
 }
+.furigana-legal {
+  color: var(--ink);
+  font-size: 15.5px;
+  line-height: 1.78;
+  overflow-wrap: anywhere;
+}
+.furigana-legal > :first-child { margin-top: 0; }
+.furigana-legal > :last-child { margin-bottom: 0; }
+.furigana-legal h2 {
+  margin: 34px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  font-size: 21px;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+.furigana-legal p { margin: 12px 0; }
+.doc-legal-name { font-size: 17px; font-weight: 600; }
+.doc-legal-effective { color: var(--muted); font-size: 14px; }
 .doc-body ul,
 .doc-body ol {
   margin: 12px 0;

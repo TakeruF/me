@@ -13,12 +13,16 @@ export function DocPage({
   eyebrow,
   title,
   lead,
+  backPath = "/projects/token-meter",
+  backLabel = "Token Meterに戻る",
   children,
 }: {
   path: string;
   eyebrow: string;
   title: string;
   lead?: string;
+  backPath?: string;
+  backLabel?: string;
   children: React.ReactNode;
 }) {
   return localize(
@@ -26,8 +30,8 @@ export function DocPage({
       <SiteHeader path={path} />
       <main id="main">
         <section className="doc-hero wrap" id="top">
-          <Link className="back-to-work" href="/projects/token-meter">
-            <ArrowLeft size={15} aria-hidden="true" /> Token Meterに戻る
+          <Link className="back-to-work" href={backPath}>
+            <ArrowLeft size={15} aria-hidden="true" /> {backLabel}
           </Link>
           <span className="section-index">{eyebrow}</span>
           <h1>

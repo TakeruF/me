@@ -4,8 +4,9 @@ import { locales, alternateLanguages } from "@/lib/i18n";
 export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   return ["/", "/work", ...products.filter(p => p.slug !== "hanlu" && hasDetailPage(p)).map(p => productPath(p.slug)),
-    // Token Meter's own documents, published here rather than on GitHub Pages.
+    // App-owned documents are published here rather than on separate product sites.
     "/projects/token-meter/releases", "/projects/token-meter/privacy", "/projects/token-meter/claude-sign-in",
+    "/projects/furigana-keyboard/privacy", "/projects/furigana-keyboard/terms",
   ].flatMap(path => locales.map(locale => ({
     url: `https://takeruf.com/${locale}${path === "/" ? "" : path}`,
     changeFrequency: "monthly" as const,

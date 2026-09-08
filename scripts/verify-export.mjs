@@ -34,6 +34,8 @@ for (const locale of locales) {
  const renderedWork = work.match(/<body[^>]*>([\s\S]*?)<script/)[1];
  assert.ok(!work.includes('MAGcup'));
  assert.ok(!work.includes('英単語マスター'));
+ assert.ok(!work.includes('keyboard.hanlu.app'));
+ assert.ok(read(`out/${locale}/projects/furigana-keyboard.html`).includes('https://downloads.takeruf.com/furigana-keyboard/1.0.0-rc.5.apk'));
  for (const slug of ['markdown-docs', 'flight-market', 'japan-rail-mcp']) {
   assert.ok(!existsSync(`out/${locale}/projects/${slug}.html`));
   assert.ok(!work.includes(`href="/${locale}/projects/${slug}"`));
@@ -49,11 +51,19 @@ for (const locale of locales) {
   for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${route} switch to ${language}`);
   assert.ok(html.includes(`href="/${locale}/projects/token-meter"`), `${route} links back to the product page`);
  }
+ for (const doc of ['privacy', 'terms']) {
+  const route = `/projects/furigana-keyboard/${doc}`;
+  const html = read(`out/${locale}${route}.html`);
+  assert.ok(html.includes(`<html lang="${locale==='zh'?'zh-CN':locale}"`), `${locale}${route} document language`);
+  assert.ok(html.includes(`href="https://takeruf.com/${locale}${route}"`), `${locale}${route} canonical`);
+  for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${route} switch to ${language}`);
+  assert.ok(html.includes('support@takeruf.com'), `${route} support contact`);
+ }
  const notes = read(`out/${locale}/projects/token-meter/releases.html`);
  assert.equal((notes.match(/class="release-card"/g)||[]).length, 22, `${locale} release notes`);
  assert.ok(!read(`out/${locale}/projects/token-meter.html`).includes('takeruf.github.io/token_meter'));
 }
-assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,68);
+assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,76);
 assert.ok(read('out/index.html').includes('0;url=/en'));
 assert.ok(read('out/index.html').includes('<html lang="en">'));
 assert.ok(read('out/index.html').includes("navigator.languages"));

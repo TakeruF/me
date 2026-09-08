@@ -296,11 +296,13 @@ export const products: Product[] = [
       "手書きとローマ字で入力できる日本語キーボード。ふりがな付きの変換候補から、読みを確かめながら言葉を選べます。",
     platforms: "Android · iOS",
     primary: {
-      label: "配布・セットアップを見る",
-      href: "https://keyboard.hanlu.app/en#download",
+      label: "Android版をダウンロード",
+      href: "https://downloads.takeruf.com/furigana-keyboard/1.0.0-rc.5.apk",
     },
     links: [
-      { label: "公式サイト", href: "https://keyboard.hanlu.app/en" },
+      { label: "プライバシーポリシー", href: "/projects/furigana-keyboard/privacy", internal: true },
+      { label: "利用規約", href: "/projects/furigana-keyboard/terms", internal: true },
+      { label: "お問い合わせ", href: "mailto:support@takeruf.com" },
       { label: "GitHub", href: "https://github.com/TakeruF/furigana_keyboard" },
     ],
     features: [
@@ -320,7 +322,7 @@ export const products: Product[] = [
     notes: [
       "Androidの追加認識モデルや辞書の更新にはダウンロードが必要な場合があります。",
       "手書き内容や入力した文章を認識のために外部へ送信しません。",
-      "OSごとの配布・導入方法は公式サイトをご覧ください。",
+      "Android版はこのページからダウンロードできます。iOS版は一般配布前です。",
     ],
     image: {
       src: "/projects/furigana-pixel-10-pro-v2.png",

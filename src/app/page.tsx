@@ -77,7 +77,7 @@ const projects = [
     links: [
       {
         label: "Android download",
-        url: "https://keyboard.hanlu.app/en#download",
+        url: "https://downloads.takeruf.com/furigana-keyboard/1.0.0-rc.5.apk",
       },
       { label: "GitHub", url: "https://github.com/TakeruF/furigana_keyboard" },
     ],
