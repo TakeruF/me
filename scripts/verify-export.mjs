@@ -12,6 +12,7 @@ for (const locale of locales) {
  for (const page of pages) {
   const html = read(`out/${locale}/${page}`);
   assert.ok(html.includes(`<html lang="${locale==='zh'?'zh-CN':locale}"`), `${locale}/${page} document language`);
+  assert.ok(html.includes('href="mailto:me@takeruf.com"'), `${locale}/${page} footer contact`);
   const route = page === 'index.html' ? '' : '/'+page.replace(/\.html$/, '');
   assert.ok(html.includes(`href="https://takeruf.com/${locale}${route}"`), `${locale}/${page} canonical`);
   for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${page} switch to ${language}`);
@@ -50,6 +51,7 @@ for (const locale of locales) {
   assert.ok(html.includes(`href="https://takeruf.com/${locale}${route}"`), `${locale}${route} canonical`);
   for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${route} switch to ${language}`);
   assert.ok(html.includes(`href="/${locale}/projects/token-meter"`), `${route} links back to the product page`);
+  assert.ok(html.includes('href="mailto:me@takeruf.com"'), `${locale}${route} footer contact`);
  }
  for (const doc of ['privacy', 'terms']) {
   const route = `/projects/furigana-keyboard/${doc}`;
@@ -58,6 +60,7 @@ for (const locale of locales) {
   assert.ok(html.includes(`href="https://takeruf.com/${locale}${route}"`), `${locale}${route} canonical`);
   for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${route} switch to ${language}`);
   assert.ok(html.includes('support@takeruf.com'), `${route} support contact`);
+  assert.ok(html.includes('href="mailto:me@takeruf.com"'), `${locale}${route} footer contact`);
  }
  const notes = read(`out/${locale}/projects/token-meter/releases.html`);
  assert.equal((notes.match(/class="release-card"/g)||[]).length, 22, `${locale} release notes`);

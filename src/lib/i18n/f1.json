@@ -1,5 +1,6 @@
 {
   "en": {
+    "联系我": "Contact me",
     "F1 赛事中心 — 鸿蒙原生 F1 粉丝应用": "F1 Race Center — a native HarmonyOS app for F1 fans",
     "赛程、积分榜、赛果、车手与车队资料、桌面卡片与赛事提醒。一款完全免费、无广告的鸿蒙原生 F1 粉丝应用。": "Schedules, standings, results, driver and team profiles, home screen cards and race reminders. A completely free, ad-free F1 fan app built for HarmonyOS.",
     "F1 赛事中心": "F1 Race Center",
@@ -112,6 +113,7 @@
     "本页截图取自开发中的构建，界面与数据可能与最终版本不同。": "Screenshots are from a development build. The interface and data may differ from the final release."
   },
   "ja": {
+    "联系我": "お問い合わせ",
     "F1 赛事中心 — 鸿蒙原生 F1 粉丝应用": "F1 赛事中心 — HarmonyOSネイティブのF1ファンアプリ",
     "赛程、积分榜、赛果、车手与车队资料、桌面卡片与赛事提醒。一款完全免费、无广告的鸿蒙原生 F1 粉丝应用。": "日程、ランキング、リザルト、ドライバーとチームの情報、ホーム画面カード、レース通知。完全無料・広告なしのHarmonyOSネイティブF1ファンアプリ。",
     "F1 赛事中心": "F1 赛事中心",
@@ -224,6 +226,7 @@
     "本页截图取自开发中的构建，界面与数据可能与最终版本不同。": "スクリーンショットは開発中のビルドのものです。画面やデータは最終版と異なる場合があります。"
   },
   "ko": {
+    "联系我": "문의하기",
     "F1 赛事中心 — 鸿蒙原生 F1 粉丝应用": "F1 레이스 센터 — HarmonyOS 네이티브 F1 팬 앱",
     "赛程、积分榜、赛果、车手与车队资料、桌面卡片与赛事提醒。一款完全免费、无广告的鸿蒙原生 F1 粉丝应用。": "경기 일정, 순위표, 결과, 드라이버·팀 정보, 홈 화면 카드와 레이스 알림. 완전 무료, 광고 없는 HarmonyOS 네이티브 F1 팬 앱.",
     "F1 赛事中心": "F1 레이스 센터",
