@@ -70,10 +70,10 @@ const projects = [
       "手書きとローマ字に対応する日本語キーボード。ふりがな付きの変換候補で、読みを確かめながら入力。オフラインでも使えます。",
     platforms: ["Android", "iOS"],
     url: "/projects/furigana-keyboard",
-    image: "/projects/furigana.webp",
+    image: "/projects/furigana-pixel-10-pro-v2.png",
     alt: "手書きの日本語とふりがな付き変換候補を表示するFurigana Keyboard",
-    width: 1080,
-    height: 2354,
+    width: 512,
+    height: 1080,
     links: [
       {
         label: "Android download",
@@ -283,14 +283,27 @@ export default function Page() {
                           </>
                         )}
                       </div>
-                      <Image
-                        className="phone-screenshot"
-                        src={project.image}
-                        alt={project.alt}
-                        width={project.width}
-                        height={project.height}
-                        sizes="(max-width: 760px) 42vw, 260px"
-                      />
+                      {project.theme === "furigana" ? (
+                        <Image
+                          className="figma-phone-render"
+                          src="/projects/furigana-pixel-10-pro-v2.png"
+                          alt={project.alt}
+                          width={512}
+                          height={1080}
+                          sizes="(max-width: 760px) 38vw, 19vw"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <Image
+                          className="figma-phone-render figma-phone-render-language"
+                          src="/projects/per-app-pixel-10-pro.png"
+                          alt={project.alt}
+                          width={512}
+                          height={1080}
+                          sizes="(max-width: 760px) 36vw, 18vw"
+                          loading="lazy"
+                        />
+                      )}
                     </div>
                   ) : (
                     <Image
@@ -430,6 +443,9 @@ export default function Page() {
                 <br />& product builder in Tokyo
               </span>
             </div>
+            <a className="about-email" href="mailto:me@takeruf.com">
+              me@takeruf.com
+            </a>
           </div>
           <div className="toolbox">
             <span className="toolbox-label">MY TOOLBOX</span>

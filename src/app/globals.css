@@ -312,25 +312,28 @@ h2 {
   display: flex;
   align-items: center;
 }
-.phone-screenshot {
-  width: 36%;
-  height: 100%;
-  object-fit: cover;
+.figma-phone-render {
+  width: 38%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
   object-position: bottom;
   position: absolute;
-  right: 8%;
+  right: 7%;
   top: 0;
-  border-radius: 16px;
-  border: 5px solid #202422;
-  box-shadow: 0 16px 30px #17201e26;
+  aspect-ratio: 971 / 2048;
   transform: rotate(7deg);
   transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.project-language .phone-screenshot {
+.project-visual:hover .figma-phone-render {
+  transform: translateY(-8px) rotate(2deg);
+}
+.figma-phone-render-language {
+  width: 36%;
   transform: rotate(-7deg);
 }
-.project-visual:hover .phone-screenshot {
-  transform: translateY(-8px) rotate(2deg);
+.project-visual:hover .figma-phone-render-language {
+  transform: translateY(-8px) rotate(-2deg);
 }
 .visual-type {
   display: flex;
@@ -523,6 +526,17 @@ h2 {
   font-size: 11px;
   line-height: 1.6;
   color: var(--muted);
+}
+.about-email {
+  display: inline-flex;
+  margin-top: 22px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid currentColor;
+  color: var(--blue);
+  font-size: 14px;
+}
+.about-email:hover {
+  color: var(--text);
 }
 .toolbox-label {
   display: block;
@@ -1797,13 +1811,16 @@ h2 {
 .language-menu a { display: flex; align-items: center; min-height: 40px; padding: 0 10px; color: inherit; text-decoration: none; }
 .language-menu a:hover, .language-menu a:focus-visible { color: var(--blue, #315bfa); background: #edf1ff; outline: none; }
 .language-menu a[aria-current] { color: var(--blue, #315bfa); }
-.nav-menu { display: flex; align-items: center; margin-left: auto; }
+.desktop-nav { margin-left: auto; }
+.nav-menu { display: none; align-items: center; }
 .nav-menu > summary { display: none; }
 .site-header { gap: 24px; }
 html[lang="zh-CN"] body { font-family: var(--font-body), "PingFang SC", "Microsoft YaHei", sans-serif; }
 html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif; }
 @media (max-width: 760px) {
- .nav-menu { position: relative; }
+ .site-header .desktop-nav { display: none; }
+ .language-switcher { margin-left: auto; }
+ .nav-menu { position: relative; display: flex; margin-left: 0; }
  .nav-menu > summary {
   display: flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; cursor: pointer; list-style: none; color: inherit;
