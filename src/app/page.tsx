@@ -465,9 +465,6 @@ export default function Page() {
                 <br />& product builder in Tokyo
               </span>
             </div>
-            <a className="about-email" href="mailto:me@takeruf.com">
-              me@takeruf.com
-            </a>
           </div>
           <div className="toolbox">
             <span className="toolbox-label">MY TOOLBOX</span>
@@ -503,12 +500,9 @@ export default function Page() {
                 See what’s <em>next.</em>
               </p>
             </div>
-            <ExternalLink
-              href="https://github.com/TakeruF"
-              className="footer-cta"
-            >
-              Follow along on GitHub
-            </ExternalLink>
+            <a href="mailto:me@takeruf.com" className="footer-cta">
+              Contact me <ArrowUpRight size={20} aria-hidden="true" />
+            </a>
           </div>
           <div className="footer-bottom">
             <a className="wordmark" href="#top">

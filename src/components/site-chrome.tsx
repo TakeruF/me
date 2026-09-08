@@ -63,9 +63,9 @@ export function SiteFooter({ path = "/" }: { path?: string }) {
               See what’s <em>next.</em>
             </p>
           </div>
-          <Link href="/work" className="footer-cta">
-            Explore all work <ArrowUpRight size={20} aria-hidden="true" />
-          </Link>
+          <a href="mailto:me@takeruf.com" className="footer-cta">
+            Contact me <ArrowUpRight size={20} aria-hidden="true" />
+          </a>
         </div>
         <div className="footer-bottom">
           <Link href="/" className="wordmark">

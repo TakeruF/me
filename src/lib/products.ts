@@ -349,7 +349,6 @@ export const products: Product[] = [
     links: [
       { label: "プライバシーポリシー", href: "/projects/furigana-keyboard/privacy", internal: true },
       { label: "利用規約", href: "/projects/furigana-keyboard/terms", internal: true },
-      { label: "お問い合わせ", href: "mailto:support@takeruf.com" },
       { label: "GitHub", href: "https://github.com/TakeruF/furigana_keyboard" },
     ],
     features: [

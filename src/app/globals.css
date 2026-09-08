@@ -530,17 +530,6 @@ h2 {
   line-height: 1.6;
   color: var(--muted);
 }
-.about-email {
-  display: inline-flex;
-  margin-top: 22px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid currentColor;
-  color: var(--blue);
-  font-size: 14px;
-}
-.about-email:hover {
-  color: var(--text);
-}
 .toolbox-label {
   display: block;
   font-size: 12px;
