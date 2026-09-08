@@ -500,7 +500,7 @@ export default function Page() {
                 See what’s <em>next.</em>
               </p>
             </div>
-            <a href="mailto:me@takeruf.com" className="footer-cta">
+            <a href="mailto:me@takeruf.com" className="footer-contact-link">
               Contact me <ArrowUpRight size={20} aria-hidden="true" />
             </a>
           </div>

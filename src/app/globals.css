@@ -585,7 +585,7 @@ h2 {
   font-family: Georgia, serif;
   font-weight: 400;
 }
-.footer-cta {
+.footer-contact-link {
   display: inline-flex;
   align-items: center;
   gap: 25px;
@@ -593,7 +593,7 @@ h2 {
   border-bottom: 1px solid #ffffff80;
   font-size: 15px;
 }
-.footer-cta:hover {
+.footer-contact-link:hover {
   border-color: white;
 }
 .footer-bottom {
@@ -831,7 +831,7 @@ h2 {
   .footer-top p {
     font-size: 54px;
   }
-  .footer-cta {
+  .footer-contact-link {
     font-size: 14px;
   }
   .footer-bottom {
