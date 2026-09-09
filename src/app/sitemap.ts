@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // App-owned documents are published here rather than on separate product sites.
     "/projects/token-meter/releases", "/projects/token-meter/privacy", "/projects/token-meter/claude-sign-in",
     "/projects/furigana-keyboard/privacy", "/projects/furigana-keyboard/terms",
+    "/projects/per-app-language/privacy",
   ].flatMap(path => locales.map(locale => ({
     url: `https://takeruf.com/${locale}${path === "/" ? "" : path}`,
     changeFrequency: "monthly" as const,
