@@ -206,6 +206,14 @@
         ]
       },
       {
+        "title": "公開後は、Google Play版を推奨します。",
+        "paragraphs": [
+          "Google Play版が公開された後は、Google Playによる更新を利用できるため、こちらの利用をおすすめします。",
+          "直接配布版から移行する場合は、1. 直接配布版をアンインストールします。 2. Google PlayからPer-App Languageをインストールします。 3. 求められた場合は、Google Play版にもShizukuの権限を許可します。",
+          "直接配布版をアンインストールしても、すでに設定したアプリごとの言語はAndroidに残ります。Play版を入れた後も、通常は設定し直す必要はありません。"
+        ]
+      },
+      {
         "title": "対応範囲を、はっきりと。",
         "paragraphs": [
           "Android 13以降とShizuku（root化済み端末ではSui）が必要です。通常の利用にroot化は不要です。",
@@ -279,6 +287,16 @@
     ]
   },
   "ai-dict": {
+    "gallery": [
+      {
+        "src": "/projects/ai-dict.png",
+        "alt": "中国語の単語を日本語で検索したAI Dictのデスクトップ画面",
+        "caption": "検索結果から、例文まで。",
+        "portrait": false,
+        "width": 2880,
+        "height": 1800
+      }
+    ],
     "sections": [
       {
         "title": "検索結果から、例文まで。",

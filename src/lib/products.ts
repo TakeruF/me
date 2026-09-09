@@ -507,6 +507,12 @@ export const products: Product[] = [
       "検索語とAPIキーは、選択したAIプロバイダーに端末から直接送信されます。各社の利用条件・料金が適用されます。",
       "iOS版は開発中で、一般配布は行っていません。",
     ],
+    image: {
+      src: "/projects/ai-dict.png",
+      alt: "中国語の単語を日本語で検索したAI Dictのデスクトップ画面",
+      width: 2880,
+      height: 1800,
+    },
     motif: "词 / 言",
     visualLabel: "MEANING, IN CONTEXT.",
     tone: "cream",
