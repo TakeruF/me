@@ -339,5 +339,9 @@
   "列車番号、発着時刻、所要時間、参考運賃、席種、空席、停車駅を構造化して返します。自然な質問から、次の候補を選べる情報へつなげます。": "Returns train numbers, times, duration, indicative fares, seat types, availability and stops in a structured format—moving from a natural question to information you can use to choose.",
   "予約はせず、情報を確かめる。": "Check information, without booking.",
   "12306のアカウント、ログイン、個人のCookieは不要です。予約・決済・キャンセル待ち・アカウント操作は扱わず、公開情報の検索だけに範囲を絞っています。": "No 12306 account, sign-in or personal cookies are needed. It does not handle reservations, payments, waitlists or account actions, and stays focused on searching public information.",
-  "セットアップと対応クライアントを見る": "See setup and compatible clients"
+  "セットアップと対応クライアントを見る": "See setup and compatible clients",
+  "プライバシーポリシー — Per-App Language": "Privacy Policy — Per-App Language",
+  "Per-App Languageが端末上でアクセス、利用、保存、保護する情報について。": "How Per-App Language accesses, uses, stores, and protects information on your device.",
+  "Per-App Languageのプライバシーポリシー": "Privacy Policy for Per-App Language",
+  "Per-App Languageに戻る": "Back to Per-App Language"
 }

@@ -2,6 +2,12 @@ import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
 const read = path => readFileSync(path, 'utf8');
 const locales = ['en', 'ja', 'zh', 'ko'];
+const policyIntro = {
+ en: 'Per-App Language is developed by TakeruF.',
+ ja: 'Per-App Language は TakeruF が開発しています。',
+ zh: 'Per-App Language 由 TakeruF 开发。',
+ ko: 'Per-App Language는 TakeruF가 개발합니다.',
+};
 const f1 = read('public/projects/f1-harmony.html');
 const originalStyle = f1.match(/<style>([\s\S]*?)<\/style>/)[1];
 const originalScript = f1.match(/<script>([\s\S]*?)<\/script>/)[1];
@@ -69,7 +75,7 @@ for (const locale of locales) {
   assert.ok(html.includes(`href="https://takeruf.com/${locale}${route}"`), `${locale}${route} canonical`);
   for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${route} switch to ${language}`);
   assert.ok(html.includes(`href="/${locale}/projects/per-app-language"`), `${route} links back to the product page`);
-  assert.ok(html.includes('Per-App Language is developed by TakeruF.'), `${locale}${route} app policy content`);
+  assert.ok(html.includes(policyIntro[locale]), `${locale}${route} localized app policy content`);
   assert.ok(html.includes('href="mailto:me@takeruf.com"'), `${locale}${route} footer contact`);
  }
  const notes = read(`out/${locale}/projects/token-meter/releases.html`);
