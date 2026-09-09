@@ -49,6 +49,7 @@ export default async function ProductPage({ params }: Props) {
     );
   }
   const story = productStories[product.slug];
+  const gallery = story?.gallery ?? product.gallery;
   const related = products
     .filter(
       (p) =>
@@ -117,10 +118,10 @@ export default async function ProductPage({ params }: Props) {
             <p>{story.intro.text}</p>
           </section>
         )}
-        {story?.gallery ? (
+        {gallery ? (
           <ScreenshotGallery
             name={product.name}
-            images={story.gallery}
+            images={gallery}
             comparison={product.slug === "china-rail-mcp"}
           />
         ) : (

@@ -900,6 +900,184 @@ h2 {
   font-weight: 400;
   color: var(--blue);
 }
+
+/* The missing route gets its own compact, English-only destination. */
+.not-found-page {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  background: #fcfdfb;
+}
+.not-found-header {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+.not-found-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 0;
+  border-bottom: 1px solid currentColor;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 180ms ease, transform 180ms ease;
+}
+.not-found-home-link:hover {
+  color: var(--blue);
+  transform: translateX(-3px);
+}
+.not-found-main {
+  display: grid;
+  align-items: center;
+  padding-block: clamp(52px, 9vw, 132px);
+}
+.not-found-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+  align-items: center;
+  gap: clamp(40px, 8vw, 130px);
+}
+.not-found-copy {
+  position: relative;
+  z-index: 1;
+}
+.not-found-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+}
+.not-found-content h1 {
+  margin-top: 25px;
+  font-size: clamp(58px, 7.5vw, 112px);
+  font-weight: 550;
+  letter-spacing: -0.075em;
+  line-height: 0.94;
+}
+.not-found-content h1 em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  color: var(--blue);
+  letter-spacing: -0.085em;
+}
+.not-found-description {
+  max-width: 470px;
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 27px;
+  margin-top: 34px;
+}
+.not-found-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 18px 15px 22px;
+  color: white;
+  background: var(--blue);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 180ms ease, transform 180ms ease;
+}
+.not-found-primary:hover {
+  background: #1635bf;
+  transform: translateY(-3px);
+}
+.not-found-secondary {
+  padding-block: 8px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 180ms ease, border-color 180ms ease;
+}
+.not-found-secondary:hover {
+  color: var(--blue);
+  border-color: var(--blue);
+}
+.not-found-mark {
+  position: relative;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  min-height: min(32vw, 430px);
+  overflow: hidden;
+  color: #fcfdfb;
+  background: var(--blue);
+  isolation: isolate;
+}
+.not-found-mark::before,
+.not-found-mark::after {
+  position: absolute;
+  z-index: -1;
+  width: 140%;
+  height: 1px;
+  background: #ffffff80;
+  content: "";
+  transform: rotate(-29deg);
+}
+.not-found-mark::before {
+  top: 34%;
+  left: -22%;
+}
+.not-found-mark::after {
+  bottom: 17%;
+  right: -56%;
+}
+.not-found-mark span {
+  margin: 0 0 -0.15em;
+  font-size: clamp(100px, 19vw, 290px);
+  font-weight: 600;
+  letter-spacing: -0.11em;
+  line-height: 0.72;
+}
+.not-found-mark p {
+  position: absolute;
+  top: 21px;
+  right: 22px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.45;
+  text-align: right;
+}
+.not-found-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.075em;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .not-found-copy { animation: enter 0.7s both; }
+  .not-found-mark { animation: enter 0.7s 0.12s both; }
+}
+@media (max-width: 760px) {
+  .not-found-header { height: 82px; }
+  .not-found-main { padding-block: 48px 58px; }
+  .not-found-content { grid-template-columns: 1fr; gap: 50px; }
+  .not-found-content h1 { font-size: clamp(60px, 16.5vw, 90px); }
+  .not-found-description { margin-top: 24px; }
+  .not-found-mark { min-height: min(72vw, 360px); }
+  .not-found-mark span { font-size: clamp(104px, 32vw, 210px); }
+  .not-found-footer { flex-direction: column; gap: 7px; }
+}
 .catalog-intro {
   display: flex;
   justify-content: space-between;

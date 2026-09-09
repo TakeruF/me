@@ -21,6 +21,14 @@ export type Product = {
     height: number;
     portrait?: boolean;
   };
+  gallery?: {
+    src: string;
+    alt: string;
+    caption: string;
+    width: number;
+    height: number;
+    portrait?: boolean;
+  }[];
   motif: string;
   visualLabel: string;
   tone: string;
@@ -70,11 +78,20 @@ export const products: Product[] = [
       "保護されたPDFの互換変換ではページを画像化するため、文字の検索・選択ができなくなる場合があります。",
     ],
     image: {
-      src: "/projects/pdf-organizer.webp",
-      alt: "PDF OrganizerのPDF選択画面",
-      width: 1440,
-      height: 1000,
+      src: "/projects/pdf-organizer.png",
+      alt: "中国語表示のPDF OrganizerでPDFページを整理するデスクトップ画面",
+      width: 2880,
+      height: 1800,
     },
+    gallery: [
+      {
+        src: "/projects/pdf-organizer.png",
+        alt: "中国語表示のPDF OrganizerでPDFページを整理するデスクトップ画面",
+        caption: "PDFを、ちょうどいい順番に。",
+        width: 2880,
+        height: 1800,
+      },
+    ],
     motif: "01 / 02 / 03",
     visualLabel: "LESS FRICTION. MORE ORDER.",
     tone: "blue",
