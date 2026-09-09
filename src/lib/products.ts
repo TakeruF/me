@@ -401,7 +401,8 @@ export const products: Product[] = [
       },
       {
         label: "プライバシーポリシー",
-        href: "https://takeruf.github.io/android-perapp-language-selector/privacy-policy.html",
+        href: "/projects/per-app-language/privacy",
+        internal: true,
       },
     ],
     features: [

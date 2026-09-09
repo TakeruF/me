@@ -22,7 +22,8 @@ const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;')
 const paths = ['/', '/work', ...readdirSync('out/ja/projects').filter(x => x.endsWith('.html') && x !== 'hanlu.html').map(x => `/projects/${x.slice(0, -5)}`),
  // Product documents are indexable public pages with localized canonical URLs.
  '/projects/token-meter/releases', '/projects/token-meter/privacy', '/projects/token-meter/claude-sign-in',
- '/projects/furigana-keyboard/privacy', '/projects/furigana-keyboard/terms'];
+ '/projects/furigana-keyboard/privacy', '/projects/furigana-keyboard/terms',
+ '/projects/per-app-language/privacy'];
 for (const locale of locales) {
  let html = f1;
  // Translate text and accessible metadata only. The original CSS and scripts stay intact.

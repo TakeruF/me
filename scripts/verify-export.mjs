@@ -62,11 +62,21 @@ for (const locale of locales) {
   assert.ok(html.includes('support@takeruf.com'), `${route} support contact`);
   assert.ok(html.includes('href="mailto:me@takeruf.com"'), `${locale}${route} footer contact`);
  }
+ {
+  const route = '/projects/per-app-language/privacy';
+  const html = read(`out/${locale}${route}.html`);
+  assert.ok(html.includes(`<html lang="${locale==='zh'?'zh-CN':locale}"`), `${locale}${route} document language`);
+  assert.ok(html.includes(`href="https://takeruf.com/${locale}${route}"`), `${locale}${route} canonical`);
+  for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${route} switch to ${language}`);
+  assert.ok(html.includes(`href="/${locale}/projects/per-app-language"`), `${route} links back to the product page`);
+  assert.ok(html.includes('Per-App Language is developed by TakeruF.'), `${locale}${route} app policy content`);
+  assert.ok(html.includes('href="mailto:me@takeruf.com"'), `${locale}${route} footer contact`);
+ }
  const notes = read(`out/${locale}/projects/token-meter/releases.html`);
  assert.equal((notes.match(/class="release-card"/g)||[]).length, 22, `${locale} release notes`);
  assert.ok(!read(`out/${locale}/projects/token-meter.html`).includes('takeruf.github.io/token_meter'));
 }
-assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,76);
+assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,80);
 assert.ok(read('out/index.html').includes('0;url=/en'));
 assert.ok(read('out/index.html').includes('<html lang="en">'));
 assert.ok(read('out/index.html').includes("navigator.languages"));
