@@ -6,8 +6,8 @@ import { privacyPolicyHtml } from "@/lib/per-app-language-docs";
 const path = "/projects/per-app-language/privacy";
 
 export const metadata: Metadata = localizedMetadata(
-  "Privacy Policy — Per-App Language",
-  "How Per-App Language accesses, uses, stores, and protects information on your device.",
+  "プライバシーポリシー — Per-App Language",
+  "Per-App Languageが端末上でアクセス、利用、保存、保護する情報について。",
   path,
 );
 
@@ -16,9 +16,9 @@ export default function PerAppLanguagePrivacy() {
     <DocPage
       path={path}
       eyebrow="PRIVACY"
-      title="Privacy Policy for Per-App Language"
+      title="Per-App Languageのプライバシーポリシー"
       backPath="/projects/per-app-language"
-      backLabel="Back to Per-App Language"
+      backLabel="Per-App Languageに戻る"
     >
       <div className="doc-wrap wrap">
         <article className="doc-card">
