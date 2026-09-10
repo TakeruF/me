@@ -311,12 +311,16 @@ export const products: Product[] = [
     headline: "調べた中国語を、そのまま覚える。",
     description:
       "日本語・簡体字・ピンインからすぐ引ける中国語辞書。意味、発音、例文、HSKレベルをひとつの画面で確かめ、気になった語はHanluで復習できます。",
-    platforms: "Web · iOS",
+    platforms: "Web · iOS · Android",
     primary: { label: "Hanlu Dictを引く", href: "https://dict.hanlu.app" },
     links: [
       {
         label: "App Store",
         href: "https://apps.apple.com/jp/app/hanlu-dict/id6776096856",
+      },
+      {
+        label: "Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.hanlu.dict",
       },
       { label: "Hanluで復習する", href: "https://hanlu.app/learn" },
       { label: "Hanlu Dictについて", href: "https://dict.hanlu.app/about" },

@@ -63,7 +63,7 @@ export default async function ProductPage({ params }: Props) {
     <>
       <SiteHeader path={productPath(product.slug)} />
       <main id="main">
-        <section className="detail-hero wrap" id="top">
+        <section className="detail-hero wrap">
           <Link className="back-to-work" href="/work">
             <ArrowLeft size={15} aria-hidden="true" /> All work{" "}
             <span>/ {product.category}</span>

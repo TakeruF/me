@@ -16,7 +16,7 @@ export default function WorkPage() {
     <>
       <SiteHeader path="/work" />
       <main id="main">
-        <section className="catalog-hero wrap" id="top">
+        <section className="catalog-hero wrap">
           <span className="section-index">
             THE COLLECTION / {String(workProducts.length).padStart(2, "0")} PROJECTS
           </span>

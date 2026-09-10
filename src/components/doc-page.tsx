@@ -29,7 +29,7 @@ export function DocPage({
     <>
       <SiteHeader path={path} />
       <main id="main">
-        <section className="doc-hero wrap" id="top">
+        <section className="doc-hero wrap">
           <Link className="back-to-work" href={backPath}>
             <ArrowLeft size={15} aria-hidden="true" /> {backLabel}
           </Link>

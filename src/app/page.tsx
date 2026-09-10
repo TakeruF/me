@@ -1,4 +1,4 @@
-import { SiteHeader } from "@/components/site-chrome";
+import { FooterThemeSwitcher, SiteHeader } from "@/components/site-chrome";
 import { currentLocale, localize, t } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,7 +46,7 @@ const projects = [
     headline: "調べた中国語を、そのまま覚える。",
     description:
       "日本語・簡体字・ピンインからすぐ引ける中国語辞書。意味、発音、例文、HSKレベルを確認し、気になった語はHanluで復習できます。",
-    platforms: ["Web", "iOS"],
+    platforms: ["Web", "iOS", "Android"],
     url: "https://dict.hanlu.app/about",
     image: "/projects/hanlu-dict.webp",
     alt: "Hanlu Dictを表示するパソコン、タブレット、スマートフォン",
@@ -57,6 +57,10 @@ const projects = [
       {
         label: "App Store",
         url: "https://apps.apple.com/jp/app/hanlu-dict/id6776096856",
+      },
+      {
+        label: "Google Play",
+        url: "https://play.google.com/store/apps/details?id=com.hanlu.dict",
       },
     ],
   },
@@ -218,7 +222,7 @@ export default function Page() {
       />
       <SiteHeader />
       <main id="main">
-        <section className="hero wrap" id="top" aria-labelledby="hero-title">
+        <section className="hero wrap" aria-labelledby="hero-title">
           <div className="hero-eyebrow">
             <span className="status-dot" /> INDEPENDENT DEVELOPER & PRODUCT
             BUILDER
@@ -312,7 +316,7 @@ export default function Page() {
                           alt={project.alt}
                           width={512}
                           height={1080}
-                          sizes="(max-width: 760px) 38vw, 19vw"
+                          sizes="(max-width: 760px) 55vw, 26vw"
                           loading="lazy"
                         />
                       ) : (
@@ -322,7 +326,7 @@ export default function Page() {
                           alt={project.alt}
                           width={512}
                           height={1080}
-                          sizes="(max-width: 760px) 36vw, 18vw"
+                          sizes="(max-width: 760px) 55vw, 26vw"
                           loading="lazy"
                         />
                       )}
@@ -510,6 +514,7 @@ export default function Page() {
             </a>
             <span>Made with curiosity in Tokyo.</span>
             <div>
+              <FooterThemeSwitcher />
               <a href="#top">
                 Back to top <ArrowUpRight size={15} aria-hidden="true" />
               </a>

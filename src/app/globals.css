@@ -3,12 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --ink: #17201e;
-  --muted: #606560;
-  --blue: #254ee8;
-  --line: #dce0dc;
-  --paper: #fcfdfb;
+  color-scheme: light dark;
+  --ink: light-dark(#17201e, #edf1ed);
+  --muted: light-dark(#606560, #abb5ad);
+  --blue: light-dark(#254ee8, #91a8ff);
+  --line: light-dark(#dce0dc, #343e38);
+  --paper: light-dark(#fcfdfb, #141a17);
+  --surface: light-dark(#ffffff, #1c2420);
+  --subtle: light-dark(#eef1ec, #1b231e);
+  --media: light-dark(#edf0ed, #232d26);
+  --hover: light-dark(#edf1ff, #28334c);
+  --solid-blue: light-dark(#254ee8, #304fc7);
+  --strong-line: light-dark(#cbd2c9, #455149);
 }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
 * {
   box-sizing: border-box;
 }
@@ -26,7 +36,7 @@ body {
 }
 ::selection {
   color: white;
-  background: var(--blue);
+  background: var(--solid-blue);
 }
 a {
   color: inherit;
@@ -59,7 +69,7 @@ h3 {
   top: -100px;
   left: 16px;
   padding: 12px 20px;
-  background: white;
+  background: var(--surface);
   z-index: 100;
 }
 .skip-link:focus {
@@ -167,7 +177,7 @@ h3 {
 .round-arrow {
   width: 48px;
   height: 48px;
-  border: 1px solid #bfc6bf;
+  border: 1px solid var(--strong-line);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -178,7 +188,7 @@ h3 {
 }
 .work-jump:hover .round-arrow {
   color: white;
-  background: var(--blue);
+  background: var(--solid-blue);
   border-color: var(--blue);
   transform: translateY(3px);
 }
@@ -233,7 +243,9 @@ h2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 60px 30px;
 }
+.project { container-type: inline-size; }
 .project-visual {
+  color: #17201e;
   display: flex;
   flex-direction: column;
   aspect-ratio: 1.2;
@@ -243,18 +255,23 @@ h2 {
   isolation: isolate;
 }
 .project-hanlu .project-visual {
+  color: #17201e;
   background: #e7ebe4;
 }
 .project-dict .project-visual {
+  color: #17201e;
   background: #efebee;
 }
 .project-token .project-visual {
+  color: #17201e;
   background: #e7e9f5;
 }
 .project-furigana .project-visual {
+  color: #17201e;
   background: #f5dd95;
 }
 .project-language .project-visual {
+  color: #17201e;
   background: #c3d6f1;
 }
 .visual-topline {
@@ -280,13 +297,24 @@ h2 {
     color 0.2s;
 }
 .project-visual:hover .visual-arrow {
-  background: var(--ink);
+  background: #17201e;
   color: white;
+}
+/* Let landscape previews determine card height so captions cannot be clipped. */
+.project-visual:has(> .desktop-screenshot) {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  aspect-ratio: auto;
+  gap: 16px;
+}
+.project-visual:has(> .desktop-screenshot) .visual-bottomline {
+  margin-top: 0;
 }
 .desktop-screenshot {
   width: 100%;
   height: auto;
-  margin-block: auto;
+  display: block;
+  margin: 0;
   mix-blend-mode: multiply;
   transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
@@ -426,7 +454,7 @@ h2 {
   color: var(--blue);
 }
 .open-section {
-  background: #eef1ec;
+  background: var(--subtle);
   padding-block: 86px;
 }
 .open-layout {
@@ -453,10 +481,10 @@ h2 {
   align-items: flex-start;
   gap: 20px;
   padding: 25px 0;
-  border-top: 1px solid #cbd2c9;
+  border-top: 1px solid var(--strong-line);
 }
 .repo-row:last-child {
-  border-bottom: 1px solid #cbd2c9;
+  border-bottom: 1px solid var(--strong-line);
 }
 .repo-icon {
   padding-top: 9px;
@@ -560,7 +588,7 @@ h2 {
 }
 .site-footer {
   color: white;
-  background: var(--blue);
+  background: var(--solid-blue);
   padding-top: 62px;
 }
 .footer-top {
@@ -758,6 +786,7 @@ h2 {
     gap: 40px;
   }
   .project-visual {
+  color: #17201e;
     aspect-ratio: 1.25;
   }
   .visual-topline {
@@ -835,11 +864,15 @@ h2 {
     font-size: 14px;
   }
   .footer-bottom {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     gap: 20px;
-    padding-block: 25px;
+    padding-top: 25px;
+    padding-bottom: calc(25px + env(safe-area-inset-bottom, 0px));
   }
   .footer-bottom > div {
+    grid-column: 1 / -1;
+    grid-row: 1;
     width: 100%;
     margin-left: 0;
     justify-content: space-between;
@@ -907,7 +940,7 @@ h2 {
   display: grid;
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
-  background: #fcfdfb;
+  background: var(--paper);
 }
 .not-found-header {
   height: 110px;
@@ -987,7 +1020,7 @@ h2 {
   gap: 20px;
   padding: 15px 18px 15px 22px;
   color: white;
-  background: var(--blue);
+  background: var(--solid-blue);
   font-size: 14px;
   font-weight: 600;
   transition: background 180ms ease, transform 180ms ease;
@@ -1015,7 +1048,7 @@ h2 {
   min-height: min(32vw, 430px);
   overflow: hidden;
   color: #fcfdfb;
-  background: var(--blue);
+  background: var(--solid-blue);
   isolation: isolate;
 }
 .not-found-mark::before,
@@ -1187,6 +1220,7 @@ h2 {
   cursor: default;
 }
 .product-art {
+  color: #17201e;
   position: relative;
   height: 660px;
   padding: 38px 48px 52px;
@@ -1346,7 +1380,7 @@ h2 {
   gap: 16px;
   min-height: 50px;
   padding: 14px 21px;
-  background: var(--blue);
+  background: var(--solid-blue);
   color: white;
   font-size: 13px;
   font-weight: 550;
@@ -1495,6 +1529,7 @@ h2 {
     gap: 40px;
   }
   .product-art {
+  color: #17201e;
     height: 540px;
   }
   .art-compact {
@@ -1556,6 +1591,7 @@ h2 {
     text-align: left;
   }
   .product-art {
+  color: #17201e;
     height: 400px;
     padding-inline: 12px;
   }
@@ -1694,7 +1730,7 @@ h2 {
   place-items: start center;
   padding: 16px 16px 0;
   overflow: hidden;
-  background: #edf0ed;
+  background: var(--media);
   border-radius: 6px;
 }
 .comparison-image img {
@@ -1757,7 +1793,7 @@ h2 {
   scroll-snap-align: start;
 }
 .screen-image {
-  background: #edf0ed;
+  background: var(--media);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -1888,7 +1924,7 @@ h2 {
 }
 .story-media {
   margin: 0;
-  background: #f0f2ed;
+  background: var(--media);
   border-radius: 6px;
   padding: 24px;
   min-width: 0;
@@ -1929,7 +1965,7 @@ h2 {
 }
 @media (hover: hover) and (pointer: fine) {
   .screen-arrow:not(:disabled):hover {
-    background: var(--blue);
+    background: var(--solid-blue);
     color: white;
   }
   .story-links a:hover {
@@ -2017,9 +2053,9 @@ h2 {
 .language-switcher summary::after { width: 5px; height: 5px; margin: -3px 0 0 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; content: ""; transform: rotate(45deg); transition: transform 180ms ease; }
 .language-switcher[open] summary::after { margin-top: 3px; transform: rotate(225deg); }
 .language-switcher summary:focus-visible { outline: 2px solid var(--blue, #315bfa); outline-offset: 4px; }
-.language-menu { position: absolute; z-index: 20; top: calc(100% + 8px); right: 0; display: grid; min-width: 112px; padding: 5px; background: #fff; border: 1px solid var(--line, #dededb); box-shadow: 0 12px 28px rgba(20, 22, 20, .12); }
+.language-menu { position: absolute; z-index: 20; top: calc(100% + 8px); right: 0; display: grid; min-width: 112px; padding: 5px; background: var(--surface); border: 1px solid var(--line, #dededb); box-shadow: 0 12px 28px rgba(20, 22, 20, .12); }
 .language-menu a { display: flex; align-items: center; min-height: 40px; padding: 0 10px; color: inherit; text-decoration: none; }
-.language-menu a:hover, .language-menu a:focus-visible { color: var(--blue, #315bfa); background: #edf1ff; outline: none; }
+.language-menu a:hover, .language-menu a:focus-visible { color: var(--blue, #315bfa); background: var(--hover); outline: none; }
 .language-menu a[aria-current] { color: var(--blue, #315bfa); }
 .desktop-nav { margin-left: auto; }
 .nav-menu { display: none; align-items: center; }
@@ -2052,12 +2088,12 @@ html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Ma
   position: absolute; z-index: 20; top: calc(100% + 10px); right: 0;
   flex-direction: column; align-items: stretch; gap: 0;
   min-width: 190px; padding: 6px;
-  background: #fff; border: 1px solid var(--line, #dededb);
+  background: var(--surface); border: 1px solid var(--line, #dededb);
   box-shadow: 0 12px 28px rgba(20, 22, 20, .12);
  }
  .nav-menu:not([open]) > nav { display: none; }
  .nav-menu > nav a { min-height: 46px; padding: 0 12px; }
- .nav-menu > nav a:hover, .nav-menu > nav a:focus-visible { color: var(--blue, #315bfa); background: #edf1ff; }
+ .nav-menu > nav a:hover, .nav-menu > nav a:focus-visible { color: var(--blue, #315bfa); background: var(--hover); }
  .header-github { margin-left: 0; justify-content: space-between; }
 }
 @media (max-width: 700px) {
@@ -2100,7 +2136,7 @@ html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Ma
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 40px 44px;
-  background: white;
+  background: var(--surface);
 }
 .release-card > h2 {
   margin: 0 0 8px;
@@ -2189,7 +2225,7 @@ html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Ma
 .doc-body code {
   padding: 2px 6px;
   border-radius: 5px;
-  background: #f1f3f0;
+  background: var(--subtle);
   font-size: 0.9em;
 }
 .doc-body pre {
@@ -2197,7 +2233,7 @@ html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Ma
   padding: 16px 18px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #f7f9f6;
+  background: var(--subtle);
   overflow-x: auto;
 }
 .doc-body pre code {
@@ -2234,7 +2270,7 @@ html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Ma
   vertical-align: top;
 }
 .doc-body th {
-  background: #f7f9f6;
+  background: var(--subtle);
   font-weight: 600;
 }
 @media (max-width: 760px) {
@@ -2248,5 +2284,76 @@ html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Ma
   }
   .doc-hero .section-index {
     margin-top: 34px;
+  }
+}
+
+/* Match the language list, opening upward from the footer. */
+.theme-switcher summary { gap: 8px; }
+.theme-switcher summary::after { margin-left: 2px; }
+.theme-switcher summary:focus-visible { outline-color: white; }
+.theme-menu {
+  top: auto;
+  bottom: calc(100% + 8px);
+  left: 0;
+  right: auto;
+  min-width: 170px;
+  color: var(--ink);
+}
+.theme-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  width: 100%;
+  padding: 0 10px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.theme-menu button:hover,
+.theme-menu button:focus-visible {
+  color: var(--blue);
+  background: var(--hover);
+  outline: none;
+}
+.theme-menu button[aria-pressed="true"] { color: var(--blue); }
+.theme-check { margin-left: auto; }
+
+/* Compact cards give the app preview its own space, clear of both captions. */
+@container (max-width: 520px) {
+  .project-furigana .project-visual,
+  .project-language .project-visual {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    gap: 16px;
+    aspect-ratio: 1 / 1.15;
+  }
+  .phone-composition {
+    position: relative;
+    inset: auto;
+    min-height: 0;
+    height: 100%;
+    justify-content: center;
+    padding-inline: 20px;
+  }
+  .visual-type { display: none; }
+  .figma-phone-render,
+  .figma-phone-render-language {
+    position: static;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-position: center;
+    transform: none;
+  }
+  .project-visual:hover .figma-phone-render,
+  .project-visual:hover .figma-phone-render-language { transform: none; }
+  .visual-bottomline {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-top: 0;
   }
 }

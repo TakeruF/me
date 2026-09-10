@@ -34,8 +34,7 @@ export const metadata: Metadata = {
   },
 };
 export const viewport: Viewport = {
-  themeColor: "#fcfdfb",
-  colorScheme: "light",
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({
@@ -44,8 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={currentLocale() === "zh" ? "zh-CN" : currentLocale()} className={`${body.variable} ${japanese.variable}`}>
-      <body>{children}</body>
+    <html suppressHydrationWarning lang={currentLocale() === "zh" ? "zh-CN" : currentLocale()} className={`${body.variable} ${japanese.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("takeru-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}})()` }} />
+      </head>
+      <body id="top">{children}</body>
     </html>
   );
 }

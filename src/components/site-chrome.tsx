@@ -1,5 +1,6 @@
 import { LanguageSwitcher } from "./language-switcher";
-import { localize } from "@/lib/i18n";
+import { ThemeSwitcher } from "./theme-switcher";
+import { currentLocale, localize } from "@/lib/i18n";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -73,10 +74,22 @@ export function SiteFooter({ path = "/" }: { path?: string }) {
           </Link>
           <span>Made with curiosity in Tokyo.</span>
           <div>
+            <FooterThemeSwitcher />
             <a href="#top">Back to top ↑</a>
           </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+export function FooterThemeSwitcher() {
+  return (
+        <ThemeSwitcher labels={{
+          en: { label: "Appearance", system: "System", light: "Light", dark: "Dark" },
+          ja: { label: "外観", system: "システム", light: "ライト", dark: "ダーク" },
+          zh: { label: "外观", system: "跟随系统", light: "浅色", dark: "深色" },
+          ko: { label: "화면 모드", system: "시스템", light: "라이트", dark: "다크" },
+        }[currentLocale()]} />
   );
 }
