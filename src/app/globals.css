@@ -19,6 +19,15 @@
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
 
+/* Reveal the new theme over the old snapshot, matching ninan.cloud's circle wipe. */
+:root[data-theme-transition]::view-transition-old(root),
+:root[data-theme-transition]::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+:root[data-theme-transition]::view-transition-old(root) { z-index: 1; }
+:root[data-theme-transition]::view-transition-new(root) { z-index: 2; }
+
 * {
   box-sizing: border-box;
 }
@@ -2287,40 +2296,27 @@ html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Ma
   }
 }
 
-/* Match the language list, opening upward from the footer. */
-.theme-switcher summary { gap: 8px; }
-.theme-switcher summary::after { margin-left: 2px; }
-.theme-switcher summary:focus-visible { outline-color: white; }
-.theme-menu {
-  top: auto;
-  bottom: calc(100% + 8px);
-  left: 0;
-  right: auto;
-  min-width: 170px;
-  color: var(--ink);
-}
-.theme-menu button {
-  display: flex;
+/* Keep the theme control beside the header's language selection. */
+.theme-switcher {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  width: 100%;
-  padding: 0 10px;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border: 0;
+  border-radius: 50%;
   background: transparent;
   color: inherit;
-  font: inherit;
-  text-align: left;
   cursor: pointer;
 }
-.theme-menu button:hover,
-.theme-menu button:focus-visible {
-  color: var(--blue);
-  background: var(--hover);
-  outline: none;
+.theme-switcher:hover { background: var(--subtle); }
+.theme-switcher:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+@media (max-width: 360px) {
+  .site-header { gap: 6px; }
+  .site-header .wordmark { font-size: 24px; }
 }
-.theme-menu button[aria-pressed="true"] { color: var(--blue); }
-.theme-check { margin-left: auto; }
 
 /* Compact cards give the app preview its own space, clear of both captions. */
 @container (max-width: 520px) {

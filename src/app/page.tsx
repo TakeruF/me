@@ -1,4 +1,4 @@
-import { FooterThemeSwitcher, SiteHeader } from "@/components/site-chrome";
+import { SiteHeader } from "@/components/site-chrome";
 import { currentLocale, localize, t } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
@@ -514,7 +514,6 @@ export default function Page() {
             </a>
             <span>Made with curiosity in Tokyo.</span>
             <div>
-              <FooterThemeSwitcher />
               <a href="#top">
                 Back to top <ArrowUpRight size={15} aria-hidden="true" />
               </a>

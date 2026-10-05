@@ -28,6 +28,7 @@ export function SiteHeader({ path = "/" }: { path?: string }) {
           </a>
         </nav>
         <LanguageSwitcher path={path} />
+        <HeaderThemeSwitcher />
         <details className="nav-menu">
           <summary className="nav-toggle" aria-label="メニュー">
             <span className="nav-toggle-icon" aria-hidden="true" />
@@ -74,7 +75,6 @@ export function SiteFooter({ path = "/" }: { path?: string }) {
           </Link>
           <span>Made with curiosity in Tokyo.</span>
           <div>
-            <FooterThemeSwitcher />
             <a href="#top">Back to top ↑</a>
           </div>
         </div>
@@ -83,13 +83,13 @@ export function SiteFooter({ path = "/" }: { path?: string }) {
   );
 }
 
-export function FooterThemeSwitcher() {
+function HeaderThemeSwitcher() {
   return (
         <ThemeSwitcher labels={{
-          en: { label: "Appearance", system: "System", light: "Light", dark: "Dark" },
-          ja: { label: "外観", system: "システム", light: "ライト", dark: "ダーク" },
-          zh: { label: "外观", system: "跟随系统", light: "浅色", dark: "深色" },
-          ko: { label: "화면 모드", system: "시스템", light: "라이트", dark: "다크" },
+          en: { label: "Appearance", light: "Light", dark: "Dark" },
+          ja: { label: "外観", light: "ライト", dark: "ダーク" },
+          zh: { label: "外观", light: "浅色", dark: "深色" },
+          ko: { label: "화면 모드", light: "라이트", dark: "다크" },
         }[currentLocale()]} />
   );
 }
