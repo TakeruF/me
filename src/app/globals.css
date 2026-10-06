@@ -1462,6 +1462,7 @@ h2 {
   margin: 0;
 }
 .detail-notes li {
+  overflow-wrap: anywhere;
   padding-left: 5px;
   margin-bottom: 14px;
   color: var(--muted);

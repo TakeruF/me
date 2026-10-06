@@ -14,7 +14,7 @@ const originalScript = f1.match(/<script>([\s\S]*?)<\/script>/)[1];
 let checked = 0;
 for (const locale of locales) {
  const pages = ['index.html', 'work.html', ...readdirSync(`out/${locale}/projects`).filter(p=>p.endsWith('.html')&&p!=='hanlu.html').map(p=>`projects/${p}`)];
- assert.equal(pages.length, 14);
+ assert.equal(pages.length, 15);
  for (const page of pages) {
   const html = read(`out/${locale}/${page}`);
   assert.ok(html.includes(`<html lang="${locale==='zh'?'zh-CN':locale}"`), `${locale}/${page} document language`);
@@ -82,7 +82,17 @@ for (const locale of locales) {
  assert.equal((notes.match(/class="release-card"/g)||[]).length, 22, `${locale} release notes`);
  assert.ok(!read(`out/${locale}/projects/token-meter.html`).includes('takeruf.github.io/token_meter'));
 }
-assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,80);
+assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,84);
+assert.ok(read('out/nagi.html').includes('0;url=/en/projects/nagi'));
+assert.ok(read('out/nagi.html').includes('navigator.languages'));
+for (const locale of locales) {
+ const html = read(`out/${locale}/projects/nagi.html`);
+ assert.ok(html.includes('https://takeruf.com/nagi/nagi-0.1.1.apk'));
+ assert.ok(read(`out/${locale}/work.html`).includes(`/${locale}/projects/nagi`));
+ assert.ok(read(`out/${locale}/index.html`).includes(`/${locale}/projects/nagi`));
+ assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/nagi`));
+}
+assert.ok(existsSync('out/nagi/nagi-0.1.1.apk'));
 assert.ok(read('out/index.html').includes('0;url=/en'));
 assert.ok(read('out/index.html').includes('<html lang="en">'));
 assert.ok(read('out/index.html').includes("navigator.languages"));

@@ -133,6 +133,32 @@ const projects = [
       },
     ],
   },
+  {
+  "number": "06",
+  "name": "Nagi",
+  "kind": "ANDROID WORKSPACE BROWSER",
+  "theme": "token",
+  "headline": "タブを整えて、ブラウジングを穏やかに。",
+  "description": "Androidタブレットのためのワークスペースブラウザ。サイドバーでタブを整理し、Spaceで作業を切り替え、分割表示で2つのページを並べられます。",
+  "platforms": [
+    "Android 8.0+"
+  ],
+  "url": "/projects/nagi",
+  "image": "/projects/nagi-home.webp",
+  "alt": "サイドバーでタブとSpaceを整理するNagi",
+  "width": 2560,
+  "height": 1600,
+  "links": [
+    {
+      "label": "Download",
+      "url": "https://takeruf.com/nagi/nagi-0.1.1.apk"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/TakeruF/android-tab-browser"
+    }
+  ]
+},
 ];
 
 const openSource = [
