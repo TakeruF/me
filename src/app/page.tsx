@@ -151,7 +151,7 @@ const projects = [
   "links": [
     {
       "label": "Download",
-      "url": "https://takeruf.com/nagi/nagi-0.1.1.apk"
+      "url": "https://takeruf.com/nagi/nagi-0.1.3.apk"
     },
     {
       "label": "GitHub",

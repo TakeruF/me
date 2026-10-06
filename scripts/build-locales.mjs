@@ -7,7 +7,7 @@ rmSync(staging, { recursive: true, force: true });
 mkdirSync(staging);
 const locales = ['en', 'ja', 'zh', 'ko'];
 for (const locale of locales) {
-  execFileSync(process.execPath, ['node_modules/next/dist/bin/next', 'build'], { stdio: 'inherit', env: { ...process.env, EDGEONE_STATIC_EXPORT: '1', SITE_LOCALE: locale, SITE_BASE_PATH: `/${locale}` } });
+  execFileSync(process.execPath, ['node_modules/next/dist/bin/next', 'build', '--webpack'], { stdio: 'inherit', env: { ...process.env, EDGEONE_STATIC_EXPORT: '1', SITE_LOCALE: locale, SITE_BASE_PATH: `/${locale}` } });
   cpSync(path.join(root, 'out'), path.join(staging, locale), { recursive: true });
 }
 rmSync('out', { recursive: true, force: true });
