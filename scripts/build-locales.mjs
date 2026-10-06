@@ -23,7 +23,7 @@ const paths = ['/', '/work', ...readdirSync('out/ja/projects').filter(x => x.end
  // Product documents are indexable public pages with localized canonical URLs.
  '/projects/token-meter/releases', '/projects/token-meter/privacy', '/projects/token-meter/claude-sign-in',
  '/projects/furigana-keyboard/privacy', '/projects/furigana-keyboard/terms',
- '/projects/per-app-language/privacy'];
+ '/projects/per-app-language/privacy', '/nagi/privacy'];
 for (const locale of locales) {
  let html = f1;
  // Translate text and accessible metadata only. The original CSS and scripts stay intact.

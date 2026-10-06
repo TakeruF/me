@@ -55,6 +55,7 @@ export default function NagiPage() {
           <div><span className="section-index">03 / 安装说明</span><h2 id="notes-title">安装前须知</h2></div>
           <div>
             <ul><li>此版本通过 APK 直接分发，支持 Android 8.0 及以上版本。</li><li>已从本站安装 0.1.0 的用户，可直接打开 0.1.1 APK 覆盖更新；无需卸载，Space、标签页和书签会保留。</li><li>0.1.0 尚无应用内更新功能，首次升级需手动安装此 APK。升级后，可在设置中的“应用更新”检查、下载并安装后续版本。</li><li>本地 Debug 版或旧的 com.orbit.browser 使用不同签名或应用标识，无法直接覆盖为此发布版本。</li></ul>
+            <p><a href="https://takeruf.com/zh/nagi/privacy">隐私政策</a> · <a href="mailto:me@takeruf.com">联系开发者</a></p>
             <details className="nagi-checksum"><summary>查看文件 SHA-256</summary><code>cda3dee9a7aaa83268f745b67a2599dc4774219de824c51735fc42bcc42959f9</code></details>
           </div>
         </section>
