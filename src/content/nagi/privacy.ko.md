@@ -2,7 +2,7 @@
 
 최종 업데이트: 2026년 10월 6일
 
-Nagi는 藤井駿(TakeruF)이 개발한 Android 워크스페이스 브라우저입니다. 이 방침은 Google Play 버전과 GitHub 및 takeruf.com에서 배포하는 APK 버전에 적용됩니다. 연락처: [me@takeruf.com](mailto:me@takeruf.com).
+Nagi는 TakeruF가 개발한 Android 워크스페이스 브라우저입니다. 이 방침은 Google Play 버전과 GitHub 및 takeruf.com에서 배포하는 APK 버전에 적용됩니다. 연락처: [me@takeruf.com](mailto:me@takeruf.com).
 
 ## 기기에 저장하는 정보
 

@@ -2,7 +2,7 @@
 
 最終更新日：2026年10月6日
 
-Nagiは藤井駿（TakeruF）が開発するAndroid向けワークスペースブラウザです。本ポリシーはGoogle Play版と、GitHubおよびtakeruf.comから配布するAPK版に適用されます。連絡先：[me@takeruf.com](mailto:me@takeruf.com)。
+NagiはTakeruFが開発するAndroid向けワークスペースブラウザです。本ポリシーはGoogle Play版と、GitHubおよびtakeruf.comから配布するAPK版に適用されます。連絡先：[me@takeruf.com](mailto:me@takeruf.com)。
 
 ## 端末に保存する情報
 

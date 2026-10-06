@@ -2,7 +2,7 @@
 
 Last updated: October 6, 2026
 
-Nagi is an Android workspace browser developed by 藤井駿 (TakeruF). This policy covers both the Google Play edition and the APK edition distributed through GitHub and takeruf.com. Contact: [me@takeruf.com](mailto:me@takeruf.com).
+Nagi is an Android workspace browser developed by TakeruF. This policy covers both the Google Play edition and the APK edition distributed through GitHub and takeruf.com. Contact: [me@takeruf.com](mailto:me@takeruf.com).
 
 ## Data stored on your device
 

@@ -2,7 +2,7 @@
 
 最后更新：2026年10月6日
 
-Nagi 是由藤井駿（TakeruF）开发的 Android 工作空间浏览器。本政策适用于 Google Play 版及通过 GitHub、takeruf.com 分发的 APK 版。联系邮箱：[me@takeruf.com](mailto:me@takeruf.com)。
+Nagi 是由 TakeruF 开发的 Android 工作空间浏览器。本政策适用于 Google Play 版及通过 GitHub、takeruf.com 分发的 APK 版。联系邮箱：[me@takeruf.com](mailto:me@takeruf.com)。
 
 ## 保存在设备上的信息
 
