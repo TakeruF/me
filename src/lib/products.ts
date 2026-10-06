@@ -58,6 +58,11 @@ export const products: Product[] = [
   },
   "links": [
     {
+      "label": "プライバシーポリシー",
+      "href": "/nagi/privacy",
+      "internal": true
+    },
+    {
       "label": "0.1.1の更新内容",
       "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v0.1.1"
     },

@@ -82,7 +82,7 @@ for (const locale of locales) {
  assert.equal((notes.match(/class="release-card"/g)||[]).length, 22, `${locale} release notes`);
  assert.ok(!read(`out/${locale}/projects/token-meter.html`).includes('takeruf.github.io/token_meter'));
 }
-assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,84);
+assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,88);
 assert.ok(read('out/nagi.html').includes('0;url=/en/projects/nagi'));
 assert.ok(read('out/nagi.html').includes('navigator.languages'));
 for (const locale of locales) {
@@ -99,3 +99,12 @@ assert.ok(read('out/index.html').includes("navigator.languages"));
 assert.ok(read('out/index.html').includes("['en','ja','zh','ko']"));
 assert.ok(read('out/sitemap.xml').includes('hreflang="x-default" href="https://takeruf.com/en"'));
 console.log(`Verified ${checked} localized pages, links/assets, language alternates, original galleries and F1 design.`);
+
+// Nagi legal pages must contain translated policy bodies and canonical routes.
+for (const [locale, phrase] of Object.entries({ en: 'Data stored on your device', ja: '端末に保存する情報', zh: '保存在设备上的信息', ko: '기기에 저장하는 정보' })) {
+ const html = readFileSync(`out/${locale}/nagi/privacy.html`, 'utf8');
+ assert.ok(html.includes(phrase), `Nagi policy body missing for ${locale}`);
+ assert.ok(html.includes(`https://takeruf.com/${locale}/nagi/privacy`));
+ assert.ok(html.includes('me@takeruf.com'));
+}
+assert.ok(readFileSync('out/nagi/privacy.html', 'utf8').includes('/en/nagi/privacy'));
