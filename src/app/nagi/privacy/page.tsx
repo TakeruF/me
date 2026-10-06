@@ -15,7 +15,7 @@ export const metadata: Metadata = localizedMetadata(text.title, text.description
 
 export default function NagiPrivacy() {
   return (
-    <DocPage path={path} eyebrow="PRIVACY" title={text.title} backPath="https://takeruf.com/nagi" backLabel={text.back}>
+    <DocPage path={path} eyebrow="PRIVACY" title={text.title} backPath="/projects/nagi" backLabel={text.back}>
       <div className="doc-wrap wrap"><article className="doc-card"><DocBody html={privacyPolicyHtml()} /></article></div>
     </DocPage>
   );

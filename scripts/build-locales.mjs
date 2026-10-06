@@ -56,12 +56,8 @@ for (const route of [...paths, '/projects/hanlu']) {
 }
 const urls = paths.flatMap(route => locales.map(locale => `<url><loc>https://takeruf.com/${locale}${route === '/' ? '' : route}</loc>${locales.map(l => `<xhtml:link rel="alternate" hreflang="${l === 'zh' ? 'zh-CN' : l}" href="https://takeruf.com/${l}${route === '/' ? '' : route}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="https://takeruf.com/en${route === '/' ? '' : route}"/></url>`));
 writeFileSync('out/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls.join('')}</urlset>`);
-// Publish Nagi only in Chinese, at its canonical root URL.
-cpSync('out/zh/nagi.html', 'out/nagi.html');
-for (const locale of locales) {
- rmSync(`out/${locale}/nagi.html`, { force: true });
- rmSync(`out/${locale}/nagi.txt`, { force: true });
-}
+// Preserve shared download URLs and route the former landing page by language.
+writeFileSync('out/nagi.html', redirect('/en/projects/nagi'));
 cpSync('public/nagi', 'out/nagi', { recursive: true });
 cpSync('out/ja/404.html', 'out/404.html');
 writeFileSync('out/robots.txt', 'User-agent: *\nAllow: /\nSitemap: https://takeruf.com/sitemap.xml\n');

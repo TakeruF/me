@@ -45,6 +45,64 @@ export const categoryIds = ["everyday", "learning", "developer", "open-source"];
 
 export const products: Product[] = [
   {
+  "slug": "nagi",
+  "name": "Nagi",
+  "category": "Everyday tools",
+  "eyebrow": "A CALMER WORKSPACE FOR THE WEB",
+  "headline": "タブを整えて、ブラウジングを穏やかに。",
+  "description": "Androidタブレットのためのワークスペースブラウザ。サイドバーでタブを整理し、Spaceで作業を切り替え、分割表示で2つのページを並べられます。",
+  "platforms": "Android 8.0以上 · 0.1.1 · 5.2 MB",
+  "primary": {
+    "label": "Android APKをダウンロード",
+    "href": "https://takeruf.com/nagi/nagi-0.1.1.apk"
+  },
+  "links": [
+    {
+      "label": "プライバシーポリシー",
+      "href": "/nagi/privacy",
+      "internal": true
+    },
+    {
+      "label": "0.1.1の更新内容",
+      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v0.1.1"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/TakeruF/android-tab-browser"
+    }
+  ],
+  "features": [
+    {
+      "title": "作業ごとに、Spaceを。",
+      "text": "タブと固定タブをSpaceで整理。お気に入りはSpaceをまたいで共有し、ブックマークや履歴もサイドバーから開けます。"
+    },
+    {
+      "title": "2つのページを、並べて。",
+      "text": "分割表示とサイドバーの幅を調整し、タブをドラッグして整理。キーボードとマウスでも操作できます。"
+    },
+    {
+      "title": "探す・開くを、ひとつのバーで。",
+      "text": "Ctrl / Command + LでURL、検索、タブ、Space、コマンドへ。ChatGPTへの質問はWebサイトを開く方式です。"
+    }
+  ],
+  "notes": [
+    "タブレットの横画面での利用を推奨します。現在はMVPです。",
+    "当サイトの0.1.0には0.1.1を上書きインストールできます。アンインストールは不要です。0.1.0からの初回更新は手動で行い、その後は設定のアプリ更新を利用できます。",
+    "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。",
+    "Space間でCookieとログイン状態は共有されます。同期、プライベートブラウジング、コンテンツブロックには未対応です。",
+    "SHA-256: cda3dee9a7aaa83268f745b67a2599dc4774219de824c51735fc42bcc42959f9"
+  ],
+  "image": {
+    "src": "/projects/nagi-home.webp",
+    "alt": "サイドバーでタブとSpaceを整理するNagi",
+    "width": 2560,
+    "height": 1600
+  },
+  "motif": "Space / Split",
+  "visualLabel": "A CALMER WORKSPACE FOR THE WEB.",
+  "tone": "blue"
+},
+  {
     slug: "pdf-organizer",
     name: "PDF Organizer",
     category: "Everyday tools",

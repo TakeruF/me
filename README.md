@@ -5,7 +5,7 @@ Complete English, Japanese and Simplified Chinese introductions, expressive typo
 
 ## Content
 
-- **Products:** Hanlu, Token Meter, Furigana Keyboard, Per-App Language
+- **Products:** Nagi, Hanlu, Token Meter, Furigana Keyboard, Per-App Language
 - **Open source:** China Rail MCP, Japan Rail MCP, MCP Mail Core, Silkroad MCP
 - **About:** introduction and technology stack
 - **All work:** `/work` lists 16 products by category
@@ -72,3 +72,7 @@ The old Vercel portfolio uses `vercel.json` to permanently redirect to the match
 - Hanlu continues to link directly to `hanlu.app/about`. Product applications and lightweight tools keep their original hosting.
 
 Run `npm run build:edgeone` then `npm run verify:export` to check the deployed artifact. A single-language development preview uses `SITE_LOCALE=zh SITE_BASE_PATH=/zh npm run dev` (replace `zh` as needed); use the assembled static output to test all three languages together.
+
+## Nagi
+
+Nagi uses the shared product catalog, homepage and localized detail pages at `/{en,ja,zh,ko}/projects/nagi`. The legacy `/nagi` URL redirects using the browser language, with English as the fallback, like other legacy project routes. APKs stay at `/nagi/` so existing download URLs continue to work.
