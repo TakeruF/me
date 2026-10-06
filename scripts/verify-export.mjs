@@ -24,7 +24,7 @@ for (const locale of locales) {
   for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${page} switch to ${language}`);
   for (const [,url] of html.matchAll(/(?:href|src)="(\/[^" ]*)"/g)) {
    if(url.startsWith('//'))continue;
-   const file='out'+url.split(/[?#]/)[0];
+   const file='out'+decodeURIComponent(url.split(/[?#]/)[0]);
    assert.ok(existsSync(file)||existsSync(file+'.html'),`${page}: missing ${url}`);
   }
   checked++;
