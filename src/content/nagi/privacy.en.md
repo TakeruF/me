@@ -20,6 +20,8 @@ When automatic regional search is enabled, Nagi connects over HTTPS to [api.coun
 
 Camera, microphone, and location access are requested when a website needs them and require your permission. Data you allow a website to use is handled by that website. Uploads use Android’s document picker to access selected files. Downloads are stored through Android’s download service and may remain after uninstalling Nagi. No broad file-system access or background location permission is requested.
 
+Photo uploads can open Android’s camera with your permission; the resulting JPEG is held in app-private cache and shared with the website you selected. Page-generated Blob/data downloads up to 32 MB are saved after confirmation. Dragging links or images can share the selected URL or image with the drop destination. Password autofill uses your selected Android provider and WebView’s website form integration; Nagi has no password vault or developer-operated credential service.
+
 ## Updates by distribution channel
 
 The Google Play edition receives updates through Google Play. It does not contact GitHub to check for APK updates and does not download or install APKs to update itself. The GitHub/APK edition checks GitHub’s release manifest on startup and on request. GitHub sees the connection IP and an Nagi-version User-Agent. APK downloads and installation require user action; Android asks for installation authorization. No browsing history or queries are included in these update requests.
