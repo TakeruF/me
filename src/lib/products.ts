@@ -91,7 +91,7 @@ export const products: Product[] = [
     "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。",
     "Space間でCookieとログイン状態は共有されます。同期、プライベートブラウジング、コンテンツブロックには未対応です。",
     "写真はJPEGでアップロードできます。生成ファイルの保存は32 MBまで。カメラやパスワード自動入力の動作は端末とプロバイダーに依存します。",
-    "SHA-256: 6d87d9056a72855f0774ddc8b1f2ab4f58201e24f94891ea7396ac17493af442"
+    "SHA-256: 61dbb8ad6cbe12c1450be33a896999ca7622f2f37a1257bb2d3effd370283e22"
   ],
   "image": {
     "src": "/projects/nagi-home.webp",
