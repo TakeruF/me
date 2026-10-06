@@ -4,7 +4,7 @@ import { currentLocale, localize } from "@/lib/i18n";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-export function SiteHeader({ path = "/" }: { path?: string }) {
+export function SiteHeader({ path = "/", chineseOnly = false }: { path?: string; chineseOnly?: boolean }) {
   return localize(
     <>
       <a className="skip-link" href="#main">
@@ -27,10 +27,10 @@ export function SiteHeader({ path = "/" }: { path?: string }) {
             <span className="sr-only">（新しいタブで開く）</span>
           </a>
         </nav>
-        <LanguageSwitcher path={path} />
+        {!chineseOnly && <LanguageSwitcher path={path} />}
         <HeaderThemeSwitcher />
         <details className="nav-menu">
-          <summary className="nav-toggle" aria-label="メニュー">
+          <summary className="nav-toggle" aria-label={chineseOnly ? "菜单" : "メニュー"}>
             <span className="nav-toggle-icon" aria-hidden="true" />
           </summary>
           <nav aria-label="メインナビゲーション">
@@ -52,17 +52,17 @@ export function SiteHeader({ path = "/" }: { path?: string }) {
   );
 }
 
-export function SiteFooter({ path = "/" }: { path?: string }) {
+export function SiteFooter({ path = "/", chineseOnly = false }: { path?: string; chineseOnly?: boolean }) {
   return localize(
     <footer className="site-footer">
       <div className="wrap">
         <div className="footer-top">
           <div>
             <span className="section-index">
-              GOOD THINGS START WITH CURIOSITY.
+              {chineseOnly ? "美好的事物，始于好奇。" : "GOOD THINGS START WITH CURIOSITY."}
             </span>
             <p>
-              See what’s <em>next.</em>
+              {chineseOnly ? <>看看下一个<em>灵感。</em></> : <>See what’s <em>next.</em></>}
             </p>
           </div>
           <a href="mailto:me@takeruf.com" className="footer-contact-link">

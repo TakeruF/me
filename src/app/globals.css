@@ -2353,3 +2353,12 @@ html[lang="ko"] body { font-family: var(--font-body), "Apple SD Gothic Neo", "Ma
     margin-top: 0;
   }
 }
+
+.nagi-checksum {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+.nagi-checksum summary { cursor: pointer; }
+.nagi-checksum code { display: block; margin-top: 12px; overflow-wrap: anywhere; }
