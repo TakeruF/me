@@ -51,10 +51,10 @@ export const products: Product[] = [
   "eyebrow": "A CALMER WORKSPACE FOR THE WEB",
   "headline": "タブを整えて、ブラウジングを穏やかに。",
   "description": "Androidタブレットのためのワークスペースブラウザ。サイドバーでタブを整理し、Spaceで作業を切り替え、分割表示で2つのページを並べられます。",
-  "platforms": "Android 8.0以上 · 0.1.2 · 5.2 MB",
+  "platforms": "Android 8.0以上 · 0.1.3 · 5.2 MB",
   "primary": {
     "label": "Android APKをダウンロード",
-    "href": "https://takeruf.com/nagi/nagi-0.1.2.apk"
+    "href": "https://takeruf.com/nagi/nagi-0.1.3.apk"
   },
   "links": [
     {
@@ -63,8 +63,8 @@ export const products: Product[] = [
       "internal": true
     },
     {
-      "label": "0.1.2の更新内容",
-      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v0.1.2"
+      "label": "0.1.3の更新内容",
+      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v0.1.3"
     },
     {
       "label": "GitHub",
@@ -74,7 +74,7 @@ export const products: Product[] = [
   "features": [
     {
       "title": "作業ごとに、Spaceを。",
-      "text": "タブと固定タブをSpaceで整理。お気に入りはSpaceをまたいで共有し、ブックマークや履歴もサイドバーから開けます。"
+      "text": "タブと固定タブをSpaceで整理。お気に入りはSpaceをまたいで共有し、履歴はサイドバーから開けます。"
     },
     {
       "title": "2つのページを、並べて。",
@@ -87,11 +87,11 @@ export const products: Product[] = [
   ],
   "notes": [
     "タブレットの横画面での利用を推奨します。現在はMVPです。",
-    "当サイト・GitHubの0.1.0／0.1.1には0.1.2を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
+    "当サイト・GitHubの0.1.0／0.1.1／0.1.2には0.1.3を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
     "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。",
     "Space間でCookieとログイン状態は共有されます。同期、プライベートブラウジング、コンテンツブロックには未対応です。",
     "写真はJPEGでアップロードできます。生成ファイルの保存は32 MBまで。カメラやパスワード自動入力の動作は端末とプロバイダーに依存します。",
-    "SHA-256: 61dbb8ad6cbe12c1450be33a896999ca7622f2f37a1257bb2d3effd370283e22"
+    "SHA-256: d14e3f507346b1595c828497f15b493b874f5cfb66effbb0c686f729f03ef1ee"
   ],
   "image": {
     "src": "/projects/nagi-home.webp",
