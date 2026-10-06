@@ -51,10 +51,10 @@ export const products: Product[] = [
   "eyebrow": "A CALMER WORKSPACE FOR THE WEB",
   "headline": "タブを整えて、ブラウジングを穏やかに。",
   "description": "Androidタブレットのためのワークスペースブラウザ。サイドバーでタブを整理し、Spaceで作業を切り替え、分割表示で2つのページを並べられます。",
-  "platforms": "Android 8.0以上 · 0.1.1 · 5.2 MB",
+  "platforms": "Android 8.0以上 · 0.1.2 · 5.2 MB",
   "primary": {
     "label": "Android APKをダウンロード",
-    "href": "https://takeruf.com/nagi/nagi-0.1.1.apk"
+    "href": "https://takeruf.com/nagi/nagi-0.1.2.apk"
   },
   "links": [
     {
@@ -63,8 +63,8 @@ export const products: Product[] = [
       "internal": true
     },
     {
-      "label": "0.1.1の更新内容",
-      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v0.1.1"
+      "label": "0.1.2の更新内容",
+      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v0.1.2"
     },
     {
       "label": "GitHub",
@@ -87,10 +87,11 @@ export const products: Product[] = [
   ],
   "notes": [
     "タブレットの横画面での利用を推奨します。現在はMVPです。",
-    "当サイトの0.1.0には0.1.1を上書きインストールできます。アンインストールは不要です。0.1.0からの初回更新は手動で行い、その後は設定のアプリ更新を利用できます。",
+    "当サイト・GitHubの0.1.0／0.1.1には0.1.2を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
     "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。",
     "Space間でCookieとログイン状態は共有されます。同期、プライベートブラウジング、コンテンツブロックには未対応です。",
-    "SHA-256: cda3dee9a7aaa83268f745b67a2599dc4774219de824c51735fc42bcc42959f9"
+    "写真はJPEGでアップロードできます。生成ファイルの保存は32 MBまで。カメラやパスワード自動入力の動作は端末とプロバイダーに依存します。",
+    "SHA-256: 6d87d9056a72855f0774ddc8b1f2ab4f58201e24f94891ea7396ac17493af442"
   ],
   "image": {
     "src": "/projects/nagi-home.webp",
