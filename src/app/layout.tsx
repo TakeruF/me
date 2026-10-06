@@ -1,19 +1,7 @@
 import { currentLocale, localizedMetadata } from "@/lib/i18n";
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Noto_Sans_JP } from "next/font/google";
+import "./fonts.css";
 import "./globals.css";
-
-const body = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-const japanese = Noto_Sans_JP({
-  weight: ["400", "500", "600"],
-  variable: "--font-ja-body",
-  display: "swap",
-  preload: false,
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://takeruf.com"),
@@ -43,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang={currentLocale() === "zh" ? "zh-CN" : currentLocale()} className={`${body.variable} ${japanese.variable}`}>
+    <html suppressHydrationWarning lang={currentLocale() === "zh" ? "zh-CN" : currentLocale()}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("takeru-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}})()` }} />
       </head>
