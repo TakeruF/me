@@ -87,12 +87,12 @@ assert.ok(read('out/nagi.html').includes('0;url=/en/projects/nagi'));
 assert.ok(read('out/nagi.html').includes('navigator.languages'));
 for (const locale of locales) {
  const html = read(`out/${locale}/projects/nagi.html`);
- assert.ok(html.includes('https://takeruf.com/nagi/nagi-0.1.3.apk'));
+ assert.ok(html.includes('https://takeruf.com/nagi/nagi-0.2.0.apk'));
  assert.ok(read(`out/${locale}/work.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read(`out/${locale}/index.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/nagi`));
 }
-assert.ok(existsSync('out/nagi/nagi-0.1.3.apk'));
+assert.ok(existsSync('out/nagi/nagi-0.2.0.apk'));
 assert.ok(read('out/index.html').includes('0;url=/en'));
 assert.ok(read('out/index.html').includes('<html lang="en">'));
 assert.ok(read('out/index.html').includes("navigator.languages"));
