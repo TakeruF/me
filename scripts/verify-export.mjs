@@ -1,5 +1,6 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 const read = path => readFileSync(path, 'utf8');
 const locales = ['en', 'ja', 'zh', 'ko'];
 const policyIntro = {
@@ -87,12 +88,17 @@ assert.ok(read('out/nagi.html').includes('0;url=/en/projects/nagi'));
 assert.ok(read('out/nagi.html').includes('navigator.languages'));
 for (const locale of locales) {
  const html = read(`out/${locale}/projects/nagi.html`);
- assert.ok(html.includes('https://takeruf.com/nagi/nagi-0.2.1.apk'));
+ assert.ok(html.includes('https://takeruf.com/nagi/nagi-0.3.0.apk'));
+ assert.ok(html.includes('9d258ca8d3b9ae14c781c5bd6c258a90acc26fdbac0a2b293668a4ef53aca8a0'));
  assert.ok(read(`out/${locale}/work.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read(`out/${locale}/index.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/nagi`));
 }
-assert.ok(existsSync('out/nagi/nagi-0.2.1.apk'));
+for (const version of ['0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.2.0', '0.2.1', '0.3.0']) {
+ assert.ok(existsSync(`out/nagi/nagi-${version}.apk`));
+}
+assert.equal(createHash('sha256').update(readFileSync('out/nagi/nagi-0.3.0.apk')).digest('hex'),
+ '9d258ca8d3b9ae14c781c5bd6c258a90acc26fdbac0a2b293668a4ef53aca8a0');
 assert.ok(read('out/index.html').includes('0;url=/en'));
 assert.ok(read('out/index.html').includes('<html lang="en">'));
 assert.ok(read('out/index.html').includes("navigator.languages"));
@@ -105,6 +111,7 @@ for (const [locale, phrase] of Object.entries({ en: 'Data stored on your device'
  const html = readFileSync(`out/${locale}/nagi/privacy.html`, 'utf8');
  assert.ok(html.includes(phrase), `Nagi policy body missing for ${locale}`);
  assert.ok(html.includes(`https://takeruf.com/${locale}/nagi/privacy`));
- assert.ok(html.includes('me@takeruf.com'));
+ assert.ok(html.includes('support@takeruf.com'));
+ assert.ok(html.includes('easylist.to') && html.includes('filters.adtidy.org'));
 }
 assert.ok(readFileSync('out/nagi/privacy.html', 'utf8').includes('/en/nagi/privacy'));
