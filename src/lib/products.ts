@@ -44,17 +44,17 @@ export const categories = [
 export const categoryIds = ["everyday", "learning", "developer", "open-source"];
 
 export const products: Product[] = [
-  {
+{
   "slug": "nagi",
   "name": "Nagi",
   "category": "Everyday tools",
   "eyebrow": "A CALMER WORKSPACE FOR THE WEB",
   "headline": "タブを整えて、ブラウジングを穏やかに。",
   "description": "Androidタブレットのためのワークスペースブラウザ。サイドバーでタブを整理し、Spaceで作業を切り替え、分割表示で2つのページを並べられます。",
-  "platforms": "Android 8.0以上 · 0.2.1 · 5.2 MB",
+  "platforms": "Android 8.0以上 · 0.3.0 · 16.6 MB",
   "primary": {
     "label": "Android APKをダウンロード",
-    "href": "https://takeruf.com/nagi/nagi-0.2.1.apk"
+    "href": "https://takeruf.com/nagi/nagi-0.3.0.apk"
   },
   "links": [
     {
@@ -63,8 +63,8 @@ export const products: Product[] = [
       "internal": true
     },
     {
-      "label": "0.2.1の更新内容",
-      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v0.2.1"
+      "label": "0.3.0の更新内容",
+      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v0.3.0"
     },
     {
       "label": "GitHub",
@@ -83,15 +83,27 @@ export const products: Product[] = [
     {
       "title": "探す・開くを、ひとつのバーで。",
       "text": "Ctrl / Command + LでURL、検索、タブ、Space、コマンドへ。ChatGPTへの質問はWebサイトを開く方式です。"
+    },
+    {
+      "title": "広告を抑えて、記事に集中。",
+      "text": "広告・トラッカーのブロック、サイトごとの例外、訪問中の一時停止。Readerで記事を読み、文字サイズを調整できます。"
+    },
+    {
+      "title": "別のワークスペースで、プライベートに。",
+      "text": "対応WebViewではCookie・サイトデータを分離したプライベートブラウジングを利用できます。終了時にそのサイトデータを消去します。"
+    },
+    {
+      "title": "動画と操作を、途切れさせずに。",
+      "text": "自動ピクチャーインピクチャー、移動できる動画プレーヤー、トラックパッドの2本指で戻る・進む。狭い画面では共有を優先し、隠れた操作だけメニューへ移します。"
     }
   ],
   "notes": [
     "タブレットの横画面での利用を推奨します。現在はMVPです。",
-    "当サイト・GitHubの0.1.0／0.1.1／0.1.2／0.1.3／0.2.0には0.2.1を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
+    "当サイト・GitHubの0.1.0〜0.2.1には0.3.0を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
     "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。",
-    "Space間でCookieとログイン状態は共有されます。同期、プライベートブラウジング、コンテンツブロックには未対応です。",
+    "通常のSpace間ではCookieとログイン状態を共有します。プライベートブラウジングには対応WebViewが必要です。同期は未対応です。",
     "写真はJPEGでアップロードできます。生成ファイルの保存は32 MBまで。カメラやパスワード自動入力の動作は端末とプロバイダーに依存します。",
-    "SHA-256: c66d65e1cb0fe250859b5a17ad3862c9ad94b5a3862a17fe7157f6d7d71555e5"
+    "SHA-256: 9d258ca8d3b9ae14c781c5bd6c258a90acc26fdbac0a2b293668a4ef53aca8a0"
   ],
   "image": {
     "src": "/projects/nagi-home.webp",

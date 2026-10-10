@@ -1,12 +1,18 @@
 # Nagi Privacy Policy
 
-Last updated: October 6, 2026
+Last updated: October 10, 2026
 
-Nagi is an Android workspace browser developed by TakeruF. This policy covers both the Google Play edition and the APK edition distributed through GitHub and takeruf.com. Contact: [me@takeruf.com](mailto:me@takeruf.com).
+Nagi is an Android workspace browser developed by TakeruF. This policy covers both the Google Play edition and the APK edition distributed through GitHub and takeruf.com. Contact: [support@takeruf.com](mailto:support@takeruf.com).
 
 ## Data stored on your device
 
-Nagi stores tabs, page titles and URLs, Spaces, Favorites, bookmarks, browsing history, settings, cached site icons, and website cookies and storage on your device. Nagi has no developer-operated account or cloud sync, advertising SDK, analytics SDK, or automatic crash-reporting service. This information is not uploaded to the developer. Cookies and site logins are shared across Spaces; Spaces are not separate privacy profiles. Private browsing is not currently available.
+Nagi stores tabs, page titles and URLs, Spaces, Favorites, bookmarks, browsing history, settings, cached site icons, and website cookies and storage on your device. Nagi has no developer-operated account or cloud sync, advertising SDK, analytics SDK, or automatic crash-reporting service. This information is not uploaded to the developer. Cookies and site logins are shared across Spaces; Spaces are not separate privacy profiles.
+
+## Private browsing, blocking, and Reader
+
+Private browsing uses a separate, temporary WebView profile and an in-memory workspace when the WebView supports profile isolation and browsing-data deletion. Private history, tabs, settings, and site icons are not saved in the normal workspace. Cookies and website storage can be written to isolated disk storage during the session; closing the private workspace clears its website data, and leftover profiles after abrupt termination are removed on the next cold startup. Private windows disable screenshots, recent-app previews, and autofill. Downloads and information you explicitly copy or share remain outside the private workspace. This mode does not hide your IP address from websites or network operators.
+
+Advertisement and tracker matching and Reader extraction run locally. Filter updates contact easylist.to and filters.adtidy.org over HTTPS; these providers see your connection IP, but Nagi does not send visited URLs, cookies, or history in the filter requests. Filter data and persistent site exceptions are stored locally. A visit pause is temporary and is not restored after app restart. Reader sanitizes extracted article HTML and retains it temporarily; loading article images and following links can contact their website providers. Page content is not sent to the developer or an AI service.
 
 ## Websites, search, and AI services
 
@@ -32,4 +38,4 @@ Local workspace information remains until removed in Nagi or through Android’s
 
 ## Contact and changes
 
-If you contact the developer, your message and contact details are used to respond to your request and retained as needed for that correspondence. You can request deletion of that correspondence at me@takeruf.com. Do not send passwords or unnecessary sensitive information. Changes to this policy will be published here with an updated date.
+If you contact the developer, your message and contact details are used to respond to your request and retained as needed for that correspondence. You can request deletion of that correspondence at support@takeruf.com. Do not send passwords or unnecessary sensitive information. Changes to this policy will be published here with an updated date.
