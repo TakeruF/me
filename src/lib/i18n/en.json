@@ -378,5 +378,7 @@
   "対応WebViewではCookie・サイトデータを分離したプライベートブラウジングを利用できます。終了時にそのサイトデータを消去します。": "Supported WebView versions isolate private cookies and website storage. Closing the private workspace clears its website data.",
   "動画と操作を、途切れさせずに。": "Keep video and browsing moving.",
   "自動ピクチャーインピクチャー、移動できる動画プレーヤー、トラックパッドの2本指で戻る・進む。狭い画面では共有を優先し、隠れた操作だけメニューへ移します。": "Automatic picture-in-picture, a movable video player, and two-finger trackpad Back/Forward gestures. Narrow panes prioritize Share and move only hidden actions into the menu.",
-  "Android 8.0以上 · 0.3.0 · 16.6 MB": "Android 8.0+ · 0.3.0 · 16.6 MB"
+  "Android 8.0以上 · 0.3.0 · 16.6 MB": "Android 8.0+ · 0.3.0 · 16.6 MB",
+  "0.3.0で、もっと使いやすく。": "More useful in 0.3.0.",
+  "2026年10月10日更新 · 署名済みAPK": "Updated October 10, 2026 · Signed APK"
 }

@@ -90,6 +90,7 @@ for (const locale of locales) {
  const html = read(`out/${locale}/projects/nagi.html`);
  assert.ok(html.includes('https://takeruf.com/nagi/nagi-0.3.0.apk'));
  assert.ok(html.includes('9d258ca8d3b9ae14c781c5bd6c258a90acc26fdbac0a2b293668a4ef53aca8a0'));
+ assert.ok(!html.includes('0.2.1 · 5.2 MB'), `${locale} stale Nagi story metadata`);
  assert.ok(read(`out/${locale}/work.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read(`out/${locale}/index.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/nagi`));
