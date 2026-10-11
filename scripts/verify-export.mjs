@@ -88,18 +88,21 @@ assert.ok(read('out/nagi.html').includes('0;url=/en/projects/nagi'));
 assert.ok(read('out/nagi.html').includes('navigator.languages'));
 for (const locale of locales) {
  const html = read(`out/${locale}/projects/nagi.html`);
- assert.ok(html.includes('https://takeruf.com/nagi/nagi-0.3.0.apk'));
- assert.ok(html.includes('9d258ca8d3b9ae14c781c5bd6c258a90acc26fdbac0a2b293668a4ef53aca8a0'));
+ assert.ok(html.includes('https://takeruf.com/nagi/nagi-1.0.0.apk'));
+ assert.ok(html.includes('1.0.0') && html.includes('16.7 MB'));
+ assert.ok(html.includes({en:'Updated October 11, 2026',ja:'2026年10月11日更新',zh:'更新于 2026 年 10 月 11 日',ko:'2026년 10월 11일 업데이트'}[locale]));
+ assert.ok(html.includes({en:'Comfortable browsing in narrow windows.',ja:'狭い画面でも、快適に。',zh:'窄屏浏览，也很顺手。',ko:'좁은 화면에서도 편하게.'}[locale]));
+ assert.ok(html.includes('82580f438c047e735761b1ab2b45b52e03f9da4082e0ddb4bb36a819f529c525'));
  assert.ok(!html.includes('0.2.1 · 5.2 MB'), `${locale} stale Nagi story metadata`);
  assert.ok(read(`out/${locale}/work.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read(`out/${locale}/index.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/nagi`));
 }
-for (const version of ['0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.2.0', '0.2.1', '0.3.0']) {
+for (const version of ['0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.2.0', '0.2.1', '0.3.0', '1.0.0']) {
  assert.ok(existsSync(`out/nagi/nagi-${version}.apk`));
 }
-assert.equal(createHash('sha256').update(readFileSync('out/nagi/nagi-0.3.0.apk')).digest('hex'),
- '9d258ca8d3b9ae14c781c5bd6c258a90acc26fdbac0a2b293668a4ef53aca8a0');
+assert.equal(createHash('sha256').update(readFileSync('out/nagi/nagi-1.0.0.apk')).digest('hex'),
+ '82580f438c047e735761b1ab2b45b52e03f9da4082e0ddb4bb36a819f529c525');
 assert.ok(read('out/index.html').includes('0;url=/en'));
 assert.ok(read('out/index.html').includes('<html lang="en">'));
 assert.ok(read('out/index.html').includes("navigator.languages"));
