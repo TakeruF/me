@@ -50,11 +50,11 @@ export const products: Product[] = [
   "category": "Everyday tools",
   "eyebrow": "A CALMER WORKSPACE FOR THE WEB",
   "headline": "タブを整えて、ブラウジングを穏やかに。",
-  "description": "Androidタブレットのためのワークスペースブラウザ。サイドバーでタブを整理し、Spaceで作業を切り替え、分割表示で2つのページを並べられます。",
-  "platforms": "Android 8.0以上 · 0.3.0 · 16.6 MB",
+  "description": "Androidタブレットとスマートフォン向けのワークスペースブラウザ。広い画面ではサイドバー、狭い画面では下部ナビゲーションでタブを整理し、Spaceと分割表示を使えます。",
+  "platforms": "Android 8.0以上 · 1.0.0 · 16.7 MB",
   "primary": {
     "label": "Android APKをダウンロード",
-    "href": "https://takeruf.com/nagi/nagi-0.3.0.apk"
+    "href": "https://takeruf.com/nagi/nagi-1.0.0.apk"
   },
   "links": [
     {
@@ -63,8 +63,8 @@ export const products: Product[] = [
       "internal": true
     },
     {
-      "label": "0.3.0の更新内容",
-      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v0.3.0"
+      "label": "1.0.0の更新内容",
+      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v1.0.0"
     },
     {
       "label": "GitHub",
@@ -72,6 +72,9 @@ export const products: Product[] = [
     }
   ],
   "features": [
+    {"title": "狭い画面でも、快適に。", "text": "600dp未満のウィンドウでは全幅表示と下部ナビゲーションを使用。タブ・お気に入り・Spaceはシートから開けます。広いウィンドウではサイドバーを使えます。"},
+    {"title": "サイズを変えても、入力を保つ。", "text": "ウィンドウのサイズ変更ではページを再読込せず、入力途中の内容を保持します。自動のモバイル・PC表示切替は次のページ移動か再読込時に適用し、サイトごとの指定を優先します。"},
+    {"title": "広告の空枠を、減らす。", "text": "ブロックが確認された広告の周囲に残る空の枠を畳みます。本文・画像・操作部品を保護し、ブロックの一時停止・再開や後から追加される要素にも対応します。"},
     {
       "title": "作業ごとに、Spaceを。",
       "text": "タブと固定タブをSpaceで整理。お気に入りはSpaceをまたいで共有し、履歴はサイドバーから開けます。"
@@ -98,12 +101,12 @@ export const products: Product[] = [
     }
   ],
   "notes": [
-    "タブレットの横画面での利用を推奨します。現在はMVPです。",
-    "当サイト・GitHubの0.1.0〜0.2.1には0.3.0を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
+    "タブレット・スマートフォンのウィンドウ幅に合わせて表示を切り替えます。実機の折りたたみ動作やすべてのサイトでの広告処理は未検証です。",
+    "当サイト・GitHubの0.1.0〜0.3.0には1.0.0を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
     "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。",
     "通常のSpace間ではCookieとログイン状態を共有します。プライベートブラウジングには対応WebViewが必要です。同期は未対応です。",
     "写真はJPEGでアップロードできます。生成ファイルの保存は32 MBまで。カメラやパスワード自動入力の動作は端末とプロバイダーに依存します。",
-    "SHA-256: 9d258ca8d3b9ae14c781c5bd6c258a90acc26fdbac0a2b293668a4ef53aca8a0"
+    "SHA-256: 82580f438c047e735761b1ab2b45b52e03f9da4082e0ddb4bb36a819f529c525"
   ],
   "image": {
     "src": "/projects/nagi-home.webp",
