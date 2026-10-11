@@ -388,5 +388,22 @@
   "広告の空枠を、減らす。": "Reduce empty advertisement space.",
   "ブロックが確認された広告の周囲に残る空の枠を畳みます。本文・画像・操作部品を保護し、ブロックの一時停止・再開や後から追加される要素にも対応します。": "Collapse empty containers around confirmed blocked advertisements while protecting article text, images, and controls. Handles pause/resume and elements added later.",
   "Androidタブレットとスマートフォン向けのワークスペースブラウザ。広い画面ではサイドバー、狭い画面では下部ナビゲーションでタブを整理し、Spaceと分割表示を使えます。": "A workspace browser for Android tablets and phones. Organize tabs with a sidebar in wide windows or bottom navigation in narrow windows, with Spaces and split browsing.",
-  "タブレット・スマートフォンのウィンドウ幅に合わせて表示を切り替えます。実機の折りたたみ動作やすべてのサイトでの広告処理は未検証です。": "The interface adapts to tablet and phone window widths. Physical folding transitions and advertisement handling on every site remain unverified."
+  "タブレット・スマートフォンのウィンドウ幅に合わせて表示を切り替えます。実機の折りたたみ動作やすべてのサイトでの広告処理は未検証です。": "The interface adapts to tablet and phone window widths. Physical folding transitions and advertisement handling on every site remain unverified.",
+  "SAME APP. NEXT WINDOW.": "SAME APP. NEXT WINDOW.",
+  "同じアプリの、次のウィンドウへ。": "The next window. In the same app.",
+  "Wordの文書をいくつも開いているときも、Option + Tabで次のウィンドウへ。いま使っているアプリの中だけを切り替える、macOSの小さなメニューバーアプリです。": "Working with several Word documents? Press Option + Tab to move to the next window. A small macOS menu bar app that switches windows within the app you are using.",
+  "Mac版をダウンロード": "Download for Mac",
+  "使い方・ソースコード": "Guide & source code",
+  "切り替えは、キーひとつで。": "Switch with a shortcut.",
+  "Option + Tabで次へ、Option + Shift + Tabで前へ。Optionを押したままTabを繰り返すと、同じアプリのウィンドウを安定した順番で巡れます。プレビューや選択画面はありません。": "Option + Tab goes forward; Option + Shift + Tab goes backward. Hold Option and press Tab repeatedly to cycle through the same app’s windows in a stable order, with no preview or window picker.",
+  "メニューバーから、必要なときに。": "Ready in your menu bar.",
+  "一時停止・再開、設定、ログイン時の起動をメニューバーから操作。最小化したウィンドウも復元して切り替えます。Command + Tabはそのまま使えます。": "Pause, resume, open setup or enable launch at login from the menu bar. Minimized windows are restored when selected. Command + Tab keeps working as usual.",
+  "ウィンドウ操作に、必要な権限だけ。": "Only the permission it needs.",
+  "アクセシビリティ権限でウィンドウを切り替えます。画面収録の権限は不要。入力した文字や文書の内容を収集・保存せず、ネットワーク通信も行いません。": "Accessibility permission lets the app switch windows. Screen Recording permission is not needed. It does not collect or save typed text or document contents, and makes no network requests.",
+  "macOS 13以降に対応。Universal版をApplicationsフォルダに移し、システム設定の「プライバシーとセキュリティ → アクセシビリティ」で許可してください。": "Requires macOS 13 or later. Move the Universal app to Applications, then enable it in System Settings → Privacy & Security → Accessibility.",
+  "日本語・英語・中国語（簡体字 / 繁体字）・韓国語に対応。macOSの優先言語とアプリごとの言語設定に従います。": "Supports Japanese, English, Chinese (Simplified / Traditional) and Korean. Follows macOS preferred languages and per-app language settings.",
+  "配布版はアドホック署名で、公証されていません。初回起動時に「プライバシーとセキュリティ」で許可が必要になる場合があります。": "The app is ad hoc signed and is not notarized. The first launch may require approval under Privacy & Security.",
+  "アプリ内のタブは対象外です。切り替え可能なウィンドウが1つ以下なら何もせず、モーダルダイアログやシートが開いている間は切り替えを停止します。": "In-app tabs are not separate windows. With zero or one eligible window, the shortcut does nothing. Switching pauses while a modal dialog or sheet is open.",
+  "AltTabなど、Option + Tabを使う他のアプリと競合する場合は、そちらのショートカットを変更してください。Intelでの実行、別のSpace・フルスクリーンのウィンドウ切り替えは未検証です。": "If another app such as AltTab uses Option + Tab, change its shortcut. Intel execution and switching across Spaces or full-screen windows have not been verified.",
+  "STAY IN YOUR APP. KEEP YOUR FLOW.": "STAY IN YOUR APP. KEEP YOUR FLOW."
 }

@@ -118,6 +118,49 @@ export const products: Product[] = [
   "visualLabel": "A CALMER WORKSPACE FOR THE WEB.",
   "tone": "blue"
 },
+{
+  "slug": "inapp-alt-tab",
+  "name": "InApp Alt Tab",
+  "category": "Everyday tools",
+  "eyebrow": "SAME APP. NEXT WINDOW.",
+  "headline": "同じアプリの、次のウィンドウへ。",
+  "description": "Wordの文書をいくつも開いているときも、Option + Tabで次のウィンドウへ。いま使っているアプリの中だけを切り替える、macOSの小さなメニューバーアプリです。",
+  "platforms": "macOS 13+ · Apple Silicon / Intel",
+  "primary": {
+    "label": "Mac版をダウンロード",
+    "href": "https://github.com/TakeruF/inapp-alt-tab/releases/latest"
+  },
+  "links": [
+    {
+      "label": "使い方・ソースコード",
+      "href": "https://github.com/TakeruF/inapp-alt-tab#readme"
+    }
+  ],
+  "features": [
+    {
+      "title": "切り替えは、キーひとつで。",
+      "text": "Option + Tabで次へ、Option + Shift + Tabで前へ。Optionを押したままTabを繰り返すと、同じアプリのウィンドウを安定した順番で巡れます。プレビューや選択画面はありません。"
+    },
+    {
+      "title": "メニューバーから、必要なときに。",
+      "text": "一時停止・再開、設定、ログイン時の起動をメニューバーから操作。最小化したウィンドウも復元して切り替えます。Command + Tabはそのまま使えます。"
+    },
+    {
+      "title": "ウィンドウ操作に、必要な権限だけ。",
+      "text": "アクセシビリティ権限でウィンドウを切り替えます。画面収録の権限は不要。入力した文字や文書の内容を収集・保存せず、ネットワーク通信も行いません。"
+    }
+  ],
+  "notes": [
+    "macOS 13以降に対応。Universal版をApplicationsフォルダに移し、システム設定の「プライバシーとセキュリティ → アクセシビリティ」で許可してください。",
+    "日本語・英語・中国語（簡体字 / 繁体字）・韓国語に対応。macOSの優先言語とアプリごとの言語設定に従います。",
+    "配布版はアドホック署名で、公証されていません。初回起動時に「プライバシーとセキュリティ」で許可が必要になる場合があります。",
+    "アプリ内のタブは対象外です。切り替え可能なウィンドウが1つ以下なら何もせず、モーダルダイアログやシートが開いている間は切り替えを停止します。",
+    "AltTabなど、Option + Tabを使う他のアプリと競合する場合は、そちらのショートカットを変更してください。Intelでの実行、別のSpace・フルスクリーンのウィンドウ切り替えは未検証です。"
+  ],
+  "motif": "⌥ Tab",
+  "visualLabel": "STAY IN YOUR APP. KEEP YOUR FLOW.",
+  "tone": "blue"
+},
   {
     slug: "pdf-organizer",
     name: "PDF Organizer",
