@@ -614,7 +614,6 @@ export const products: Product[] = [
     motif: "word.",
     visualLabel: "A LITTLE MORE, EVERY DAY.",
     tone: "mint",
-    workState: "hidden",
   },
   {
     slug: "ai-dict",

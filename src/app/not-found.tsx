@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ArrowUpRight, CornerDownLeft, Sparkles } from "lucide-react";
+import { localize } from "@/lib/i18n";
 
 export default function NotFound() {
-  return (
+  return localize(
     <div className="not-found-page">
       <header className="not-found-header wrap">
         <Link className="wordmark" href="/" aria-label="Takeru home">
@@ -48,6 +49,6 @@ export default function NotFound() {
         <span>TAKERU — DEVELOPER &amp; PRODUCT BUILDER</span>
         <span>Tokyo, Japan</span>
       </footer>
-    </div>
+    </div>,
   );
 }

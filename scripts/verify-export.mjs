@@ -14,7 +14,7 @@ const originalStyle = f1.match(/<style>([\s\S]*?)<\/style>/)[1];
 const originalScript = f1.match(/<script>([\s\S]*?)<\/script>/)[1];
 let checked = 0;
 for (const locale of locales) {
- const pages = ['index.html', 'work.html', ...readdirSync(`out/${locale}/projects`).filter(p=>p.endsWith('.html')&&p!=='hanlu.html').map(p=>`projects/${p}`)];
+ const pages = ['index.html', 'work.html', ...readdirSync(`out/${locale}/projects`).filter(p=>p.endsWith('.html')&&p!=='hanlu.html'&&!['markdown-docs.html','flight-market.html','japan-rail-mcp.html'].includes(p)).map(p=>`projects/${p}`)];
  assert.equal(pages.length, 16);
  for (const page of pages) {
   const html = read(`out/${locale}/${page}`);
@@ -40,19 +40,27 @@ for (const locale of locales) {
  const racing=read(`out/${locale}/projects/f1-harmony.html`);
  assert.ok(racing.includes(originalStyle),'F1 original design');
  assert.ok(racing.includes(originalScript),'F1 original motion');
- assert.equal((racing.match(/<section\b/g)||[]).length,6);
+ assert.ok(racing.includes(`href="/${locale}/work"`), `${locale} F1 back-to-work link`);
+ assert.equal((racing.match(/<section\b/g)||[]).length,7);
  assert.ok(read(`out/${locale}/index.html`).includes('https://hanlu.app/about'));
  const work = read(`out/${locale}/work.html`);
  const renderedWork = work.match(/<body[^>]*>([\s\S]*?)<script/)[1];
  assert.ok(!work.includes('MAGcup'));
- assert.ok(!work.includes('英単語マスター'));
+ assert.ok(work.includes(locale === 'ja' ? '英単語マスター' : 'Eitango Master'));
+ assert.ok(read(`out/${locale}/404.html`).includes(`href="/${locale}/work"`), `${locale} 404 work link`);
  assert.ok(!work.includes('keyboard.hanlu.app'));
  assert.ok(read(`out/${locale}/projects/furigana-keyboard.html`).includes('https://downloads.takeruf.com/furigana-keyboard/1.0.0-rc.5.apk'));
- for (const slug of ['markdown-docs', 'flight-market', 'japan-rail-mcp']) {
-  assert.ok(!existsSync(`out/${locale}/projects/${slug}.html`));
+ for (const [slug, target] of Object.entries({
+  'markdown-docs': 'https://mddocs-five.vercel.app',
+  'flight-market': 'https://flight-market.vercel.app',
+  'japan-rail-mcp': 'https://github.com/TakeruF/japan-rail-mcp',
+ })) {
+  assert.ok(existsSync(`out/${locale}/projects/${slug}.html`));
+  assert.ok(read(`out/${locale}/projects/${slug}.html`).includes(target), `${locale}/${slug} legacy route target`);
+  assert.ok(read(`out/${locale}/projects/${slug}.html`).includes(`rel="canonical" href="${new URL(target).href}"`), `${locale}/${slug} legacy canonical`);
   assert.ok(!work.includes(`href="/${locale}/projects/${slug}"`));
  }
- assert.equal((renderedWork.match(/UNDER DEVELOPMENT/g)||[]).length,3);
+ assert.equal((renderedWork.match(new RegExp(locale === 'zh' ? '开发中' : 'UNDER DEVELOPMENT','g'))||[]).length,3);
 }
 for (const locale of locales) {
  for (const doc of ['releases', 'privacy', 'claude-sign-in']) {

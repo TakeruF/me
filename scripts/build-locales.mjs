@@ -37,22 +37,37 @@ for (const locale of locales) {
   html = html.replace(/(content|alt|aria-label|title)="([^"]*)"/g, (all, attr, value) => dictionary[value] ? `${attr}="${escape(dictionary[value])}"` : all);
  }
  html = html.replace(/<html lang="[^"]*"/, `<html lang="${locale === 'zh' ? 'zh-CN' : locale}"`)
+ .replaceAll('/__SITE_LOCALE__', `/${locale}`)
  .replaceAll('/projects/f1-harmony/assets/', `/${locale}/projects/f1-harmony/assets/`)
  .replace('content="assets/shots/schedule.jpg"', `content="https://takeruf.com/${locale}/projects/f1-harmony/assets/shots/schedule.jpg"`)
  .replace('https://takeruf.com/projects/f1-harmony', `https://takeruf.com/${locale}/projects/f1-harmony`);
  const languageNames = { en: 'English', ja: '日本語', zh: '中文', ko: '한국어' };
  const languageLabel = { en: 'Language', ja: '言語', zh: '语言', ko: '언어' }[locale];
  const switches = locales.map(l => `<a lang="${l === 'zh' ? 'zh-CN' : l}" hreflang="${l === 'zh' ? 'zh-CN' : l}" href="/${l}/projects/f1-harmony" ${l === locale ? 'aria-current="true"' : ''}>${languageNames[l]}</a>`).join('');
- html = html.replace('</head>', `${locales.map(l => `<link rel="alternate" hreflang="${l === 'zh' ? 'zh-CN' : l}" href="https://takeruf.com/${l}/projects/f1-harmony">`).join('')}<link rel="alternate" hreflang="x-default" href="https://takeruf.com/en/projects/f1-harmony"><style>.locale-nav{position:sticky;top:calc(var(--nav) + env(safe-area-inset-top));z-index:101;display:flex;justify-content:flex-end;padding:8px max(20px,calc((100vw - 1200px)/2));background:#0b0b0d;color:#ddd;font:12px system-ui}.locale-nav details{position:relative}.locale-nav summary{display:flex;align-items:center;min-height:44px;list-style:none;cursor:pointer;border-bottom:1px solid currentColor}.locale-nav summary::-webkit-details-marker{display:none}.locale-nav summary:after{width:5px;height:5px;margin:-3px 0 0 7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;content:'';transform:rotate(45deg)}.locale-nav details[open] summary:after{margin-top:3px;transform:rotate(225deg)}.locale-nav .language-menu{position:absolute;right:0;top:calc(100% + 8px);display:grid;min-width:112px;padding:5px;background:#17171a;border:1px solid #39393f;box-shadow:0 12px 28px rgba(0,0,0,.35)}.locale-nav a{display:flex;align-items:center;min-height:40px;padding:0 10px;color:inherit;text-decoration:none}.locale-nav a:hover,.locale-nav a:focus-visible,.locale-nav a[aria-current]{color:#fff;background:#29292d;outline:none}</style></head>`)
+ html = html.replace('</head>', `${locales.map(l => `<link rel="alternate" hreflang="${l === 'zh' ? 'zh-CN' : l}" href="https://takeruf.com/${l}/projects/f1-harmony">`).join('')}<link rel="alternate" hreflang="x-default" href="https://takeruf.com/en/projects/f1-harmony"><style>.locale-nav{position:fixed;top:calc(4px + env(safe-area-inset-top));right:max(20px,calc((100vw - 1200px)/2));z-index:101;display:flex;justify-content:flex-end;padding:0;background:transparent;color:#ddd;font:12px system-ui}@media(max-width:560px){.locale-nav{top:calc(var(--nav) + env(safe-area-inset-top) + 4px);right:var(--inset)}}.locale-nav details{position:relative}.locale-nav summary{display:flex;align-items:center;min-height:44px;list-style:none;cursor:pointer;border-bottom:1px solid currentColor}.locale-nav summary::-webkit-details-marker{display:none}.locale-nav summary:after{width:5px;height:5px;margin:-3px 0 0 7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;content:'';transform:rotate(45deg)}.locale-nav details[open] summary:after{margin-top:3px;transform:rotate(225deg)}.locale-nav .language-menu{position:absolute;right:0;top:calc(100% + 8px);display:grid;min-width:112px;padding:5px;background:#17171a;border:1px solid #39393f;box-shadow:0 12px 28px rgba(0,0,0,.35)}.locale-nav a{display:flex;align-items:center;min-height:40px;padding:0 10px;color:inherit;text-decoration:none}.locale-nav a:hover,.locale-nav a:focus-visible,.locale-nav a[aria-current]{color:#fff;background:#29292d;outline:none}</style></head>`)
  .replace(/(<body[^>]*>)/, `$1<nav class="locale-nav" aria-label="${languageLabel}"><details><summary aria-label="${languageLabel}">${languageNames[locale]}</summary><div class="language-menu">${switches}</div></details></nav>`);
  writeFileSync(`out/${locale}/projects/f1-harmony.html`, html);
 }
 function redirect(target) {
+ const canonical = new URL(target, "https://takeruf.com").href;
  const localeScript = `(()=>{const supported=new Set(['en','ja','zh','ko']);const languages=Array.isArray(navigator.languages)&&navigator.languages.length?navigator.languages:[navigator.language];const locale=languages.map(language=>String(language||'').toLowerCase().split('-')[0]).find(language=>supported.has(language))||'en';const destination=${JSON.stringify(target)}.replace(/^\\/en(?=\\/|$)/,'/'+locale);location.replace(destination+location.search+location.hash)})()`;
- return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0;url=${target}"><link rel="canonical" href="https://takeruf.com${target}"><title>Takeru</title><script>${localeScript}</script></head><body><a href="${target}">English · Continue</a> · <a href="/ja">日本語</a> · <a href="/zh">中文</a> · <a href="/ko">한국어</a></body></html>`;
+ return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0;url=${target}"><link rel="canonical" href="${canonical}"><title>Takeru</title><script>${localeScript}</script></head><body><a href="${target}">English · Continue</a> · <a href="/ja">日本語</a> · <a href="/zh">中文</a> · <a href="/ko">한국어</a></body></html>`;
 }
 for (const route of [...paths, '/projects/hanlu']) {
  const file = route === '/' ? 'out/index.html' : `out${route}.html`;mkdirSync(path.dirname(file), { recursive: true });writeFileSync(file, redirect(`/en${route === '/' ? '' : route}`));
+}
+// Preserve previously linked detail URLs for projects that currently have no detail page.
+const staleProjectRedirects = {
+ '/projects/markdown-docs': 'https://mddocs-five.vercel.app',
+ '/projects/flight-market': 'https://flight-market.vercel.app',
+ '/projects/japan-rail-mcp': 'https://github.com/TakeruF/japan-rail-mcp',
+};
+for (const locale of locales) {
+ for (const [route, target] of Object.entries(staleProjectRedirects)) {
+  const file = `out/${locale}${route}.html`;
+  mkdirSync(path.dirname(file), { recursive: true });
+  writeFileSync(file, redirect(target));
+ }
 }
 const urls = paths.flatMap(route => locales.map(locale => `<url><loc>https://takeruf.com/${locale}${route === '/' ? '' : route}</loc>${locales.map(l => `<xhtml:link rel="alternate" hreflang="${l === 'zh' ? 'zh-CN' : l}" href="https://takeruf.com/${l}${route === '/' ? '' : route}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="https://takeruf.com/en${route === '/' ? '' : route}"/></url>`));
 writeFileSync('out/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls.join('')}</urlset>`);
