@@ -405,5 +405,6 @@
   "配布版はアドホック署名で、公証されていません。初回起動時に「プライバシーとセキュリティ」で許可が必要になる場合があります。": "The app is ad hoc signed and is not notarized. The first launch may require approval under Privacy & Security.",
   "アプリ内のタブは対象外です。切り替え可能なウィンドウが1つ以下なら何もせず、モーダルダイアログやシートが開いている間は切り替えを停止します。": "In-app tabs are not separate windows. With zero or one eligible window, the shortcut does nothing. Switching pauses while a modal dialog or sheet is open.",
   "AltTabなど、Option + Tabを使う他のアプリと競合する場合は、そちらのショートカットを変更してください。Intelでの実行、別のSpace・フルスクリーンのウィンドウ切り替えは未検証です。": "If another app such as AltTab uses Option + Tab, change its shortcut. Intel execution and switching across Spaces or full-screen windows have not been verified.",
-  "STAY IN YOUR APP. KEEP YOUR FLOW.": "STAY IN YOUR APP. KEEP YOUR FLOW."
+  "STAY IN YOUR APP. KEEP YOUR FLOW.": "STAY IN YOUR APP. KEEP YOUR FLOW.",
+  "Wordの文書ウィンドウとInApp Alt Tabの設定画面": "Word document windows and the InApp Alt Tab setup window"
 }

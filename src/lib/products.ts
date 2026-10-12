@@ -157,6 +157,12 @@ export const products: Product[] = [
     "アプリ内のタブは対象外です。切り替え可能なウィンドウが1つ以下なら何もせず、モーダルダイアログやシートが開いている間は切り替えを停止します。",
     "AltTabなど、Option + Tabを使う他のアプリと競合する場合は、そちらのショートカットを変更してください。Intelでの実行、別のSpace・フルスクリーンのウィンドウ切り替えは未検証です。"
   ],
+  "image": {
+    "src": "/projects/inapp-alt-tab.webp",
+    "alt": "Wordの文書ウィンドウとInApp Alt Tabの設定画面",
+    "width": 2940,
+    "height": 1912
+  },
   "motif": "⌥ Tab",
   "visualLabel": "STAY IN YOUR APP. KEEP YOUR FLOW.",
   "tone": "blue"
