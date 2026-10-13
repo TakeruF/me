@@ -283,6 +283,19 @@
             "href": "https://takeruf.github.io/silkroad-mcp/en/guides/china-rail/"
           }
         ]
+      },
+      {
+        "title": "Codexから、かんたんに追加。",
+        "paragraphs": [
+          "Codexの「Add plugin marketplace」で、Sourceに TakeruF/china-rail-mcp、Git refに main を入力。Sparse pathsには .agents/plugins と plugins/codex を1行ずつ指定します。China Railをインストールすると、Node.js 20以上を使ってMCPサーバーが端末内で起動します。",
+          "これはGitHubリポジトリから追加するプラグイン市場です。Codexの公式公開プラグインディレクトリとは別の配布方法です。"
+        ],
+        "links": [
+          {
+            "label": "READMEでCodexの追加手順を見る",
+            "href": "https://github.com/TakeruF/china-rail-mcp#readme"
+          }
+        ]
       }
     ]
   },
