@@ -79,4 +79,4 @@ Nagi uses the shared product catalog, homepage and localized detail pages at `/{
 
 ## anDrop
 
-anDrop is listed under Everyday tools and at `/{en,ja,zh,ko}/projects/androp`, with GitHub Releases as its download destination. Copy and compatibility scope were checked against the anDrop repository and 1.1.0 release on 2026-10-17. The four app views use fictional data; the original Simplified Chinese interface is preserved. See [image sources and rights](docs/androp-assets.md).
+anDrop is listed under Everyday tools and at `/{en,ja,zh,ko}/projects/androp`, with GitHub Releases as its download destination. Copy and compatibility scope match anDrop 1.2.0, including official Huawei Share support, per-recipient sends, trusted devices and the Petal quit recommendation. The four app views use fictional data. Chinese pages use the Simplified Chinese app captures; English, Japanese and Korean pages use the English captures. See [image sources and rights](docs/androp-assets.md).

@@ -36,6 +36,10 @@ for (const locale of locales) {
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/androp`));
  assert.equal((androp.match(/class="screen-slide /g)||[]).length, 4, `${locale} anDrop demo gallery`);
  assert.ok(androp.includes('OPPO Find X9 Pro') && androp.includes('OPPO Pad 4 Pro'), `${locale} tested anDrop devices`);
+ assert.ok(androp.includes('1.2.0') && androp.includes('Pura 70'), `${locale} anDrop Huawei release coverage`);
+ for (const scene of ['recipients', 'sending', 'trusted', 'settings']) {
+  assert.ok(androp.includes(`androp-120-${scene}-${locale === 'zh' ? 'zh' : 'en'}.webp`), `${locale} localized anDrop ${scene}`);
+ }
  const inapp = read(`out/${locale}/projects/inapp-alt-tab.html`);
  assert.ok(inapp.includes('https://github.com/TakeruF/inapp-alt-tab/releases/latest'), `${locale} InApp download`);
  assert.ok(read(`out/${locale}/work.html`).match(/<section[^>]*id="everyday"[\s\S]*?inapp-alt-tab[\s\S]*?<\/section>/), `${locale} InApp everyday category`);

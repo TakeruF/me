@@ -1,3 +1,5 @@
+import { currentLocale } from "./i18n";
+
 export type Product = {
   slug: string;
   name: string;
@@ -43,15 +45,62 @@ export const categories = [
 ] as const;
 export const categoryIds = ["everyday", "learning", "developer", "open-source"];
 
+const andropScreenshots = {
+  "en": {
+    "recipients": {
+      "src": "/projects/androp-120-recipients-en.webp",
+      "width": 920,
+      "height": 816
+    },
+    "sending": {
+      "src": "/projects/androp-120-sending-en.webp",
+      "width": 920,
+      "height": 900
+    },
+    "trusted": {
+      "src": "/projects/androp-120-trusted-en.webp",
+      "width": 840,
+      "height": 896
+    },
+    "settings": {
+      "src": "/projects/androp-120-settings-en.webp",
+      "width": 920,
+      "height": 2200
+    }
+  },
+  "zh": {
+    "recipients": {
+      "src": "/projects/androp-120-recipients-zh.webp",
+      "width": 920,
+      "height": 756
+    },
+    "sending": {
+      "src": "/projects/androp-120-sending-zh.webp",
+      "width": 920,
+      "height": 912
+    },
+    "trusted": {
+      "src": "/projects/androp-120-trusted-zh.webp",
+      "width": 840,
+      "height": 840
+    },
+    "settings": {
+      "src": "/projects/androp-120-settings-zh.webp",
+      "width": 920,
+      "height": 2200
+    }
+  }
+}[currentLocale() === "zh" ? "zh" : "en"];
+
 export const products: Product[] = [
 {
   "slug": "androp",
   "name": "anDrop",
   "category": "Everyday tools",
   "eyebrow": "YOUR MAC. THEIR BUILT-IN SHARE.",
-  "headline": "Macとスマホ、ファイルをもっと手軽に。",
-  "description": "中国メーカーの対応するスマートフォン・タブレットの標準共有機能で、Macとファイルを双方向に共有。スマホへの追加アプリやアカウント登録は不要。Macのメニューバーに常駐します。Google Quick Shareには対応していません。",
-  "platforms": "macOS 14+ · Apple Silicon · 1.1.0",
+  "headline": "华为分享も、Macで。",
+  "description": "互传联盟と华为分享に正式対応。Macと対応スマートフォン・タブレットの間でファイルを双方向に共有。スマホ側の追加アプリやアカウント登録は不要です。",
+  "platforms": "macOS 14+ · Apple Silicon · 1.2.0",
   "primary": {
     "label": "Mac版をダウンロード",
     "href": "https://github.com/TakeruF/cn-android-share/releases/latest"
@@ -72,66 +121,66 @@ export const products: Product[] = [
   ],
   "features": [
     {
-      "title": "Finderから、相手を選んで送信。",
-      "text": "Finderでファイルを選び、「共有 → anDrop」から送信。メニューバーの「ファイルを送信」も使えます。スマホとタブレットのアイコンで相手を見分け、進捗を確認できます。"
+      "title": "1.2.0の目玉、华为分享に正式対応。",
+      "text": "Huawei Pura 70・HarmonyOS 7で双方向転送を確認。端末標準の华为分享から使え、Petalの起動は不要です。両端を同じWi-Fiに接続して共有できます。"
+    },
+    {
+      "title": "クリックして送信、別の端末にも。",
+      "text": "Finderの「共有 → anDrop」から端末をクリックすると送信開始。送信中も別の端末をクリックして同じファイルを送れます。進捗・取消・再試行は端末ごとに操作できます。"
     },
     {
       "title": "受け取ったら、そのままダウンロードへ。",
       "text": "スマホ側の対応する共有機能でMacを選び、通知またはメニューバーで受信を許可。初期設定ではダウンロードフォルダに保存します。同名ファイルは連番を付けて保存し、自動で開きません。"
     },
     {
-      "title": "同じWi-Fiで、ファイルは直接。",
-      "text": "両方のBluetoothをオンにして、同じWi-Fi（同一LAN）に接続すれば準備完了。メーカーのパソコン用アプリへの事前接続やUSBケーブルは不要です。ファイルの共有にクラウドを使いません。"
+      "title": "受信は、毎回自分で確認。",
+      "text": "「すべての人」と「信頼したデバイスのみ」を選択。Huawei端末も成功した受信履歴から登録できます。Huaweiは転送公開鍵で識別し、どのモードでも受信ごとに確認します。アカウント連携ではありません。"
     },
     {
-      "title": "受信は、毎回自分で確認。",
-      "text": "「すべての人」と「信頼したデバイスのみ」を切り替え、成功した受信履歴からデバイスを登録。どちらも受信ごとの確認が必要です。信頼フィルターはMacを周囲から隠す機能ではなく、暗号学的な本人認証でもありません。"
+      "title": "名前を変える、候補から隠す。",
+      "text": "端末アイコンを右クリックして、このMac上の名前を変更したり候補から隠したりできます。非表示の端末は設定から復元でき、受信の可否には影響しません。"
+    },
+    {
+      "title": "更新も、転送のあとに。",
+      "text": "自動更新を有効にすると、署名検証済みの更新を転送終了後にインストールして再起動し、通知で案内します。自動インストールをオフにすれば、新版を通知で確認できます。"
     }
   ],
   "notes": [
     "DMGを開き、anDropをApplicationsへ移動して起動。Bluetooth・ローカルネットワーク・通知・保存先へのアクセスを必要に応じて許可してください。Apple Silicon・macOS 14以降向けで、Intel版はありません。macOS 14の実機動作は未検証です。",
-    "中国メーカーの対応する標準共有機能を使います。OPPO Find X9 Pro・OPPO Pad 4 Proで双方向の実機テストを実施。Xiaomi・HONOR・vivoなど、他メーカー・機種は未検証です。対応は地域・OS・機種により異なります。",
-    "Google Quick Share・Wi-Fi Direct・Huawei Shareには未対応。Petal Interconnectとの共存は実験的で、デバイスの発見に競合が起きる場合があります。",
+    "OPPO Find X9 Pro・OPPO Pad 4 Proに加え、Huawei Pura 70・HarmonyOS 7で双方向の実機テストを実施。ほかのメーカー・機種は未検証です。対応は地域・OS・機種により異なります。",
+    "anDropは华为分享のファイル共有を単独で行えるため、鸿蒙星河互联（Petal）での転送を終えてから終了することをおすすめします。共存は引き続き実験的です。起動中に送受信が失敗すると、終了して再試行するようポップアップで案内します。",
+    "Mac→Huaweiは最大16ファイル・単体4 GiB・合計16 GiB。Huawei→Macは最大16ファイル・単体と合計とも16 MiBです。GiB級の実機転送とHuawei・OPPOへの実機同時送信は未検証です。Google Quick Share・Wi-Fi Directには対応していません。",
     "相手側の対応する共有機能と「すべての人に公開」を有効にしてください。公開設定は自動で切れることがあります。ゲストWi-Fiや端末間通信を遮断するネットワークでは転送できない場合があります。",
-    "アプリの表示言語は簡体字中国語・英語。初回は簡体字中国語で起動し、設定で切り替えられます。フォルダは先に圧縮し、同じ名前のファイルは別々に送信してください。一度に進められる転送は1件です。",
+    "表示言語は簡体字中国語・英語。フォルダは先に圧縮し、同名ファイルは別々に送信してください。異なる端末への送信は並行できます。受信はほかの転送と同時には行いません。",
+    "画面は実際のアプリUIに架空のデータを入れた例です。表示されているすべてのメーカーやPCの互換性を示すものではありません。",
     "GPL-3.0-onlyのオープンソースです。Appleや端末メーカーの公式製品ではありません。"
   ],
   "image": {
-    "src": "/projects/androp-recipients.webp",
-    "alt": "anDropの送信先選択画面。スマホとタブレットを表示。",
-    "width": 920,
-    "height": 544
+    ...andropScreenshots.recipients,
+    "alt": "華為端末も表示するanDropの送信先選択画面。"
   },
   "gallery": [
     {
-      "src": "/projects/androp-recipients.webp",
-      "alt": "anDropの送信先選択画面。スマホとタブレットを表示。",
-      "caption": "Finderから送信先を選択。スマホとタブレットを見分けて送信。",
-      "width": 920,
-      "height": 544
+      "alt": "華為端末も表示するanDropの送信先選択画面。",
+      "caption": "华为分享と互传联盟の端末を、ひとつの一覧から。",
+      ...andropScreenshots.recipients
     },
     {
-      "src": "/projects/androp-sending.webp",
-      "alt": "送信進捗を表示するanDrop。",
-      "caption": "送信の進み具合を、ひと目で確認。",
-      "width": 920,
-      "height": 558
+      "alt": "HuaweiとOPPOに個別の送信進捗を表示するanDrop。",
+      "caption": "複数の相手に、進捗・取消・再試行をそれぞれ。",
+      ...andropScreenshots.sending
     },
     {
-      "src": "/projects/androp-trusted.webp",
-      "alt": "受信履歴から信頼するデバイスを追加するanDrop。",
-      "caption": "受信履歴から、信頼するデバイスを管理。",
-      "width": 840,
-      "height": 874,
-      "portrait": true
+      "alt": "Huaweiを受信履歴から信頼済み端末に追加する画面。",
+      "caption": "Huaweiも、受信履歴から信頼を登録。",
+      "portrait": true,
+      ...andropScreenshots.trusted
     },
     {
-      "src": "/projects/androp-settings.webp",
       "alt": "保存先・言語・自動更新などを表示するanDropの設定画面。",
-      "caption": "保存先や言語、自動更新を設定。",
-      "width": 920,
-      "height": 1800,
-      "portrait": true
+      "caption": "受信範囲・非表示端末・自動更新を設定。",
+      "portrait": true,
+      ...andropScreenshots.settings
     }
   ],
   "motif": "Mac ↔ Phone",
