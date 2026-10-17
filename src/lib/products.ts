@@ -98,7 +98,7 @@ export const products: Product[] = [
   "name": "anDrop",
   "category": "Everyday tools",
   "eyebrow": "YOUR MAC. THEIR BUILT-IN SHARE.",
-  "headline": "华为分享も、Macで。",
+  "headline": "安卓互传も、华为分享も、Macで。",
   "description": "互传联盟と华为分享に正式対応。Macと対応スマートフォン・タブレットの間でファイルを双方向に共有。スマホ側の追加アプリやアカウント登録は不要です。",
   "platforms": "macOS 14+ · Apple Silicon · 1.2.0",
   "primary": {

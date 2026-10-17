@@ -430,7 +430,6 @@
   "相手側の対応する共有機能と「すべての人に公開」を有効にしてください。公開設定は自動で切れることがあります。ゲストWi-Fiや端末間通信を遮断するネットワークでは転送できない場合があります。": "Enable compatible sharing and Everyone visibility on the other device. Visibility may expire automatically. Guest Wi-Fi and networks that isolate devices may block transfers.",
   "GPL-3.0-onlyのオープンソースです。Appleや端末メーカーの公式製品ではありません。": "Open source under GPL-3.0-only. anDrop is not an official Apple or device-manufacturer product.",
   "保存先・言語・自動更新などを表示するanDropの設定画面。": "anDrop settings for destination, language and automatic updates.",
-  "华为分享も、Macで。": "Huawei Share. Now on your Mac.",
   "互传联盟と华为分享に正式対応。Macと対応スマートフォン・タブレットの間でファイルを双方向に共有。スマホ側の追加アプリやアカウント登録は不要です。": "Official support for Mutual Transfer Alliance and Huawei Share. Send files both ways between your Mac and compatible phones or tablets, with no extra phone app or account.",
   "1.2.0の目玉、华为分享に正式対応。": "The headline in 1.2.0: Huawei Share.",
   "Huawei Pura 70・HarmonyOS 7で双方向転送を確認。端末標準の华为分享から使え、Petalの起動は不要です。両端を同じWi-Fiに接続して共有できます。": "Tested in both directions on Huawei Pura 70 with HarmonyOS 7. Use the phone’s built-in Huawei Share on the same Wi-Fi; Petal does not need to be running.",
@@ -452,5 +451,6 @@
   "複数の相手に、進捗・取消・再試行をそれぞれ。": "Separate progress, cancellation and retry for each recipient.",
   "Huaweiを受信履歴から信頼済み端末に追加する画面。": "Adding Huawei to trusted devices from receive history.",
   "Huaweiも、受信履歴から信頼を登録。": "Enroll Huawei devices from receive history too.",
-  "受信範囲・非表示端末・自動更新を設定。": "Set receive scope, hidden devices and automatic updates."
+  "受信範囲・非表示端末・自動更新を設定。": "Set receive scope, hidden devices and automatic updates.",
+  "安卓互传も、华为分享も、Macで。": "Android sharing and Huawei Share. On Mac too."
 }
