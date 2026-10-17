@@ -1783,8 +1783,11 @@ h2 {
 }
 .screen-viewport {
   display: flex;
+  align-items: flex-start;
   gap: 24px;
   overflow-x: auto;
+  overflow-y: hidden;
+  box-sizing: content-box;
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
   scrollbar-color: var(--line) transparent;

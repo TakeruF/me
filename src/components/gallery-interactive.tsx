@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { StoryImage } from "@/lib/product-stories";
 
@@ -18,6 +18,21 @@ export function GalleryInteractive({
   const drag = useRef<{ x: number; scroll: number } | null>(null);
   const [active, setActive] = useState(0);
   const [dragging, setDragging] = useState(false);
+
+  useLayoutEffect(() => {
+    const el = viewport.current;
+    const slide = el?.children[active];
+    if (!el || !slide) return;
+
+    // Mixed portrait and landscape slides should only reserve the current height.
+    const resize = () => {
+      el.style.height = `${slide.getBoundingClientRect().height}px`;
+    };
+    resize();
+    const observer = new ResizeObserver(resize);
+    observer.observe(slide);
+    return () => observer.disconnect();
+  }, [active]);
 
   function closest() {
     const el = viewport.current;
