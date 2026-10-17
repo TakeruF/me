@@ -15,7 +15,7 @@ const originalScript = f1.match(/<script>([\s\S]*?)<\/script>/)[1];
 let checked = 0;
 for (const locale of locales) {
  const pages = ['index.html', 'work.html', ...readdirSync(`out/${locale}/projects`).filter(p=>p.endsWith('.html')&&p!=='hanlu.html'&&!['markdown-docs.html','flight-market.html','japan-rail-mcp.html'].includes(p)).map(p=>`projects/${p}`)];
- assert.equal(pages.length, 16);
+ assert.equal(pages.length, 17);
  for (const page of pages) {
   const html = read(`out/${locale}/${page}`);
   assert.ok(html.includes(`<html lang="${locale==='zh'?'zh-CN':locale}"`), `${locale}/${page} document language`);
@@ -30,6 +30,12 @@ for (const locale of locales) {
   }
   checked++;
  }
+ const androp = read(`out/${locale}/projects/androp.html`);
+ assert.ok(androp.includes('https://github.com/TakeruF/cn-android-share/releases/latest'), `${locale} anDrop download`);
+ assert.ok(read(`out/${locale}/work.html`).match(/<section[^>]*id="everyday"[\s\S]*?androp[\s\S]*?<\/section>/), `${locale} anDrop everyday category`);
+ assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/androp`));
+ assert.equal((androp.match(/class="screen-slide /g)||[]).length, 4, `${locale} anDrop demo gallery`);
+ assert.ok(androp.includes('OPPO Find X9 Pro') && androp.includes('OPPO Pad 4 Pro'), `${locale} tested anDrop devices`);
  const inapp = read(`out/${locale}/projects/inapp-alt-tab.html`);
  assert.ok(inapp.includes('https://github.com/TakeruF/inapp-alt-tab/releases/latest'), `${locale} InApp download`);
  assert.ok(read(`out/${locale}/work.html`).match(/<section[^>]*id="everyday"[\s\S]*?inapp-alt-tab[\s\S]*?<\/section>/), `${locale} InApp everyday category`);
@@ -95,7 +101,7 @@ for (const locale of locales) {
  assert.equal((notes.match(/class="release-card"/g)||[]).length, 22, `${locale} release notes`);
  assert.ok(!read(`out/${locale}/projects/token-meter.html`).includes('takeruf.github.io/token_meter'));
 }
-assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,92);
+assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,96);
 assert.ok(read('out/nagi.html').includes('0;url=/en/projects/nagi'));
 assert.ok(read('out/nagi.html').includes('navigator.languages'));
 for (const locale of locales) {

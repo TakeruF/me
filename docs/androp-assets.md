@@ -1,0 +1,7 @@
+# anDrop introduction assets
+
+The four `public/projects/androp-*.webp` files are WebP conversions (quality 88, no layout changes) of `docs/images/{recipients,sending,trusted,settings}-zh.png` from [TakeruF/cn-android-share at aef4b96](https://github.com/TakeruF/cn-android-share/tree/aef4b960c077b8601d779edb533be3ab8ef3aaac/docs/images).
+
+These views use the production application UI with fictional device names, file names, settings and progress. They do not establish actual transfers or compatibility with every displayed manufacturer. The introduction preserves the original Simplified Chinese screenshot contents and translates captions and alternative text into the site's four languages.
+
+Copyright (c) 2026 anDrop contributors. Project-authored documentation and application artwork are GPL-3.0-only; see the [original license](https://github.com/TakeruF/cn-android-share/blob/aef4b960c077b8601d779edb533be3ab8ef3aaac/LICENSE) and [documentation-image notes](https://github.com/TakeruF/cn-android-share/blob/aef4b960c077b8601d779edb533be3ab8ef3aaac/docs/images/README.md). Manufacturer marks retain their owners' copyright and trademark rights, are excluded from that GPL grant, and imply no endorsement. Their provenance is recorded in the [original brand-artwork notes](https://github.com/TakeruF/cn-android-share/blob/aef4b960c077b8601d779edb533be3ab8ef3aaac/Resources/BrandLogos/README.md).

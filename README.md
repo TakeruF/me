@@ -76,3 +76,7 @@ Run `npm run build:edgeone` then `npm run verify:export` to check the deployed a
 ## Nagi
 
 Nagi uses the shared product catalog, homepage and localized detail pages at `/{en,ja,zh,ko}/projects/nagi`. The legacy `/nagi` URL redirects using the browser language, with English as the fallback, like other legacy project routes. APKs stay at `/nagi/` so existing download URLs continue to work.
+
+## anDrop
+
+anDrop is listed under Everyday tools and at `/{en,ja,zh,ko}/projects/androp`, with GitHub Releases as its download destination. Copy and compatibility scope were checked against the anDrop repository and 1.1.0 release on 2026-10-17. The four app views use fictional data; the original Simplified Chinese interface is preserved. See [image sources and rights](docs/androp-assets.md).

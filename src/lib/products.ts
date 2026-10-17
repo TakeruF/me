@@ -45,6 +45,100 @@ export const categoryIds = ["everyday", "learning", "developer", "open-source"];
 
 export const products: Product[] = [
 {
+  "slug": "androp",
+  "name": "anDrop",
+  "category": "Everyday tools",
+  "eyebrow": "YOUR MAC. THEIR BUILT-IN SHARE.",
+  "headline": "Macとスマホ、ファイルをもっと手軽に。",
+  "description": "中国メーカーの対応するスマートフォン・タブレットの標準共有機能で、Macとファイルを双方向に共有。スマホへの追加アプリやアカウント登録は不要。Macのメニューバーに常駐します。Google Quick Shareには対応していません。",
+  "platforms": "macOS 14+ · Apple Silicon · 1.1.0",
+  "primary": {
+    "label": "Mac版をダウンロード",
+    "href": "https://github.com/TakeruF/cn-android-share/releases/latest"
+  },
+  "links": [
+    {
+      "label": "使い方・トラブル対処",
+      "href": "https://github.com/TakeruF/cn-android-share/blob/main/docs/usage.md"
+    },
+    {
+      "label": "対応機種・テスト記録",
+      "href": "https://github.com/TakeruF/cn-android-share/blob/main/docs/compatibility.md"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/TakeruF/cn-android-share"
+    }
+  ],
+  "features": [
+    {
+      "title": "Finderから、相手を選んで送信。",
+      "text": "Finderでファイルを選び、「共有 → anDrop」から送信。メニューバーの「ファイルを送信」も使えます。スマホとタブレットのアイコンで相手を見分け、進捗を確認できます。"
+    },
+    {
+      "title": "受け取ったら、そのままダウンロードへ。",
+      "text": "スマホ側の対応する共有機能でMacを選び、通知またはメニューバーで受信を許可。初期設定ではダウンロードフォルダに保存します。同名ファイルは連番を付けて保存し、自動で開きません。"
+    },
+    {
+      "title": "同じWi-Fiで、ファイルは直接。",
+      "text": "両方のBluetoothをオンにして、同じWi-Fi（同一LAN）に接続すれば準備完了。メーカーのパソコン用アプリへの事前接続やUSBケーブルは不要です。ファイルの共有にクラウドを使いません。"
+    },
+    {
+      "title": "受信は、毎回自分で確認。",
+      "text": "「すべての人」と「信頼したデバイスのみ」を切り替え、成功した受信履歴からデバイスを登録。どちらも受信ごとの確認が必要です。信頼フィルターはMacを周囲から隠す機能ではなく、暗号学的な本人認証でもありません。"
+    }
+  ],
+  "notes": [
+    "DMGを開き、anDropをApplicationsへ移動して起動。Bluetooth・ローカルネットワーク・通知・保存先へのアクセスを必要に応じて許可してください。Apple Silicon・macOS 14以降向けで、Intel版はありません。macOS 14の実機動作は未検証です。",
+    "中国メーカーの対応する標準共有機能を使います。OPPO Find X9 Pro・OPPO Pad 4 Proで双方向の実機テストを実施。Xiaomi・HONOR・vivoなど、他メーカー・機種は未検証です。対応は地域・OS・機種により異なります。",
+    "Google Quick Share・Wi-Fi Direct・Huawei Shareには未対応。Petal Interconnectとの共存は実験的で、デバイスの発見に競合が起きる場合があります。",
+    "相手側の対応する共有機能と「すべての人に公開」を有効にしてください。公開設定は自動で切れることがあります。ゲストWi-Fiや端末間通信を遮断するネットワークでは転送できない場合があります。",
+    "アプリの表示言語は簡体字中国語・英語。初回は簡体字中国語で起動し、設定で切り替えられます。フォルダは先に圧縮し、同じ名前のファイルは別々に送信してください。一度に進められる転送は1件です。",
+    "GPL-3.0-onlyのオープンソースです。Appleや端末メーカーの公式製品ではありません。"
+  ],
+  "image": {
+    "src": "/projects/androp-recipients.webp",
+    "alt": "anDropの送信先選択画面。スマホとタブレットを表示。",
+    "width": 920,
+    "height": 544
+  },
+  "gallery": [
+    {
+      "src": "/projects/androp-recipients.webp",
+      "alt": "anDropの送信先選択画面。スマホとタブレットを表示。",
+      "caption": "Finderから送信先を選択。スマホとタブレットを見分けて送信。",
+      "width": 920,
+      "height": 544
+    },
+    {
+      "src": "/projects/androp-sending.webp",
+      "alt": "送信進捗を表示するanDrop。",
+      "caption": "送信の進み具合を、ひと目で確認。",
+      "width": 920,
+      "height": 558
+    },
+    {
+      "src": "/projects/androp-trusted.webp",
+      "alt": "受信履歴から信頼するデバイスを追加するanDrop。",
+      "caption": "受信履歴から、信頼するデバイスを管理。",
+      "width": 840,
+      "height": 874,
+      "portrait": true
+    },
+    {
+      "src": "/projects/androp-settings.webp",
+      "alt": "保存先・言語・自動更新などを表示するanDropの設定画面。",
+      "caption": "保存先や言語、自動更新を設定。",
+      "width": 920,
+      "height": 1800,
+      "portrait": true
+    }
+  ],
+  "motif": "Mac ↔ Phone",
+  "visualLabel": "LOCAL FILES. BUILT-IN SHARING.",
+  "tone": "mint"
+},
+{
   "slug": "nagi",
   "name": "Nagi",
   "category": "Everyday tools",
