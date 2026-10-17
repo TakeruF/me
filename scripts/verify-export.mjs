@@ -108,6 +108,8 @@ for (const locale of locales) {
 assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,96);
 assert.ok(read('out/nagi.html').includes('0;url=/en/projects/nagi'));
 assert.ok(read('out/nagi.html').includes('navigator.languages'));
+assert.ok(read('out/androp.html').includes('0;url=/en/projects/androp'));
+assert.ok(read('out/androp.html').includes('navigator.languages'));
 for (const locale of locales) {
  const html = read(`out/${locale}/projects/nagi.html`);
  assert.ok(html.includes('https://takeruf.com/nagi/nagi-1.0.0.apk'));

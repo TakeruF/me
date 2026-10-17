@@ -73,6 +73,7 @@ const urls = paths.flatMap(route => locales.map(locale => `<url><loc>https://tak
 writeFileSync('out/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls.join('')}</urlset>`);
 // Preserve shared download URLs and route the former landing page by language.
 writeFileSync('out/nagi.html', redirect('/en/projects/nagi'));
+writeFileSync('out/androp.html', redirect('/en/projects/androp'));
 cpSync('public/nagi', 'out/nagi', { recursive: true });
 cpSync('out/ja/404.html', 'out/404.html');
 writeFileSync('out/robots.txt', 'User-agent: *\nAllow: /\nSitemap: https://takeruf.com/sitemap.xml\n');
