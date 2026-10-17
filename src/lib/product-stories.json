@@ -283,21 +283,55 @@
             "href": "https://takeruf.github.io/silkroad-mcp/en/guides/china-rail/"
           }
         ]
-      },
-      {
-        "title": "Codexから、かんたんに追加。",
-        "paragraphs": [
-          "Codexの「Add plugin marketplace」で、Sourceに TakeruF/china-rail-mcp、Git refに main を入力。Sparse pathsには .agents/plugins と plugins/codex を1行ずつ指定します。China Railをインストールすると、Node.js 20以上を使ってMCPサーバーが端末内で起動します。",
-          "これはGitHubリポジトリから追加するプラグイン市場です。Codexの公式公開プラグインディレクトリとは別の配布方法です。"
-        ],
-        "links": [
-          {
-            "label": "READMEでCodexの追加手順を見る",
-            "href": "https://github.com/TakeruF/china-rail-mcp#readme"
-          }
-        ]
       }
-    ]
+    ],
+    "setup": {
+      "title": "Codexプラグイン市場からインストール。",
+      "paragraphs": [
+        "手動のクローンやサーバーの公開は不要です。パソコンにNode.js 20以上が必要ですが、12306のアカウント・Cookie・アクセスキーは使いません。"
+      ],
+      "steps": [
+        {
+          "title": "追加画面を開く",
+          "text": "Codexのプラグイン画面で「Add plugin marketplace」を選びます。右のスクショで入力欄の位置を確認できます。"
+        },
+        {
+          "title": "リポジトリ情報を入力する",
+          "text": "下の値をコピーして入力します。Sparse pathsは2行に分けて指定してください。",
+          "fields": [
+            {
+              "label": "Source",
+              "value": "TakeruF/china-rail-mcp"
+            },
+            {
+              "label": "Git ref",
+              "value": "main"
+            },
+            {
+              "label": "Sparse paths",
+              "value": ".agents/plugins\nplugins/codex"
+            }
+          ]
+        },
+        {
+          "title": "インストールして質問する",
+          "text": "「Add marketplace」を押し、China Railをインストールして新しい会話を始めます。例：「明日の上海虹橋から杭州東までの高速鉄道を、出発時刻・参考運賃・空席とともに教えて」。検索は読み取り専用で、予約・決済は行いません。"
+        }
+      ],
+      "image": {
+        "src": "/projects/china-rail-codex-marketplace.webp",
+        "alt": "CodexのAdd plugin marketplace画面。Source・Git ref・Sparse pathsの入力欄。",
+        "caption": "スクショは入力欄の位置を示しています。入力する値は手順2を参照してください。",
+        "width": 1244,
+        "height": 876
+      },
+      "links": [
+        {
+          "label": "READMEでCodexの追加手順を見る",
+          "href": "https://github.com/TakeruF/china-rail-mcp#readme"
+        }
+      ]
+    }
   },
   "ai-dict": {
     "gallery": [

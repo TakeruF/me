@@ -1932,6 +1932,25 @@ h2 {
 .story-copy p + p {
   margin-top: 16px;
 }
+.story-steps {
+  padding-left: 24px;
+  margin-top: 24px;
+}
+.story-steps li + li { margin-top: 24px; }
+.story-steps h3 { font-size: 18px; margin-bottom: 8px; }
+.story-fields { margin-top: 16px; }
+.story-fields > div + div { margin-top: 12px; }
+.story-fields dt { font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.story-fields dd { margin: 0; }
+.story-fields pre {
+  padding: 12px 16px;
+  background: var(--media);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.7;
+}
 .story-media {
   margin: 0;
   background: var(--media);

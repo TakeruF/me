@@ -410,5 +410,15 @@
   "アプリ内のタブは対象外です。切り替え可能なウィンドウが1つ以下なら何もせず、モーダルダイアログやシートが開いている間は切り替えを停止します。": "In-app tabs are not separate windows. With zero or one eligible window, the shortcut does nothing. Switching pauses while a modal dialog or sheet is open.",
   "AltTabなど、Option + Tabを使う他のアプリと競合する場合は、そちらのショートカットを変更してください。Intelでの実行、別のSpace・フルスクリーンのウィンドウ切り替えは未検証です。": "If another app such as AltTab uses Option + Tab, change its shortcut. Intel execution and switching across Spaces or full-screen windows have not been verified.",
   "STAY IN YOUR APP. KEEP YOUR FLOW.": "STAY IN YOUR APP. KEEP YOUR FLOW.",
-  "Wordの文書ウィンドウとInApp Alt Tabの設定画面": "Word document windows and the InApp Alt Tab setup window"
+  "Wordの文書ウィンドウとInApp Alt Tabの設定画面": "Word document windows and the InApp Alt Tab setup window",
+  "Codexプラグイン市場からインストール。": "Install from the Codex plugin marketplace.",
+  "手動のクローンやサーバーの公開は不要です。パソコンにNode.js 20以上が必要ですが、12306のアカウント・Cookie・アクセスキーは使いません。": "No manual clone or hosted server is needed. Your computer needs Node.js 20 or later; no 12306 account, cookie, or access token is required.",
+  "追加画面を開く": "Open the add-marketplace dialog",
+  "Codexのプラグイン画面で「Add plugin marketplace」を選びます。右のスクショで入力欄の位置を確認できます。": "On the Codex plugins page, choose “Add plugin marketplace.” The screenshot shows where to enter the details.",
+  "リポジトリ情報を入力する": "Enter the repository details",
+  "下の値をコピーして入力します。Sparse pathsは2行に分けて指定してください。": "Copy the values below into the matching fields. Enter Sparse paths on two separate lines.",
+  "インストールして質問する": "Install and ask a question",
+  "「Add marketplace」を押し、China Railをインストールして新しい会話を始めます。例：「明日の上海虹橋から杭州東までの高速鉄道を、出発時刻・参考運賃・空席とともに教えて」。検索は読み取り専用で、予約・決済は行いません。": "Click “Add marketplace,” install China Rail, and start a new chat. Try: “Show tomorrow’s high-speed trains from Shanghai Hongqiao to Hangzhou East, including departure times, reference fares, and seat availability.” Queries are read-only and cannot book or pay for tickets.",
+  "CodexのAdd plugin marketplace画面。Source・Git ref・Sparse pathsの入力欄。": "Codex Add plugin marketplace dialog with Source, Git ref, and Sparse paths fields.",
+  "スクショは入力欄の位置を示しています。入力する値は手順2を参照してください。": "The screenshot shows the fields. Use the values in step 2."
 }

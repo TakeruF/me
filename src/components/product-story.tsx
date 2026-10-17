@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ResourceLink } from "@/components/resource-link";
 import type { ProductStory as Story } from "@/lib/product-stories";
 
-export function ProductStory({ story }: { story: Story }) {
+export function ProductStory({ story, startIndex = 0 }: { story: Story; startIndex?: number }) {
   return localize(
     <div className="product-story wrap">
       {story.sections.map((section, index) => (
@@ -13,12 +13,32 @@ export function ProductStory({ story }: { story: Story }) {
         >
           <div className="story-copy">
             <span className="section-index">
-              {String(index + 1).padStart(2, "0")} / THE DETAILS
+              {String(startIndex + index + 1).padStart(2, "0")} / THE DETAILS
             </span>
             <h2>{section.title}</h2>
             {section.paragraphs.map((text) => (
               <p key={text}>{text}</p>
             ))}
+            {section.steps && (
+              <ol className="story-steps">
+                {section.steps.map((step) => (
+                  <li key={step.title}>
+                    <h3>{step.title}</h3>
+                    <p>{step.text}</p>
+                    {step.fields && (
+                      <dl className="story-fields">
+                        {step.fields.map((field) => (
+                          <div key={field.label}>
+                            <dt>{field.label}</dt>
+                            <dd><pre><code>{field.value}</code></pre></dd>
+                          </div>
+                        ))}
+                      </dl>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            )}
             {section.links && (
               <div className="story-links">
                 {section.links.map((link) => (
