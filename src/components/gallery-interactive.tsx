@@ -65,7 +65,7 @@ export function GalleryInteractive({
 
   return (
     <section
-      className="screen-gallery wrap"
+      className={`screen-gallery wrap${name === "anDrop" ? " screen-gallery-androp" : ""}`}
       aria-label={`${name}: ${labels.screenshots}`}
       aria-roledescription={labels.carousel}
     >

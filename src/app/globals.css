@@ -1827,6 +1827,20 @@ h2 {
   object-fit: contain;
   margin: auto;
 }
+.screen-gallery-androp .screen-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(300px, 60vh, 560px);
+  padding: 20px;
+}
+.screen-gallery-androp .screen-image img {
+  width: auto;
+  height: auto;
+  max-width: min(100%, 460px);
+  max-height: 100%;
+  object-fit: contain;
+}
 .screen-slide figcaption {
   padding: 20px 0;
   display: flex;
