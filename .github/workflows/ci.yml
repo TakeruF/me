@@ -1,9 +1,18 @@
 name: CI
 
 on:
+  # Root-level Markdown only: src/content/**/*.md is rendered by the site.
   pull_request:
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+      - 'LICENSE'
   push:
     branches: [main]
+    paths-ignore:
+      - '*.md'
+      - 'docs/**'
+      - 'LICENSE'
 
 permissions:
   contents: read
