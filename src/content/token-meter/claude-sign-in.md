@@ -40,7 +40,7 @@ After signing in, click **Re-check** in Token Meter.
 
 ### 3. Grant Keychain access
 
-To show your remaining Claude Pro / Max usage, Token Meter must read the `Claude Code-credentials` item that Claude Code saved in macOS Keychain.
+To show your remaining Claude plan usage, Token Meter must read the `Claude Code-credentials` item that Claude Code saved in macOS Keychain.
 
 The first time it reads the item, macOS displays a dialog similar to this:
 
@@ -61,7 +61,7 @@ macOS remembers the denial for each Keychain item, so Token Meter cannot undo it
 3. On the **Access Control** tab, allow Token Meter. Alternatively, remove Token Meter from the list so macOS asks again next time.
 4. Return to Token Meter and click **Re-check**.
 
-If you do not want Claude usage displayed, turn off **Claude Pro / Max usage** in Settings. Keychain reads and network access will stop, while token counts from local logs will continue to work.
+If you do not want Claude usage displayed, turn off **Claude plan usage** in Settings. Keychain reads and network access will stop, while token counts from local logs will continue to work.
 
 ### 4. Troubleshooting
 
@@ -110,7 +110,7 @@ claude
 
 ### 3. Keychain へのアクセスを許可する
 
-Claude 使用量（Pro / Max の残量）を表示するには、Claude Code が macOS Keychain に保存した `Claude Code-credentials` を Token Meter が読み取る必要があります。
+Claude のプラン残量を表示するには、Claude Code が macOS Keychain に保存した `Claude Code-credentials` を Token Meter が読み取る必要があります。
 
 初回の読み取りで macOS 自身が次のようなダイアログを出します。
 
@@ -131,7 +131,7 @@ macOS はアイテムごとの拒否を記憶するので、アプリ側から�
 3. **アクセス制御**タブで Token Meter を許可します。または一覧から Token Meter を削除し、次回もう一度 macOS に確認させます。
 4. Token Meter に戻って「再確認」を押します。
 
-Claude の使用量表示自体をやめたい場合は、設定で「Claude Pro / Max利用状況」をオフにしてください。Keychain の読み取りとネットワークアクセスは停止し、ローカルログによるトークン数の表示だけが残ります。
+Claude の使用量表示自体をやめたい場合は、設定で「Claudeプラン利用状況」をオフにしてください。Keychain の読み取りとネットワークアクセスは停止し、ローカルログによるトークン数の表示だけが残ります。
 
 ### 4. うまくいかないとき
 
@@ -180,7 +180,7 @@ claude
 
 ### 3. 允许访问钥匙串
 
-要显示 Claude Pro / Max 的剩余用量，Token Meter 必须读取 Claude Code 保存在 macOS 钥匙串中的 `Claude Code-credentials` 项目。
+要显示 Claude 套餐的剩余用量，Token Meter 必须读取 Claude Code 保存在 macOS 钥匙串中的 `Claude Code-credentials` 项目。
 
 首次读取该项目时，macOS 会显示类似以下内容的对话框：
 
@@ -201,7 +201,7 @@ macOS 会记住每个钥匙串项目的拒绝设置，Token Meter 无法自行�
 3. 在“**访问控制**”标签页中允许 Token Meter。也可以从列表中移除 Token Meter，让 macOS 下次再次询问。
 4. 返回 Token Meter，点击“重新检查”。
 
-如果不想显示 Claude 用量，请在设置中关闭“Claude Pro / Max 用量”。钥匙串读取和网络访问将停止，而基于本地日志的令牌统计仍可继续使用。
+如果不想显示 Claude 用量，请在设置中关闭“Claude 套餐用量”。钥匙串读取和网络访问将停止，而基于本地日志的令牌统计仍可继续使用。
 
 ### 4. 故障排除
 
@@ -250,7 +250,7 @@ claude
 
 ### 3. 키체인 접근 허용
 
-Claude Pro / Max의 남은 사용량을 표시하려면 Token Meter가 Claude Code가 macOS 키체인에 저장한 `Claude Code-credentials` 항목을 읽어야 합니다.
+Claude 요금제의 남은 사용량을 표시하려면 Token Meter가 Claude Code가 macOS 키체인에 저장한 `Claude Code-credentials` 항목을 읽어야 합니다.
 
 처음 읽을 때 macOS가 다음과 비슷한 대화상자를 표시합니다.
 
@@ -271,7 +271,7 @@ macOS는 키체인 항목별로 거부 설정을 기억하므로 Token Meter에�
 3. **접근 제어** 탭에서 Token Meter를 허용합니다. 또는 목록에서 Token Meter를 제거하여 다음에 macOS가 다시 묻게 할 수 있습니다.
 4. Token Meter로 돌아가 **다시 확인**을 클릭합니다.
 
-Claude 사용량을 표시하지 않으려면 설정에서 **Claude Pro / Max 사용량**을 끄세요. 키체인 읽기와 네트워크 접근은 중지되며, 로컬 로그를 사용한 토큰 수 집계는 계속 작동합니다.
+Claude 사용량을 표시하지 않으려면 설정에서 **Claude 플랜 사용량**을 끄세요. 키체인 읽기와 네트워크 접근은 중지되며, 로컬 로그를 사용한 토큰 수 집계는 계속 작동합니다.
 
 ### 4. 문제 해결
 

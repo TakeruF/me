@@ -161,7 +161,6 @@
   "ClaudeとCodexを選択するプロバイダー設定画面": "Provider settings for selecting Claude and Codex",
   "プロバイダー選択": "Provider selection",
   "メニューバーは、あなたの見やすさで。": "A menu bar that works your way.",
-  "Full、Compact、Icon onlyから選択。Claude CodeとCodexに表示する5時間枠または週次枠を選べます。5時間枠を選んだ際、Codex Proに5時間枠がなければ週次枠を自動表示します。": "Choose Full, Compact or Icon only, and select the five-hour or weekly window for Claude Code and Codex. If the five-hour window is selected but unavailable for Codex Pro, the weekly window is shown automatically.",
   "メニューバーの表示形式を選択する画面": "Settings for choosing the menu bar display format",
   "Full / Compact / アイコンのみ": "Full / Compact / Icon only",
   "残量を、デスクトップの定位置に。": "Keep your limits on the desktop.",
@@ -171,7 +170,6 @@
   "Largeウィジェット · 7日間の利用推移": "Large widget · Seven-day usage trend",
   "使用履歴は、このMacから出さない。": "Your usage history stays on this Mac.",
   "ローカルのセッションログから、トークン数・日時・モデル名だけを集計します。プロンプト本文や応答本文、認証情報は保存しません。": "Only token counts, timestamps and model names are aggregated from local session logs. Prompt text, responses and credentials are not stored.",
-  "Claude Pro / Maxの残量確認は任意です。有効にした場合のみ、Claude Codeのサインイン情報を使ってAnthropicの使用量エンドポイントへ問い合わせます。": "Checking Claude Pro / Max remaining usage is optional. Only when enabled does the app use your Claude Code sign-in to request Anthropic's usage endpoint.",
   "プライバシーポリシーを読む": "Read the privacy policy",
   "数分で準備完了。": "Ready in minutes.",
   "初期設定では、選んだプロバイダーの使用量を実際に読み取れるかまで確認します。読み取れない場合は、未ログインやセッションログ未作成など、直すべき点を具体的に表示。今は設定を終えて、あとから接続しても構いません。": "Setup checks whether usage can actually be read for your selected providers. If not, it explains what to fix, such as missing sign-in or session logs. You can finish setup now and connect later.",
@@ -452,5 +450,7 @@
   "Huaweiを受信履歴から信頼済み端末に追加する画面。": "Adding Huawei to trusted devices from receive history.",
   "Huaweiも、受信履歴から信頼を登録。": "Enroll Huawei devices from receive history too.",
   "受信範囲・非表示端末・自動更新を設定。": "Set receive scope, hidden devices and automatic updates.",
-  "安卓互传も、华为分享も、Macで。": "Android sharing and Huawei Share. On Mac too."
+  "安卓互传も、华为分享も、Macで。": "Android sharing and Huawei Share. On Mac too.",
+  "Full、Compact、Icon onlyから選択。Claude CodeとCodexに表示する5時間枠または週次枠を選べます。Codex Pro 100 / 200 / 500は週次枠を表示します。": "Choose Full, Compact or Icon only, and select the five-hour or weekly window for Claude Code and Codex. Codex Pro 100 / 200 / 500 show the weekly account limit.",
+  "Claudeプランの残量確認は任意です。有効にした場合のみ、Claude Codeのサインイン情報を使ってAnthropicの使用量エンドポイントへ問い合わせます。": "Checking Claude plan usage is optional. Only when enabled does the app use your Claude Code sign-in to request Anthropic's usage endpoint."
 }

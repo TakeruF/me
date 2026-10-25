@@ -102,7 +102,7 @@ for (const locale of locales) {
   assert.ok(html.includes('href="mailto:me@takeruf.com"'), `${locale}${route} footer contact`);
  }
  const notes = read(`out/${locale}/projects/token-meter/releases.html`);
- assert.equal((notes.match(/class="release-card"/g)||[]).length, 23, `${locale} release notes`);
+ assert.equal((notes.match(/class="release-card"/g)||[]).length, 24, `${locale} release notes`);
  assert.ok(!read(`out/${locale}/projects/token-meter.html`).includes('takeruf.github.io/token_meter'));
 }
 assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,96);

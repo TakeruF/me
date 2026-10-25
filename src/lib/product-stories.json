@@ -53,7 +53,7 @@
       {
         "title": "メニューバーは、あなたの見やすさで。",
         "paragraphs": [
-          "Full、Compact、Icon onlyから選択。Claude CodeとCodexに表示する5時間枠または週次枠を選べます。5時間枠を選んだ際、Codex Proに5時間枠がなければ週次枠を自動表示します。"
+          "Full、Compact、Icon onlyから選択。Claude CodeとCodexに表示する5時間枠または週次枠を選べます。Codex Pro 100 / 200 / 500は週次枠を表示します。"
         ],
         "image": {
           "src": "/projects/token-meter-display.webp",
@@ -83,7 +83,7 @@
         "title": "使用履歴は、このMacから出さない。",
         "paragraphs": [
           "ローカルのセッションログから、トークン数・日時・モデル名だけを集計します。プロンプト本文や応答本文、認証情報は保存しません。",
-          "Claude Pro / Maxの残量確認は任意です。有効にした場合のみ、Claude Codeのサインイン情報を使ってAnthropicの使用量エンドポイントへ問い合わせます。"
+          "Claudeプランの残量確認は任意です。有効にした場合のみ、Claude Codeのサインイン情報を使ってAnthropicの使用量エンドポイントへ問い合わせます。"
         ],
         "links": [
           {
