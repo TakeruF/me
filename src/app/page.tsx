@@ -150,8 +150,12 @@ const projects = [
   "height": 1600,
   "links": [
     {
+      "label": "Google Play",
+      "url": "https://play.google.com/store/apps/details?id=com.takeruf.nagi"
+    },
+    {
       "label": "Download",
-      "url": "https://takeruf.com/nagi/nagi-0.1.3.apk"
+      "url": "https://takeruf.com/nagi/nagi-1.0.0.apk"
     },
     {
       "label": "GitHub",

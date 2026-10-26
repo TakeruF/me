@@ -201,6 +201,10 @@ export const products: Product[] = [
   },
   "links": [
     {
+      "label": "Google Play",
+      "href": "https://play.google.com/store/apps/details?id=com.takeruf.nagi"
+    },
+    {
       "label": "プライバシーポリシー",
       "href": "/nagi/privacy",
       "internal": true
