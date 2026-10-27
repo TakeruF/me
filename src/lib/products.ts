@@ -196,13 +196,13 @@ export const products: Product[] = [
   "description": "Androidタブレットとスマートフォン向けのワークスペースブラウザ。広い画面ではサイドバー、狭い画面では下部ナビゲーションでタブを整理し、Spaceと分割表示を使えます。",
   "platforms": "Android 8.0以上 · 1.1.0 · 84.3 MB",
   "primary": {
-    "label": "Android APKをダウンロード",
-    "href": "https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk"
+    "label": "Google Play",
+    "href": "https://play.google.com/store/apps/details?id=com.takeruf.nagi"
   },
   "links": [
     {
-      "label": "Google Play",
-      "href": "https://play.google.com/store/apps/details?id=com.takeruf.nagi"
+      "label": "Android APKをダウンロード",
+      "href": "https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk"
     },
     {
       "label": "プライバシーポリシー",
