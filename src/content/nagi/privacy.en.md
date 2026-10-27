@@ -1,12 +1,24 @@
 # Nagi Privacy Policy
 
-Last updated: October 10, 2026
+Last updated: October 27, 2026
 
 Nagi is an Android workspace browser developed by TakeruF. This policy covers both the Google Play edition and the APK edition distributed through GitHub and takeruf.com. Contact: [support@takeruf.com](mailto:support@takeruf.com).
 
 ## Data stored on your device
 
-Nagi stores tabs, page titles and URLs, Spaces, Favorites, bookmarks, browsing history, settings, cached site icons, and website cookies and storage on your device. Nagi has no developer-operated account or cloud sync, advertising SDK, analytics SDK, or automatic crash-reporting service. This information is not uploaded to the developer. Cookies and site logins are shared across Spaces; Spaces are not separate privacy profiles.
+Nagi stores tabs, page titles and URLs, Spaces, Favorites, bookmarks, browsing history, settings, cached site icons, and website cookies and storage on your device. Nagi has no developer-operated account or cloud sync, advertising SDK or developer-operated automatic crash-reporting service. This information is not uploaded to the developer. Cookies and site logins are shared across Spaces; Spaces are not separate privacy profiles.
+
+## Page translation and Google ML Kit
+
+Page translation and language identification run on your device using Google Translate through Google ML Kit. Nagi does not send the page text to a cloud translation service or to the developer. Language models are downloaded from Google when needed and stored locally for later offline translation. Models, translation preferences and local background-photo copies are removed when app data is cleared or Nagi is uninstalled.
+
+The ML Kit SDKs communicate with Google for model delivery, remote configuration, diagnostics and usage analytics. Google describes collection of device and app information (such as model, operating system, package and version), installation or other identifiers, performance metrics, API configuration, input/output sizes, feature events and error codes. Translation also reports configured source and target languages; language identification reports detected languages. These SDK communications use HTTPS. Local text processing does not mean the SDK makes no network requests or collects no diagnostics. These diagnostic identifiers are separate from a Nagi account; Nagi has no account service or advertising ID integration.
+
+See [ML Kit's data disclosure](https://developers.google.com/ml-kit/android-data-disclosure) and [Google's Privacy Policy](https://policies.google.com/privacy) for Google's handling. Clearing local app data does not delete records already held by external providers; their retention and deletion processes apply.
+
+## New-tab backgrounds
+
+If you choose a background photo, Nagi imports a bounded copy into app-private storage and displays it locally. The photo is not uploaded to the developer or sent to ML Kit for translation. Android's picker grants access only to the selected file; broad photo-library access is not requested.
 
 ## Private browsing, blocking, and Reader
 
