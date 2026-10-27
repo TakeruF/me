@@ -361,7 +361,6 @@
   "サイドバーでタブとSpaceを整理するNagi": "Nagi with tabs and Spaces organized in the sidebar",
   "2つのWebページを並べたNagiの分割表示": "Nagi showing two web pages in split panes",
   "APKをインストールする": "Install the APK",
-  "上のボタンからAPKをダウンロードし、Androidのダウンロード一覧から開きます。システムの案内に従って、この提供元からのインストールを許可してください。": "Download the APK using the button above and open it from Android’s downloads. Follow the system prompt to allow installation from this source.",
   "0.2.1で、もっと使いやすく。": "More useful in 0.2.1.",
   "タブレットの横画面での利用を推奨します。現在はMVPです。": "Landscape use on a tablet is recommended. This is an MVP.",
   "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。": "Debug builds and the former com.orbit.browser use different signing or app IDs and cannot be updated directly with this APK.",
@@ -461,5 +460,6 @@
   "当サイト・GitHubの旧版には1.1.0を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。": "Install 1.1.0 over an older version from this site or GitHub without uninstalling. Google Play uses a different signing certificate; update through the same distribution channel.",
   "Android 8.0以上 · 1.1.0 · 84.3 MB": "Android 8.0+ · 1.1.0 · 84.3 MB",
   "1.1.0の更新内容": "What’s new in 1.1.0",
-  "2026年10月27日更新 · 署名済みAPK": "Updated October 27, 2026 · Signed APK"
+  "2026年10月27日更新 · 署名済みAPK": "Updated October 27, 2026 · Signed APK",
+  "APKを使う場合は、上部の「Android APKをダウンロード」リンクから取得し、Androidのダウンロード一覧から開きます。システムの案内に従って、この提供元からのインストールを許可してください。": "To install the APK, use the “Download Android APK” link near the top and open the file from Android’s downloads. Follow the system prompt to allow installation from this source."
 }
