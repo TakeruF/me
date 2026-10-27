@@ -1,12 +1,24 @@
 # Nagi 隐私政策
 
-最后更新：2026年10月10日
+最后更新：2026年10月27日
 
 Nagi 是由 TakeruF 开发的 Android 工作空间浏览器。本政策适用于 Google Play 版及通过 GitHub、takeruf.com 分发的 APK 版。联系邮箱：[support@takeruf.com](mailto:support@takeruf.com)。
 
 ## 保存在设备上的信息
 
-Nagi 将标签页、网页标题和网址、Space、收藏、书签、浏览历史、设置、网站图标缓存、Cookie 和网站存储保存在设备上。没有开发者运营的账号、云同步、广告 SDK、分析 SDK 或自动崩溃报告服务。这些信息不会上传给开发者。不同 Space 共享 Cookie 和网站登录状态；Space 不是独立的隐私配置文件。
+Nagi 将标签页、网页标题和网址、Space、收藏、书签、浏览历史、设置、网站图标缓存、Cookie 和网站存储保存在设备上。没有开发者运营的账号、云同步、广告 SDK 或开发者运营的自动崩溃报告服务。这些信息不会上传给开发者。不同 Space 共享 Cookie 和网站登录状态；Space 不是独立的隐私配置文件。
+
+## 网页翻译与 Google ML Kit
+
+网页翻译和语言识别通过 Google ML Kit 的 Google Translate 在设备上运行。Nagi 不会将网页正文发送给云端翻译服务或开发者。所需语言模型从 Google 下载并保存在本地，以供之后离线翻译。清除应用数据或卸载 Nagi 会移除本地模型、翻译设置和背景照片副本。
+
+ML Kit SDK 会为模型分发、远程配置、诊断和使用情况分析与 Google 通信。根据 Google 的说明，收集内容包括设备和应用信息（如机型、操作系统、软件包名和版本）、安装或其他标识符、性能指标、API 配置、输入输出大小、功能事件及错误代码。翻译还会报告设置的源语言和目标语言，语言识别会报告识别出的语言。SDK 通信使用 HTTPS。本地处理正文不代表 SDK 不进行网络通信或不收集诊断信息。这些诊断标识符并非 Nagi 账号；Nagi 不提供账号服务，也未集成广告 ID。
+
+Google 的处理方式请参阅 [ML Kit 数据披露](https://developers.google.com/ml-kit/android-data-disclosure)和 [Google 隐私政策](https://policies.google.com/privacy)。清除本地应用数据不会删除外部提供商已保存的记录，其保留和删除流程由对方规定。
+
+## 新标签页背景
+
+选择背景照片后，Nagi 会将尺寸受限的副本导入应用私有存储并在本地显示。照片不会上传给开发者，也不会发送给 ML Kit 翻译。Android 的文件选择器仅授予所选文件的访问权；应用不请求访问整个照片库。
 
 ## 隐私浏览、广告拦截和阅读模式
 
