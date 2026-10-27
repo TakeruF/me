@@ -452,5 +452,14 @@
   "受信範囲・非表示端末・自動更新を設定。": "Set receive scope, hidden devices and automatic updates.",
   "安卓互传も、华为分享も、Macで。": "Android sharing and Huawei Share. On Mac too.",
   "Full、Compact、Icon onlyから選択。Claude CodeとCodexに表示する5時間枠または週次枠を選べます。Codex Pro 100 / 200 / 500は週次枠を表示します。": "Choose Full, Compact or Icon only, and select the five-hour or weekly window for Claude Code and Codex. Codex Pro 100 / 200 / 500 show the weekly account limit.",
-  "Claudeプランの残量確認は任意です。有効にした場合のみ、Claude Codeのサインイン情報を使ってAnthropicの使用量エンドポイントへ問い合わせます。": "Checking Claude plan usage is optional. Only when enabled does the app use your Claude Code sign-in to request Anthropic's usage endpoint."
+  "Claudeプランの残量確認は任意です。有効にした場合のみ、Claude Codeのサインイン情報を使ってAnthropicの使用量エンドポイントへ問い合わせます。": "Checking Claude plan usage is optional. Only when enabled does the app use your Claude Code sign-in to request Anthropic's usage endpoint.",
+  "ページを、いつもの言語で。": "Translate pages into your language.",
+  "Google Translateの端末内翻訳でページの文章を翻訳。翻訳先を記憶し、同じタブで同じ言語のリンク先も続けて翻訳できます。画像・PDFは対象外です。言語モデルの取得とSDK診断には通信を使います。": "Translate page text on your device with Google Translate. Remember your target language and continue translating same-language links in the same tab. Images and PDFs are excluded. Model downloads and SDK diagnostics use the network.",
+  "新しいタブを、自分らしく。": "Make each new tab your own.",
+  "新しいタブの背景を選択できます。お気に入りメニューの長押しとタップ範囲を修正し、画面の回転・サイズ変更時の安定性を改善しました。": "Choose a new-tab background. Favorite menu long presses and touch targets are fixed, with improved stability when rotating or resizing the window.",
+  "GoogleログインがPC表示で拒否された場合は、上部のバーからモバイル表示を試せます。ログインの成功を保証するものではありません。": "If Google rejects sign-in in desktop view, try mobile view from the top bar. Successful sign-in is not guaranteed.",
+  "当サイト・GitHubの旧版には1.1.0を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。": "Install 1.1.0 over an older version from this site or GitHub without uninstalling. Google Play uses a different signing certificate; update through the same distribution channel.",
+  "Android 8.0以上 · 1.1.0 · 84.3 MB": "Android 8.0+ · 1.1.0 · 84.3 MB",
+  "1.1.0の更新内容": "What’s new in 1.1.0",
+  "2026年10月27日更新 · 署名済みAPK": "Updated October 27, 2026 · Signed APK"
 }
