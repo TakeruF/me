@@ -112,14 +112,16 @@ assert.ok(read('out/androp.html').includes('0;url=/en/projects/androp'));
 assert.ok(read('out/androp.html').includes('navigator.languages'));
 for (const locale of locales) {
  const html = read(`out/${locale}/projects/nagi.html`);
- assert.ok(html.includes('https://takeruf.com/nagi/nagi-1.0.0.apk'));
- assert.ok(html.includes('1.0.0') && html.includes('16.7 MB'));
- assert.ok(html.includes({en:'Updated October 11, 2026',ja:'2026年10月11日更新',zh:'更新于 2026 年 10 月 11 日',ko:'2026년 10월 11일 업데이트'}[locale]));
+ assert.ok(html.includes('https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk'));
+ assert.ok(html.includes('1.1.0') && html.includes('84.3 MB'));
+ assert.ok(html.includes({en:'Updated October 27, 2026',ja:'2026年10月27日更新',zh:'2026年10月27日更新',ko:'2026년 10월 27일 업데이트'}[locale]));
  assert.ok(html.includes({en:'Comfortable browsing in narrow windows.',ja:'狭い画面でも、快適に。',zh:'窄屏浏览，也很顺手。',ko:'좁은 화면에서도 편하게.'}[locale]));
- assert.ok(html.includes('82580f438c047e735761b1ab2b45b52e03f9da4082e0ddb4bb36a819f529c525'));
+ assert.ok(html.includes('befa7d79d107dbedae664ad6ef54332c3ffea67972bac40b4cbc5e9d427ed253'));
  assert.ok(!html.includes('0.2.1 · 5.2 MB'), `${locale} stale Nagi story metadata`);
  assert.ok(read(`out/${locale}/work.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read(`out/${locale}/index.html`).includes(`/${locale}/projects/nagi`));
+ assert.ok(read(`out/${locale}/index.html`).includes('https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk'), `${locale} current homepage APK`);
+ assert.ok(!read(`out/${locale}/index.html`).includes('nagi-1.0.0.apk'), `${locale} no stale homepage APK`);
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/nagi`));
 }
 for (const version of ['0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.2.0', '0.2.1', '0.3.0', '1.0.0']) {

@@ -194,10 +194,10 @@ export const products: Product[] = [
   "eyebrow": "A CALMER WORKSPACE FOR THE WEB",
   "headline": "タブを整えて、ブラウジングを穏やかに。",
   "description": "Androidタブレットとスマートフォン向けのワークスペースブラウザ。広い画面ではサイドバー、狭い画面では下部ナビゲーションでタブを整理し、Spaceと分割表示を使えます。",
-  "platforms": "Android 8.0以上 · 1.0.0 · 16.7 MB",
+  "platforms": "Android 8.0以上 · 1.1.0 · 84.3 MB",
   "primary": {
     "label": "Android APKをダウンロード",
-    "href": "https://takeruf.com/nagi/nagi-1.0.0.apk"
+    "href": "https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk"
   },
   "links": [
     {
@@ -210,8 +210,8 @@ export const products: Product[] = [
       "internal": true
     },
     {
-      "label": "1.0.0の更新内容",
-      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v1.0.0"
+      "label": "1.1.0の更新内容",
+      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v1.1.0"
     },
     {
       "label": "GitHub",
@@ -219,6 +219,8 @@ export const products: Product[] = [
     }
   ],
   "features": [
+    {"title": "ページを、いつもの言語で。", "text": "Google Translateの端末内翻訳でページの文章を翻訳。翻訳先を記憶し、同じタブで同じ言語のリンク先も続けて翻訳できます。画像・PDFは対象外です。言語モデルの取得とSDK診断には通信を使います。"},
+    {"title": "新しいタブを、自分らしく。", "text": "新しいタブの背景を選択できます。お気に入りメニューの長押しとタップ範囲を修正し、画面の回転・サイズ変更時の安定性を改善しました。"},
     {"title": "狭い画面でも、快適に。", "text": "600dp未満のウィンドウでは全幅表示と下部ナビゲーションを使用。タブ・お気に入り・Spaceはシートから開けます。広いウィンドウではサイドバーを使えます。"},
     {"title": "サイズを変えても、入力を保つ。", "text": "ウィンドウのサイズ変更ではページを再読込せず、入力途中の内容を保持します。自動のモバイル・PC表示切替は次のページ移動か再読込時に適用し、サイトごとの指定を優先します。"},
     {"title": "広告の空枠を、減らす。", "text": "ブロックが確認された広告の周囲に残る空の枠を畳みます。本文・画像・操作部品を保護し、ブロックの一時停止・再開や後から追加される要素にも対応します。"},
@@ -248,12 +250,13 @@ export const products: Product[] = [
     }
   ],
   "notes": [
+    "GoogleログインがPC表示で拒否された場合は、上部のバーからモバイル表示を試せます。ログインの成功を保証するものではありません。",
     "タブレット・スマートフォンのウィンドウ幅に合わせて表示を切り替えます。実機の折りたたみ動作やすべてのサイトでの広告処理は未検証です。",
-    "当サイト・GitHubの0.1.0〜0.3.0には1.0.0を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
+    "当サイト・GitHubの旧版には1.1.0を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
     "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。",
     "通常のSpace間ではCookieとログイン状態を共有します。プライベートブラウジングには対応WebViewが必要です。同期は未対応です。",
     "写真はJPEGでアップロードできます。生成ファイルの保存は32 MBまで。カメラやパスワード自動入力の動作は端末とプロバイダーに依存します。",
-    "SHA-256: 82580f438c047e735761b1ab2b45b52e03f9da4082e0ddb4bb36a819f529c525"
+    "SHA-256: befa7d79d107dbedae664ad6ef54332c3ffea67972bac40b4cbc5e9d427ed253"
   ],
   "image": {
     "src": "/projects/nagi-home.webp",
