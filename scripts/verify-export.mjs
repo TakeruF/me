@@ -120,6 +120,8 @@ for (const locale of locales) {
  assert.ok(!html.includes('0.2.1 · 5.2 MB'), `${locale} stale Nagi story metadata`);
  assert.ok(read(`out/${locale}/work.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read(`out/${locale}/index.html`).includes(`/${locale}/projects/nagi`));
+ assert.ok(read(`out/${locale}/index.html`).includes('https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk'), `${locale} current homepage APK`);
+ assert.ok(!read(`out/${locale}/index.html`).includes('nagi-1.0.0.apk'), `${locale} no stale homepage APK`);
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/nagi`));
 }
 for (const version of ['0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.2.0', '0.2.1', '0.3.0', '1.0.0']) {
