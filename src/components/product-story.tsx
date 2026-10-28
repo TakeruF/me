@@ -3,7 +3,15 @@ import Image from "next/image";
 import { ResourceLink } from "@/components/resource-link";
 import type { ProductStory as Story } from "@/lib/product-stories";
 
-export function ProductStory({ story, startIndex = 0 }: { story: Story; startIndex?: number }) {
+export function ProductStory({
+  story,
+  startIndex = 0,
+  label,
+}: {
+  story: Story;
+  startIndex?: number;
+  label?: string;
+}) {
   return localize(
     <div className="product-story wrap">
       {story.sections.map((section, index) => (
@@ -13,7 +21,8 @@ export function ProductStory({ story, startIndex = 0 }: { story: Story; startInd
         >
           <div className="story-copy">
             <span className="section-index">
-              {String(startIndex + index + 1).padStart(2, "0")} / THE DETAILS
+              {String(startIndex + index + 1).padStart(2, "0")}
+              {index === 0 && label && ` / ${label}`}
             </span>
             <h2>{section.title}</h2>
             {section.paragraphs.map((text) => (
