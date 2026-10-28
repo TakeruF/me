@@ -413,18 +413,25 @@
     ],
     "gallery": [
       {
-        "src": "/projects/nagi-home.webp",
-        "alt": "サイドバーでタブとSpaceを整理するNagi",
-        "caption": "作業ごとに、Spaceを。",
+        "src": "/projects/nagi-tablet.webp",
+        "alt": "タブレットで2つのページを並べて表示するNagi",
+        "caption": "タブレットのために、設計。",
         "width": 2560,
-        "height": 1600
+        "height": 1440
       },
       {
-        "src": "/projects/nagi-split.webp",
-        "alt": "2つのWebページを並べたNagiの分割表示",
-        "caption": "2つのページを、並べて。",
+        "src": "/projects/nagi-tablet-split.webp",
+        "alt": "タブをドラッグして分割表示を始めるNagi",
+        "caption": "ドラッグ&ドロップで、分割表示。",
         "width": 2560,
-        "height": 1600
+        "height": 1440
+      },
+      {
+        "src": "/projects/nagi-tablet-adblock.webp",
+        "alt": "広告を抑えてニュース記事を表示するNagi",
+        "caption": "広告を抑えて、記事に集中。",
+        "width": 2560,
+        "height": 1440
       }
     ],
     "sections": [

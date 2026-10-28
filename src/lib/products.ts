@@ -259,10 +259,10 @@ export const products: Product[] = [
     "SHA-256: befa7d79d107dbedae664ad6ef54332c3ffea67972bac40b4cbc5e9d427ed253"
   ],
   "image": {
-    "src": "/projects/nagi-home.webp",
-    "alt": "サイドバーでタブとSpaceを整理するNagi",
+    "src": "/projects/nagi-tablet.webp",
+    "alt": "タブレットで2つのページを並べて表示するNagi",
     "width": 2560,
-    "height": 1600
+    "height": 1440
   },
   "motif": "Space / Split",
   "visualLabel": "A CALMER WORKSPACE FOR THE WEB.",
