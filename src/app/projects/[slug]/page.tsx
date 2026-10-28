@@ -113,7 +113,7 @@ export default async function ProductPage({ params }: Props) {
           </ul>
         )}
         {story?.setup && (
-          <ProductStory story={{ sections: [story.setup] }} />
+          <ProductStory story={{ sections: [story.setup] }} label="SETUP" />
         )}
         {story?.intro && (
           <section className="story-intro wrap">
@@ -133,7 +133,11 @@ export default async function ProductPage({ params }: Props) {
           </div>
         )}
         {story ? (
-          <ProductStory story={story} startIndex={story.setup ? 1 : 0} />
+          <ProductStory
+            story={story}
+            startIndex={story.setup ? 1 : 0}
+            label="THE DETAILS"
+          />
         ) : (
           <section
             className="detail-features wrap"

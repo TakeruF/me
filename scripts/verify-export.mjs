@@ -115,7 +115,8 @@ for (const locale of locales) {
  assert.ok(html.includes('https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk'));
  assert.ok(html.includes('1.1.0') && html.includes('84.3 MB'));
  assert.ok(html.includes({en:'Updated October 27, 2026',ja:'2026年10月27日更新',zh:'2026年10月27日更新',ko:'2026년 10월 27일 업데이트'}[locale]));
- assert.ok(html.includes({en:'Comfortable browsing in narrow windows.',ja:'狭い画面でも、快適に。',zh:'窄屏浏览，也很顺手。',ko:'좁은 화면에서도 편하게.'}[locale]));
+ assert.ok(html.includes({en:'Fits the size of your screen.',ja:'画面の広さに合わせて。',zh:'随屏幕大小而变。',ko:'화면 크기에 맞춰서.'}[locale]));
+ assert.equal((html.match(/section-index">\d+<!-- --> \/ (THE DETAILS|詳しく見る|详细介绍|자세히 보기)/g)||[]).length, 1, `${locale} single details label`);
  assert.ok(html.includes('befa7d79d107dbedae664ad6ef54332c3ffea67972bac40b4cbc5e9d427ed253'));
  assert.ok(!html.includes('0.2.1 · 5.2 MB'), `${locale} stale Nagi story metadata`);
  assert.ok(read(`out/${locale}/work.html`).includes(`/${locale}/projects/nagi`));

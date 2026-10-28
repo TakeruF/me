@@ -464,5 +464,9 @@
   "Android 8.0以上 · 1.1.0 · 84.3 MB": "Android 8.0+ · 1.1.0 · 84.3 MB",
   "1.1.0の更新内容": "What’s new in 1.1.0",
   "2026年10月27日更新 · 署名済みAPK": "Updated October 27, 2026 · Signed APK",
-  "APKを使う場合は、上部の「Android APKをダウンロード」リンクから取得し、Androidのダウンロード一覧から開きます。システムの案内に従って、この提供元からのインストールを許可してください。": "To install the APK, use the “Download Android APK” link near the top and open the file from Android’s downloads. Follow the system prompt to allow installation from this source."
+  "APKを使う場合は、上部の「Android APKをダウンロード」リンクから取得し、Androidのダウンロード一覧から開きます。システムの案内に従って、この提供元からのインストールを許可してください。": "To install the APK, use the “Download Android APK” link near the top and open the file from Android’s downloads. Follow the system prompt to allow installation from this source.",
+  "タブをドラッグして分割表示を始められます。分割とサイドバーの幅を調整し、左右のタブをペアで保存。キーボードとマウスでも操作できます。": "Drag a tab to start split view. Adjust the split and sidebar widths, and save left and right tabs as a pair. Works with keyboard and mouse too.",
+  "画面の広さに合わせて。": "Fits the size of your screen.",
+  "広いウィンドウではサイドバー、600dp未満では全幅表示と下部ナビゲーションに切り替わります。ウィンドウのサイズを変えてもページを再読込せず、入力途中の内容を保ちます。": "Wide windows use a sidebar; windows narrower than 600dp switch to full-width pages with bottom navigation. Resizing a window doesn’t reload the page, so what you’re typing stays put.",
+  "広告・トラッカーをブロックし、ブロック後に残る空の枠も畳みます。サイトごとの例外や訪問中の一時停止にも対応。Readerで記事を読み、文字サイズを調整できます。": "Blocks ads and trackers, and collapses the empty slots they leave behind. Supports per-site exceptions and pausing on the current site. Read articles in Reader and adjust the text size."
 }
