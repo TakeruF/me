@@ -144,10 +144,10 @@ const projects = [
     "Android 8.0+"
   ],
   "url": "/projects/nagi",
-  "image": "/projects/nagi-home.webp",
-  "alt": "サイドバーでタブとSpaceを整理するNagi",
+  "image": "/projects/nagi-tablet.webp",
+  "alt": "タブレットで2つのページを並べて表示するNagi",
   "width": 2560,
-  "height": 1600,
+  "height": 1440,
   "links": [
     {
       "label": "Google Play",
