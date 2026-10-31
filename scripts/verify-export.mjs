@@ -122,16 +122,18 @@ assert.ok(read('out/androp.html').includes('0;url=/en/projects/androp'));
 assert.ok(read('out/androp.html').includes('navigator.languages'));
 for (const locale of locales) {
  const html = read(`out/${locale}/projects/nagi.html`);
- assert.ok(html.includes('https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk'));
- assert.ok(html.includes('1.1.0') && html.includes('84.3 MB'));
- assert.ok(html.includes({en:'Updated October 27, 2026',ja:'2026年10月27日更新',zh:'2026年10月27日更新',ko:'2026년 10월 27일 업데이트'}[locale]));
+ assert.ok(html.includes('https://play.google.com/store/apps/details?id=com.takeruf.nagi'));
+ assert.ok(!/android-tab-browser\/releases\/download\//.test(html), `${locale} no Nagi APK download`);
+ assert.ok(html.includes('Google Play') && !html.includes('84.3 MB'));
+ assert.ok(html.includes({en:'Official installs and updates: Google Play',ja:'公式配布・更新：Google Play',zh:'官方安装与更新：Google Play',ko:'공식 설치 및 업데이트: Google Play'}[locale]));
  assert.ok(html.includes({en:'Fits the size of your screen.',ja:'画面の広さに合わせて。',zh:'随屏幕大小而变。',ko:'화면 크기에 맞춰서.'}[locale]));
  assert.equal((html.match(/section-index">\d+<!-- --> \/ (THE DETAILS|詳しく見る|详细介绍|자세히 보기)/g)||[]).length, 1, `${locale} single details label`);
- assert.ok(html.includes('befa7d79d107dbedae664ad6ef54332c3ffea67972bac40b4cbc5e9d427ed253'));
+ assert.ok(!html.includes('befa7d79d107dbedae664ad6ef54332c3ffea67972bac40b4cbc5e9d427ed253'));
  assert.ok(!html.includes('0.2.1 · 5.2 MB'), `${locale} stale Nagi story metadata`);
  assert.ok(read(`out/${locale}/work.html`).includes(`/${locale}/projects/nagi`));
  assert.ok(read(`out/${locale}/index.html`).includes(`/${locale}/projects/nagi`));
- assert.ok(read(`out/${locale}/index.html`).includes('https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk'), `${locale} current homepage APK`);
+ assert.ok(read(`out/${locale}/index.html`).includes('https://play.google.com/store/apps/details?id=com.takeruf.nagi'), `${locale} homepage Play link`);
+ assert.ok(!/android-tab-browser\/releases\/download\//.test(read(`out/${locale}/index.html`)), `${locale} no homepage Nagi APK`);
  assert.ok(!read(`out/${locale}/index.html`).includes('nagi-1.0.0.apk'), `${locale} no stale homepage APK`);
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/nagi`));
 }

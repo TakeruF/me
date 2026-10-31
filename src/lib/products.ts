@@ -211,24 +211,16 @@ export const products: Product[] = [
   "eyebrow": "A CALMER WORKSPACE FOR THE WEB",
   "headline": "タブを整えて、ブラウジングを穏やかに。",
   "description": "Androidタブレットとスマートフォン向けのワークスペースブラウザ。広い画面ではサイドバー、狭い画面では下部ナビゲーションでタブを整理し、Spaceと分割表示を使えます。",
-  "platforms": "Android 8.0以上 · 1.1.0 · 84.3 MB",
+  "platforms": "Android 8.0以上 · Google Play",
   "primary": {
     "label": "Google Play",
     "href": "https://play.google.com/store/apps/details?id=com.takeruf.nagi"
   },
   "links": [
     {
-      "label": "Android APKをダウンロード",
-      "href": "https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk"
-    },
-    {
       "label": "プライバシーポリシー",
       "href": "/nagi/privacy",
       "internal": true
-    },
-    {
-      "label": "1.1.0の更新内容",
-      "href": "https://github.com/TakeruF/android-tab-browser/releases/tag/v1.1.0"
     },
     {
       "label": "GitHub",
@@ -267,14 +259,13 @@ export const products: Product[] = [
     }
   ],
   "notes": [
+    "Google Playからインストール・更新します。今後の公式配布先はGoogle Playのみです。",
+    "旧GitHub／Webサイト版とは署名が異なるため、上書き移行できない場合があります。アンインストールすると端末内のタブ・ブックマーク・設定・サイトデータが削除されます。",
+    "GitHubはソースコードと更新履歴の公開先です。新しいAPKの配布は行いません。",
     "GoogleログインがPC表示で拒否された場合は、上部のバーからモバイル表示を試せます。ログインの成功を保証するものではありません。",
     "タブレット・スマートフォンのウィンドウ幅に合わせて表示を切り替えます。実機の折りたたみ動作やすべてのサイトでの広告処理は未検証です。",
-    "APKを使う場合は、上部の「Android APKをダウンロード」リンクから取得し、Androidのダウンロード一覧から開きます。システムの案内に従って、この提供元からのインストールを許可してください。",
-    "当サイト・GitHubの旧版には1.1.0を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。",
-    "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。",
     "通常のSpace間ではCookieとログイン状態を共有します。プライベートブラウジングには対応WebViewが必要です。同期は未対応です。",
     "写真はJPEGでアップロードできます。生成ファイルの保存は32 MBまで。カメラやパスワード自動入力の動作は端末とプロバイダーに依存します。",
-    "SHA-256: befa7d79d107dbedae664ad6ef54332c3ffea67972bac40b4cbc5e9d427ed253"
   ],
   "image": {
     "src": "/projects/nagi-tablet.webp",

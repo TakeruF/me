@@ -1,8 +1,8 @@
 # Nagi 개인정보 처리방침
 
-최종 업데이트: 2026년 10월 27일
+최종 업데이트: 2026년 10월 31일
 
-Nagi는 TakeruF가 개발한 Android 워크스페이스 브라우저입니다. 이 방침은 Google Play 버전과 GitHub 및 takeruf.com에서 배포하는 APK 버전에 적용됩니다. 연락처: [support@takeruf.com](mailto:support@takeruf.com).
+Nagi는 TakeruF가 개발한 Android 워크스페이스 브라우저입니다. 1.1.1부터 새 버전은 Google Play로만 배포합니다. 이 방침은 이전에 GitHub 및 takeruf.com에서 배포한 APK 버전에도 계속 적용됩니다. 연락처: [support@takeruf.com](mailto:support@takeruf.com).
 
 ## 기기에 저장하는 정보
 
@@ -42,7 +42,7 @@ WebView가 프로필 분리와 탐색 데이터 삭제를 지원하는 경우 �
 
 ## 배포 경로별 업데이트
 
-Google Play 버전은 Google Play를 통해 업데이트됩니다. APK 업데이트 확인을 위해 GitHub에 연결하거나 자체 업데이트용 APK를 다운로드하거나 설치하지 않습니다. GitHub／APK 버전은 시작 시와 사용자 요청 시 GitHub 릴리스 정보를 확인합니다. GitHub는 접속 IP와 Nagi 버전이 포함된 User-Agent를 볼 수 있습니다. APK 다운로드와 설치에는 사용자 동작과 Android 설치 승인이 필요합니다. 업데이트 요청에 방문 기록이나 검색어를 포함하지 않습니다.
+Google Play 버전은 Google Play를 통해 업데이트됩니다. APK 업데이트 확인을 위해 GitHub에 연결하거나 자체 업데이트용 APK를 다운로드하거나 설치하지 않습니다. 이전 GitHub／APK 버전은 시작 시와 사용자 요청 시 GitHub 릴리스 정보를 확인합니다. GitHub는 접속 IP와 Nagi 버전이 포함된 User-Agent를 볼 수 있습니다. APK 다운로드와 설치에는 사용자 동작과 Android 설치 승인이 필요합니다. 업데이트 요청에 방문 기록이나 검색어를 포함하지 않습니다.
 
 ## 보관, 삭제 및 보안
 
