@@ -366,7 +366,6 @@
   "APKをインストールする": "Install the APK",
   "0.2.1で、もっと使いやすく。": "More useful in 0.2.1.",
   "タブレットの横画面での利用を推奨します。現在はMVPです。": "Landscape use on a tablet is recommended. This is an MVP.",
-  "Debug版や旧com.orbit.browserは署名・アプリIDが異なるため、このAPKで直接上書きできません。": "Debug builds and the former com.orbit.browser use different signing or app IDs and cannot be updated directly with this APK.",
   "Space間でCookieとログイン状態は共有されます。同期、プライベートブラウジング、コンテンツブロックには未対応です。": "Cookies and logins are shared across Spaces. Sync, private browsing and content blocking are not supported.",
   "写真はJPEGでアップロードできます。生成ファイルの保存は32 MBまで。カメラやパスワード自動入力の動作は端末とプロバイダーに依存します。": "Photo uploads use JPEG. Generated file downloads are limited to 32 MB. Camera and password autofill behavior depends on your device and provider.",
   "タブと固定タブをSpaceで整理。お気に入りはSpaceをまたいで共有し、履歴はサイドバーから開けます。": "Organize ordinary and pinned tabs in Spaces. Favorites are shared across Spaces; history is available from the sidebar.",
@@ -454,11 +453,6 @@
   "新しいタブを、自分らしく。": "Make each new tab your own.",
   "新しいタブの背景を選択できます。お気に入りメニューの長押しとタップ範囲を修正し、画面の回転・サイズ変更時の安定性を改善しました。": "Choose a new-tab background. Favorite menu long presses and touch targets are fixed, with improved stability when rotating or resizing the window.",
   "GoogleログインがPC表示で拒否された場合は、上部のバーからモバイル表示を試せます。ログインの成功を保証するものではありません。": "If Google rejects sign-in in desktop view, try mobile view from the top bar. Successful sign-in is not guaranteed.",
-  "当サイト・GitHubの旧版には1.1.0を上書きインストールできます。アンインストールは不要です。Google Play版とは署名が異なるため、同じ配布元で更新してください。": "Install 1.1.0 over an older version from this site or GitHub without uninstalling. Google Play uses a different signing certificate; update through the same distribution channel.",
-  "Android 8.0以上 · 1.1.0 · 84.3 MB": "Android 8.0+ · 1.1.0 · 84.3 MB",
-  "1.1.0の更新内容": "What’s new in 1.1.0",
-  "2026年10月27日更新 · 署名済みAPK": "Updated October 27, 2026 · Signed APK",
-  "APKを使う場合は、上部の「Android APKをダウンロード」リンクから取得し、Androidのダウンロード一覧から開きます。システムの案内に従って、この提供元からのインストールを許可してください。": "To install the APK, use the “Download Android APK” link near the top and open the file from Android’s downloads. Follow the system prompt to allow installation from this source.",
   "タブをドラッグして分割表示を始められます。分割とサイドバーの幅を調整し、左右のタブをペアで保存。キーボードとマウスでも操作できます。": "Drag a tab to start split view. Adjust the split and sidebar widths, and save left and right tabs as a pair. Works with keyboard and mouse too.",
   "画面の広さに合わせて。": "Fits the size of your screen.",
   "広いウィンドウではサイドバー、600dp未満では全幅表示と下部ナビゲーションに切り替わります。ウィンドウのサイズを変えてもページを再読込せず、入力途中の内容を保ちます。": "Wide windows use a sidebar; windows narrower than 600dp switch to full-width pages with bottom navigation. Resizing a window doesn’t reload the page, so what you’re typing stays put.",
@@ -476,5 +470,10 @@
   "1.3.0の更新内容": "1.3.0 release notes",
   "App Sandboxで、ファイルへのアクセスを限定。": "Limit file access with App Sandbox.",
   "アプリと転送ツールをApp Sandbox内で実行。共有するファイルと保存先への許可で動作します。アップデート後、独自の保存先を使っていた場合は設定から一度選び直してください。": "The app and transfer tools run in App Sandbox with permission to access shared files and the save folder. If you used a custom save folder before updating, select it once more in Settings.",
-  "1.3.0のサンドボックス版で、OPPO Pad 4 ProとHuawei Pura 70・HarmonyOS 7との4 MiBファイル往復とハッシュ一致を確認。OPPO Find X9 Proは旧版でテスト済みですが、1.3.0での再試験は未実施です。ほかのメーカー・機種は未検証。対応は地域・OS・機種により異なります。": "The 1.3.0 sandbox build passed 4 MiB round trips with matching hashes on OPPO Pad 4 Pro and Huawei Pura 70 with HarmonyOS 7. OPPO Find X9 Pro was tested in earlier releases; its 1.3.0 retest remains outstanding. Other brands and models remain untested; compatibility varies by region, OS and model."
+  "1.3.0のサンドボックス版で、OPPO Pad 4 ProとHuawei Pura 70・HarmonyOS 7との4 MiBファイル往復とハッシュ一致を確認。OPPO Find X9 Proは旧版でテスト済みですが、1.3.0での再試験は未実施です。ほかのメーカー・機種は未検証。対応は地域・OS・機種により異なります。": "The 1.3.0 sandbox build passed 4 MiB round trips with matching hashes on OPPO Pad 4 Pro and Huawei Pura 70 with HarmonyOS 7. OPPO Find X9 Pro was tested in earlier releases; its 1.3.0 retest remains outstanding. Other brands and models remain untested; compatibility varies by region, OS and model.",
+  "Android 8.0以上 · Google Play": "Android 8.0+ · Google Play",
+  "公式配布・更新：Google Play": "Official installs and updates: Google Play",
+  "Google Playからインストール・更新します。今後の公式配布先はGoogle Playのみです。": "Install and update through Google Play. Google Play is the sole official channel for future releases.",
+  "旧GitHub／Webサイト版とは署名が異なるため、上書き移行できない場合があります。アンインストールすると端末内のタブ・ブックマーク・設定・サイトデータが削除されます。": "The old GitHub/website edition uses a different signing certificate, so an in-place switch may fail. Uninstalling deletes local tabs, bookmarks, settings and site data.",
+  "GitHubはソースコードと更新履歴の公開先です。新しいAPKの配布は行いません。": "GitHub hosts source code and release history. New APK downloads will not be published."
 }

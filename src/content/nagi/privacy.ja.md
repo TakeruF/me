@@ -1,8 +1,8 @@
 # Nagiのプライバシーポリシー
 
-最終更新日：2026年10月27日
+最終更新日：2026年10月31日
 
-NagiはTakeruFが開発するAndroid向けワークスペースブラウザです。本ポリシーはGoogle Play版と、GitHubおよびtakeruf.comから配布するAPK版に適用されます。連絡先：[support@takeruf.com](mailto:support@takeruf.com)。
+NagiはTakeruFが開発するAndroid向けワークスペースブラウザです。1.1.1以降の新規リリースはGoogle Playのみで配布します。本ポリシーは、以前GitHubおよびtakeruf.comから配布したAPK版にも引き続き適用されます。連絡先：[support@takeruf.com](mailto:support@takeruf.com)。
 
 ## 端末に保存する情報
 
@@ -42,7 +42,7 @@ Googleによる取り扱いは[ML Kitのデータ開示](https://developers.goog
 
 ## 配布経路ごとの更新
 
-Google Play版はGoogle Play経由で更新します。APK更新の確認のためにGitHubへ接続したり、自己更新用APKを取得・インストールしたりしません。GitHub／APK版は起動時およびユーザーの操作時にGitHubのリリース情報を確認します。GitHubには接続元IPとNagiのバージョンを含むUser-Agentが伝わります。APKの取得とインストールにはユーザー操作が必要で、Androidのインストール許可画面を使用します。更新リクエストに閲覧履歴や検索語を含めません。
+Google Play版はGoogle Play経由で更新します。APK更新の確認のためにGitHubへ接続したり、自己更新用APKを取得・インストールしたりしません。旧GitHub／APK版は起動時およびユーザーの操作時にGitHubのリリース情報を確認します。GitHubには接続元IPとNagiのバージョンを含むUser-Agentが伝わります。APKの取得とインストールにはユーザー操作が必要で、Androidのインストール許可画面を使用します。更新リクエストに閲覧履歴や検索語を含めません。
 
 ## 保存期間・削除・セキュリティ
 

@@ -1,8 +1,8 @@
 # Nagi Privacy Policy
 
-Last updated: October 27, 2026
+Last updated: October 31, 2026
 
-Nagi is an Android workspace browser developed by TakeruF. This policy covers both the Google Play edition and the APK edition distributed through GitHub and takeruf.com. Contact: [support@takeruf.com](mailto:support@takeruf.com).
+Nagi is an Android workspace browser developed by TakeruF. Starting with 1.1.1, new releases are distributed only through Google Play. This policy also continues to cover APK editions previously distributed through GitHub and takeruf.com. Contact: [support@takeruf.com](mailto:support@takeruf.com).
 
 ## Data stored on your device
 
@@ -42,7 +42,7 @@ Photo uploads can open Android’s camera with your permission; the resulting JP
 
 ## Updates by distribution channel
 
-The Google Play edition receives updates through Google Play. It does not contact GitHub to check for APK updates and does not download or install APKs to update itself. The GitHub/APK edition checks GitHub’s release manifest on startup and on request. GitHub sees the connection IP and an Nagi-version User-Agent. APK downloads and installation require user action; Android asks for installation authorization. No browsing history or queries are included in these update requests.
+The Google Play edition receives updates through Google Play. It does not contact GitHub to check for APK updates and does not download or install APKs to update itself. The legacy GitHub/APK edition checks GitHub’s release manifest on startup and on request. GitHub sees the connection IP and an Nagi-version User-Agent. APK downloads and installation require user action; Android asks for installation authorization. No browsing history or queries are included in these update requests.
 
 ## Retention, deletion, and security
 

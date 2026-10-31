@@ -154,10 +154,6 @@ const projects = [
       "url": "https://play.google.com/store/apps/details?id=com.takeruf.nagi"
     },
     {
-      "label": "Download",
-      "url": "https://github.com/TakeruF/android-tab-browser/releases/download/v1.1.0/nagi-1.1.0.apk"
-    },
-    {
       "label": "GitHub",
       "url": "https://github.com/TakeruF/android-tab-browser"
     }

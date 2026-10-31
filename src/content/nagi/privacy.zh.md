@@ -1,8 +1,8 @@
 # Nagi 隐私政策
 
-最后更新：2026年10月27日
+最后更新：2026年10月31日
 
-Nagi 是由 TakeruF 开发的 Android 工作空间浏览器。本政策适用于 Google Play 版及通过 GitHub、takeruf.com 分发的 APK 版。联系邮箱：[support@takeruf.com](mailto:support@takeruf.com)。
+Nagi 是由 TakeruF 开发的 Android 工作空间浏览器。从 1.1.1 起，新版本仅通过 Google Play 分发。本政策也继续适用于此前通过 GitHub 和 takeruf.com 分发的 APK 版本。联系邮箱：[support@takeruf.com](mailto:support@takeruf.com)。
 
 ## 保存在设备上的信息
 
@@ -42,7 +42,7 @@ Google 的处理方式请参阅 [ML Kit 数据披露](https://developers.google.
 
 ## 不同分发渠道的更新
 
-Google Play 版通过 Google Play 更新，不会为了 APK 更新检查连接 GitHub，也不会下载或安装 APK 来更新自身。GitHub／APK 版在启动时及用户操作时检查 GitHub 发布信息。GitHub 会看到来源 IP 和包含 Nagi 版本的 User-Agent。APK 下载和安装需要用户操作，并由 Android 请求安装授权。更新请求不包含浏览历史或搜索词。
+Google Play 版通过 Google Play 更新，不会为了 APK 更新检查连接 GitHub，也不会下载或安装 APK 来更新自身。旧 GitHub／APK 版在启动时及用户操作时检查 GitHub 发布信息。GitHub 会看到来源 IP 和包含 Nagi 版本的 User-Agent。APK 下载和安装需要用户操作，并由 Android 请求安装授权。更新请求不包含浏览历史或搜索词。
 
 ## 保留、删除与安全
 
