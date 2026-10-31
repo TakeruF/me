@@ -107,6 +107,11 @@ export const products: Product[] = [
   },
   "links": [
     {
+      "label": "プライバシーポリシー",
+      "href": "/projects/androp/privacy",
+      "internal": true
+    },
+    {
       "label": "1.3.0の更新内容",
       "href": "https://github.com/TakeruF/androp/releases/tag/v1.3.0"
     },

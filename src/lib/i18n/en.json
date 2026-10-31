@@ -475,5 +475,9 @@
   "公式配布・更新：Google Play": "Official installs and updates: Google Play",
   "Google Playからインストール・更新します。今後の公式配布先はGoogle Playのみです。": "Install and update through Google Play. Google Play is the sole official channel for future releases.",
   "旧GitHub／Webサイト版とは署名が異なるため、上書き移行できない場合があります。アンインストールすると端末内のタブ・ブックマーク・設定・サイトデータが削除されます。": "The old GitHub/website edition uses a different signing certificate, so an in-place switch may fail. Uninstalling deletes local tabs, bookmarks, settings and site data.",
-  "GitHubはソースコードと更新履歴の公開先です。新しいAPKの配布は行いません。": "GitHub hosts source code and release history. New APK downloads will not be published."
+  "GitHubはソースコードと更新履歴の公開先です。新しいAPKの配布は行いません。": "GitHub hosts source code and release history. New APK downloads will not be published.",
+  "プライバシーポリシー — anDrop": "Privacy Policy — anDrop",
+  "anDropのファイル転送、ローカル保存、診断と配布経路別の更新通信について。": "How anDrop handles file transfers, local storage, diagnostics and updates for each distribution channel.",
+  "anDropのプライバシーポリシー": "Privacy Policy for anDrop",
+  "anDropに戻る": "Back to anDrop"
 }

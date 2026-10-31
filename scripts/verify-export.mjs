@@ -9,6 +9,12 @@ const policyIntro = {
  zh: 'Per-App Language 由 TakeruF 开发。',
  ko: 'Per-App Language는 TakeruF가 개발합니다.',
 };
+const andropPolicyIntro = {
+ en: 'anDrop is developed and provided by',
+ ja: 'anDrop は',
+ zh: 'anDrop 由',
+ ko: 'anDrop는',
+};
 const f1 = read('public/projects/f1-harmony.html');
 const originalStyle = f1.match(/<style>([\s\S]*?)<\/style>/)[1];
 const originalScript = f1.match(/<script>([\s\S]*?)<\/script>/)[1];
@@ -31,6 +37,7 @@ for (const locale of locales) {
   checked++;
  }
  const androp = read(`out/${locale}/projects/androp.html`);
+ assert.ok(androp.includes(`href="/${locale}/projects/androp/privacy"`), `${locale} anDrop privacy link`);
  assert.ok(androp.includes('https://github.com/TakeruF/androp/releases/latest'), `${locale} anDrop download`);
  assert.ok(read(`out/${locale}/work.html`).match(/<section[^>]*id="everyday"[\s\S]*?androp[\s\S]*?<\/section>/), `${locale} anDrop everyday category`);
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/androp`));
@@ -83,6 +90,18 @@ for (const locale of locales) {
  assert.equal((renderedWork.match(new RegExp(locale === 'zh' ? '开发中' : 'UNDER DEVELOPMENT','g'))||[]).length,3);
 }
 for (const locale of locales) {
+ {
+  const route = '/projects/androp/privacy';
+  const html = read(`out/${locale}${route}.html`);
+  assert.ok(html.includes(`<html lang="${locale==='zh'?'zh-CN':locale}"`), `${locale}${route} document language`);
+  assert.ok(html.includes(`href="https://takeruf.com/${locale}${route}"`), `${locale}${route} canonical`);
+  for (const language of locales) assert.ok(html.includes(`href="/${language}${route}"`), `${route} switch to ${language}`);
+  assert.ok(html.includes(`href="/${locale}/projects/androp"`), `${route} product link`);
+  assert.ok(html.includes(andropPolicyIntro[locale]), `${locale}${route} localized policy body`);
+  assert.ok(html.includes('Mac App Store') && html.includes('Sparkle'), `${locale}${route} both distribution channels`);
+  assert.ok(html.includes('href="mailto:support@takeruf.com"'), `${locale}${route} privacy contact`);
+  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}${route}`), `${locale}${route} sitemap`);
+ }
  for (const doc of ['releases', 'privacy', 'claude-sign-in']) {
   const route = `/projects/token-meter/${doc}`;
   const html = read(`out/${locale}${route}.html`);
@@ -115,7 +134,8 @@ for (const locale of locales) {
  assert.equal((notes.match(/class="release-card"/g)||[]).length, 25, `${locale} release notes`);
  assert.ok(!read(`out/${locale}/projects/token-meter.html`).includes('takeruf.github.io/token_meter'));
 }
-assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,96);
+assert.equal((read('out/sitemap.xml').match(/<url>/g)||[]).length,100);
+assert.ok(read('out/projects/androp/privacy.html').includes('/en/projects/androp/privacy'));
 assert.ok(read('out/nagi.html').includes('0;url=/en/projects/nagi'));
 assert.ok(read('out/nagi.html').includes('navigator.languages'));
 assert.ok(read('out/androp.html').includes('0;url=/en/projects/androp'));
