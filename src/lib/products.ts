@@ -100,28 +100,40 @@ export const products: Product[] = [
   "eyebrow": "YOUR MAC. THEIR BUILT-IN SHARE.",
   "headline": "安卓互传も、华为分享も、Macで。",
   "description": "互传联盟と华为分享に正式対応。Macと対応スマートフォン・タブレットの間でファイルを双方向に共有。スマホ側の追加アプリやアカウント登録は不要です。",
-  "platforms": "macOS 14+ · Apple Silicon · 1.2.0",
+  "platforms": "macOS 14+ · Apple Silicon · 1.2.3",
   "primary": {
     "label": "Mac版をダウンロード",
-    "href": "https://github.com/TakeruF/cn-android-share/releases/latest"
+    "href": "https://github.com/TakeruF/androp/releases/latest"
   },
   "links": [
     {
+      "label": "1.2.3の更新内容",
+      "href": "https://github.com/TakeruF/androp/releases/tag/v1.2.3"
+    },
+    {
       "label": "使い方・トラブル対処",
-      "href": "https://github.com/TakeruF/cn-android-share/blob/main/docs/usage.md"
+      "href": `https://github.com/TakeruF/androp/blob/main/docs/usage${currentLocale() === "zh" ? "" : ".en"}.md`
     },
     {
       "label": "対応機種・テスト記録",
-      "href": "https://github.com/TakeruF/cn-android-share/blob/main/docs/compatibility.md"
+      "href": `https://github.com/TakeruF/androp/blob/main/docs/compatibility${currentLocale() === "zh" ? "" : ".en"}.md`
     },
     {
       "label": "GitHub",
-      "href": "https://github.com/TakeruF/cn-android-share"
+      "href": "https://github.com/TakeruF/androp"
     }
   ],
   "features": [
     {
-      "title": "1.2.0の目玉、华为分享に正式対応。",
+      "title": "通知は3分で、自動的に片づく。",
+      "text": "送信済み・受信済み・転送失敗の通知は、アプリ起動中なら3分後に自動で消えます。スリープや終了中に期限を過ぎた分は、復帰・次回起動時に整理。転送履歴はアプリに残ります。"
+    },
+    {
+      "title": "Live Photoも、ファイルとして共有。",
+      "text": "Apple・Android／OPPO・Huaweiの動く写真をローカルで形式変換。対応するOPPOのLive Photo ZIPは.pvtファイルとして受信し、「写真」には自動で取り込みません。"
+    },
+    {
+      "title": "华为分享に、正式対応。",
       "text": "Huawei Pura 70・HarmonyOS 7で双方向転送を確認。端末標準の华为分享から使え、Petalの起動は不要です。両端を同じWi-Fiに接続して共有できます。"
     },
     {
@@ -130,11 +142,11 @@ export const products: Product[] = [
     },
     {
       "title": "受け取ったら、そのままダウンロードへ。",
-      "text": "スマホ側の対応する共有機能でMacを選び、通知またはメニューバーで受信を許可。初期設定ではダウンロードフォルダに保存します。同名ファイルは連番を付けて保存し、自動で開きません。"
+      "text": "スマホ側の対応する共有機能でMacを選択。確認が必要な相手は通知またはメニューバーで受信を許可します。初期設定ではダウンロードフォルダに保存し、同名ファイルは連番を付けて保存。自動では開きません。"
     },
     {
-      "title": "受信は、毎回自分で確認。",
-      "text": "「すべての人」と「信頼したデバイスのみ」を選択。Huawei端末も成功した受信履歴から登録できます。Huaweiは転送公開鍵で識別し、どのモードでも受信ごとに確認します。アカウント連携ではありません。"
+      "title": "信頼した相手からは、自動で受信。",
+      "text": "登録した端末からの自動受信は初期設定でオン。「すべての人」「信頼したデバイスのみ」の両方で使え、オフにすれば毎回確認できます。Huawei端末も、成功した受信履歴から登録できます。"
     },
     {
       "title": "名前を変える、候補から隠す。",
@@ -152,7 +164,8 @@ export const products: Product[] = [
     "Mac→Huaweiは最大16ファイル・単体4 GiB・合計16 GiB。Huawei→Macは最大16ファイル・単体と合計とも16 MiBです。GiB級の実機転送とHuawei・OPPOへの実機同時送信は未検証です。Google Quick Share・Wi-Fi Directには対応していません。",
     "相手側の対応する共有機能と「すべての人に公開」を有効にしてください。公開設定は自動で切れることがあります。ゲストWi-Fiや端末間通信を遮断するネットワークでは転送できない場合があります。",
     "表示言語は簡体字中国語・英語。フォルダは先に圧縮し、同名ファイルは別々に送信してください。異なる端末への送信は並行できます。受信はほかの転送と同時には行いません。",
-    "画面は実際のアプリUIに架空のデータを入れた例です。表示されているすべてのメーカーやPCの互換性を示すものではありません。",
+    "Live Photoの端末側ギャラリーでの認識やHDR/gainmapの保持は未検証です。共有元が静止画だけを渡す場合は、元の写真と動画をペアで書き出してください。URL・テキスト共有には対応していません。",
+    "画面は1.2.0の実際のアプリUIに架空のデータを入れた例です。表示されているすべてのメーカーやPCの互換性を示すものではありません。",
     "GPL-3.0-onlyのオープンソースです。Appleや端末メーカーの公式製品ではありません。"
   ],
   "image": {

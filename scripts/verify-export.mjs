@@ -31,12 +31,21 @@ for (const locale of locales) {
   checked++;
  }
  const androp = read(`out/${locale}/projects/androp.html`);
- assert.ok(androp.includes('https://github.com/TakeruF/cn-android-share/releases/latest'), `${locale} anDrop download`);
+ assert.ok(androp.includes('https://github.com/TakeruF/androp/releases/latest'), `${locale} anDrop download`);
  assert.ok(read(`out/${locale}/work.html`).match(/<section[^>]*id="everyday"[\s\S]*?androp[\s\S]*?<\/section>/), `${locale} anDrop everyday category`);
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/androp`));
  assert.equal((androp.match(/class="screen-slide /g)||[]).length, 4, `${locale} anDrop demo gallery`);
  assert.ok(androp.includes('OPPO Find X9 Pro') && androp.includes('OPPO Pad 4 Pro'), `${locale} tested anDrop devices`);
- assert.ok(androp.includes('1.2.0') && androp.includes('Pura 70'), `${locale} anDrop Huawei release coverage`);
+ assert.ok(androp.includes('1.2.3') && androp.includes('Pura 70'), `${locale} anDrop release coverage`);
+ assert.ok(androp.includes('https://github.com/TakeruF/androp/releases/tag/v1.2.3'), `${locale} anDrop release notes`);
+ assert.ok(!androp.includes('TakeruF/cn-android-share'), `${locale} current anDrop repository`);
+ const andropCopy = {
+  en: ['Notifications clear themselves after three minutes.', 'Receive automatically from trusted devices.', 'Share Live Photos as files, too.'],
+  ja: ['通知は3分で、自動的に片づく。', '信頼した相手からは、自動で受信。', 'Live Photoも、ファイルとして共有。'],
+  zh: ['通知，3分钟后自动清理。', '来自信任的设备，自动接收。', '实况照片，也能作为文件共享。'],
+  ko: ['알림은 3분 뒤 자동으로 정리됩니다.', '신뢰하는 기기에서 자동으로 수신하세요.', 'Live Photo도 파일로 공유하세요.'],
+ };
+ for (const copy of andropCopy[locale]) assert.ok(androp.includes(copy), `${locale} anDrop current features: ${copy}`);
  for (const scene of ['recipients', 'sending', 'trusted', 'settings']) {
   assert.ok(androp.includes(`androp-120-${scene}-${locale === 'zh' ? 'zh' : 'en'}.webp`), `${locale} localized anDrop ${scene}`);
  }
