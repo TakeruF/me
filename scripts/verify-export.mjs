@@ -36,9 +36,10 @@ for (const locale of locales) {
  assert.ok(read('out/sitemap.xml').includes(`https://takeruf.com/${locale}/projects/androp`));
  assert.equal((androp.match(/class="screen-slide /g)||[]).length, 4, `${locale} anDrop demo gallery`);
  assert.ok(androp.includes('OPPO Find X9 Pro') && androp.includes('OPPO Pad 4 Pro'), `${locale} tested anDrop devices`);
- assert.ok(androp.includes('1.2.3') && androp.includes('Pura 70'), `${locale} anDrop release coverage`);
- assert.ok(androp.includes('https://github.com/TakeruF/androp/releases/tag/v1.2.3'), `${locale} anDrop release notes`);
+ assert.ok(androp.includes('1.3.0') && androp.includes('Pura 70'), `${locale} anDrop release coverage`);
+ assert.ok(androp.includes('https://github.com/TakeruF/androp/releases/tag/v1.3.0'), `${locale} anDrop release notes`);
  assert.ok(!androp.includes('TakeruF/cn-android-share'), `${locale} current anDrop repository`);
+ assert.ok(androp.includes('App Sandbox') && androp.includes('4 MiB'), `${locale} anDrop sandbox and physical test scope`);
  const andropCopy = {
   en: ['Notifications clear themselves after three minutes.', 'Receive automatically from trusted devices.', 'Share Live Photos as files, too.'],
   ja: ['通知は3分で、自動的に片づく。', '信頼した相手からは、自動で受信。', 'Live Photoも、ファイルとして共有。'],
