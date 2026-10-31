@@ -100,15 +100,15 @@ export const products: Product[] = [
   "eyebrow": "YOUR MAC. THEIR BUILT-IN SHARE.",
   "headline": "安卓互传も、华为分享も、Macで。",
   "description": "互传联盟と华为分享に正式対応。Macと対応スマートフォン・タブレットの間でファイルを双方向に共有。スマホ側の追加アプリやアカウント登録は不要です。",
-  "platforms": "macOS 14+ · Apple Silicon · 1.2.3",
+  "platforms": "macOS 14+ · Apple Silicon · 1.3.0",
   "primary": {
     "label": "Mac版をダウンロード",
     "href": "https://github.com/TakeruF/androp/releases/latest"
   },
   "links": [
     {
-      "label": "1.2.3の更新内容",
-      "href": "https://github.com/TakeruF/androp/releases/tag/v1.2.3"
+      "label": "1.3.0の更新内容",
+      "href": "https://github.com/TakeruF/androp/releases/tag/v1.3.0"
     },
     {
       "label": "使い方・トラブル対処",
@@ -124,6 +124,10 @@ export const products: Product[] = [
     }
   ],
   "features": [
+    {
+      "title": "App Sandboxで、ファイルへのアクセスを限定。",
+      "text": "アプリと転送ツールをApp Sandbox内で実行。共有するファイルと保存先への許可で動作します。アップデート後、独自の保存先を使っていた場合は設定から一度選び直してください。"
+    },
     {
       "title": "通知は3分で、自動的に片づく。",
       "text": "送信済み・受信済み・転送失敗の通知は、アプリ起動中なら3分後に自動で消えます。スリープや終了中に期限を過ぎた分は、復帰・次回起動時に整理。転送履歴はアプリに残ります。"
@@ -159,7 +163,7 @@ export const products: Product[] = [
   ],
   "notes": [
     "DMGを開き、anDropをApplicationsへ移動して起動。Bluetooth・ローカルネットワーク・通知・保存先へのアクセスを必要に応じて許可してください。Apple Silicon・macOS 14以降向けで、Intel版はありません。macOS 14の実機動作は未検証です。",
-    "OPPO Find X9 Pro・OPPO Pad 4 Proに加え、Huawei Pura 70・HarmonyOS 7で双方向の実機テストを実施。ほかのメーカー・機種は未検証です。対応は地域・OS・機種により異なります。",
+    "1.3.0のサンドボックス版で、OPPO Pad 4 ProとHuawei Pura 70・HarmonyOS 7との4 MiBファイル往復とハッシュ一致を確認。OPPO Find X9 Proは旧版でテスト済みですが、1.3.0での再試験は未実施です。ほかのメーカー・機種は未検証。対応は地域・OS・機種により異なります。",
     "anDropは华为分享のファイル共有を単独で行えるため、鸿蒙星河互联（Petal）での転送を終えてから終了することをおすすめします。共存は引き続き実験的です。起動中に送受信が失敗すると、終了して再試行するようポップアップで案内します。",
     "Mac→Huaweiは最大16ファイル・単体4 GiB・合計16 GiB。Huawei→Macは最大16ファイル・単体と合計とも16 MiBです。GiB級の実機転送とHuawei・OPPOへの実機同時送信は未検証です。Google Quick Share・Wi-Fi Directには対応していません。",
     "相手側の対応する共有機能と「すべての人に公開」を有効にしてください。公開設定は自動で切れることがあります。ゲストWi-Fiや端末間通信を遮断するネットワークでは転送できない場合があります。",
