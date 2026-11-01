@@ -66,7 +66,6 @@
   "利用者自身による各アカウントの認証・権限付与が必要です。": "You must authenticate and grant permissions for each of your accounts yourself.",
   "機能・配布形態・導入手順はリポジトリの最新版を確認してください。": "See the latest repository documentation for features, distribution and setup instructions.",
   "Markdownの編集とプレビューを並べた、シンプルな文書エディタ。通信が途切れても、書く時間を途切れさせないために。": "A simple document editor with Markdown and preview side by side. Keep writing even when your connection drops.",
-  "Markdown Docs を開く": "Open Markdown Docs",
   "書きながら、仕上がりを見る。": "See the result as you write.",
   "Markdown入力とプレビューを分割表示。見出し、リンク、引用、コードなどの入力をツールバーが支えます。": "Edit Markdown beside a live preview, with toolbar support for headings, links, quotes and code.",
   "複数のメモを、ひとつの場所に。": "All your notes, in one place.",
