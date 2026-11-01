@@ -384,43 +384,6 @@ export const products: Product[] = [
     tone: "blue",
   },
   {
-    slug: "markdown-docs",
-    name: "Markdown Docs",
-    category: "Everyday tools",
-    eyebrow: "THOUGHTS, WITH ROOM TO GROW",
-    headline: "思いついたら、書きつづける。",
-    description:
-      "Markdownの編集とプレビューを並べた、シンプルな文書エディタ。通信が途切れても、書く時間を途切れさせないために。",
-    platforms: "Web · Offline-first",
-    primary: {
-      label: "Markdown Docs を開く",
-      href: "https://mddocs-five.vercel.app",
-    },
-    links: [],
-    features: [
-      {
-        title: "書きながら、仕上がりを見る。",
-        text: "Markdown入力とプレビューを分割表示。見出し、リンク、引用、コードなどの入力をツールバーが支えます。",
-      },
-      {
-        title: "複数のメモを、ひとつの場所に。",
-        text: "文書を作成し、タイトルと本文から検索。サイドバーで切り替えながら、考えを整理できます。",
-      },
-      {
-        title: "オフラインでも、その続きから。",
-        text: "入力内容は端末内に自動保存。初回読み込み後は、キャッシュが利用できる環境で通信なしでも編集を続けられます。",
-      },
-    ],
-    notes: [
-      "文書は利用中のブラウザ・端末に保存されます。端末間の自動同期はありません。",
-      "ブラウザのサイトデータを削除すると保存内容も失われます。大切な文書は別の場所にも保管してください。",
-    ],
-    motif: "Aa / #",
-    visualLabel: "WRITE. PREVIEW. KEEP GOING.",
-    tone: "cream",
-    workState: "under-development",
-  },
-  {
     slug: "flight-market",
     name: "Flight Market",
     category: "Everyday tools",

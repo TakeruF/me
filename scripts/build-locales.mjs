@@ -58,7 +58,6 @@ for (const route of [...paths, '/projects/hanlu']) {
 }
 // Preserve previously linked detail URLs for projects that currently have no detail page.
 const staleProjectRedirects = {
- '/projects/markdown-docs': 'https://mddocs-five.vercel.app',
  '/projects/flight-market': 'https://flight-market.vercel.app',
  '/projects/japan-rail-mcp': 'https://github.com/TakeruF/japan-rail-mcp',
 };
