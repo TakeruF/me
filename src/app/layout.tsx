@@ -1,4 +1,4 @@
-import { currentLocale, localizedMetadata } from "@/lib/i18n";
+import { currentLocale, localizedHref, localizedMetadata } from "@/lib/i18n";
 import type { Metadata, Viewport } from "next";
 import "./fonts.css";
 import "./globals.css";
@@ -34,6 +34,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang={currentLocale() === "zh" ? "zh-CN" : currentLocale()}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem("takeru-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}})()` }} />
+        <script src={localizedHref("/site-disclosures.js")} defer />
       </head>
       <body id="top">{children}</body>
     </html>

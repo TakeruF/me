@@ -8,7 +8,9 @@
     "build:edgeone": "node scripts/build-locales.mjs",
     "start": "next start",
     "lint": "eslint .",
-    "verify:export": "node scripts/verify-export.mjs"
+    "verify:export": "node scripts/verify-export.mjs",
+    "predev": "node scripts/prepare-images.mjs",
+    "prebuild": "node scripts/prepare-images.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.61.0",
@@ -25,6 +27,7 @@
     "eslint": "^9.18.0",
     "eslint-config-next": "^16.4.3",
     "postcss": "^8.5.31",
+    "sharp": "0.35.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.3"
   }

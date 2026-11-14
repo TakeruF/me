@@ -1,7 +1,7 @@
 import { GalleryInteractive } from "./gallery-interactive";
 import { t, localizedHref } from "@/lib/i18n";
 import type { StoryImage } from "@/lib/product-stories";
-import Image from "next/image";
+import Image from "@/components/responsive-image";
 
 export function ScreenshotGallery({
   name,

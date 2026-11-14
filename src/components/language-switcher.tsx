@@ -6,8 +6,8 @@ export function LanguageSwitcher({ path = "/" }: { path?: string }) {
 
   return (
     <details className="language-switcher">
-      <summary aria-label={label}>{localeNames[current]}</summary>
-      <div className="language-menu" role="menu" aria-label={label}>
+      <summary aria-label={`${localeNames[current]}: ${label}`}>{localeNames[current]}</summary>
+      <nav className="language-menu" aria-label={label}>
         {locales.map((locale) => (
           <a
             key={locale}
@@ -15,12 +15,11 @@ export function LanguageSwitcher({ path = "/" }: { path?: string }) {
             hrefLang={locale === "zh" ? "zh-CN" : locale}
             lang={locale === "zh" ? "zh-CN" : locale}
             aria-current={current === locale ? "true" : undefined}
-            role="menuitem"
           >
             {localeNames[locale]}
           </a>
         ))}
-      </div>
+      </nav>
     </details>
   );
 }
