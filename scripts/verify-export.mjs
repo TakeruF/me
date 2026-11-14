@@ -3,6 +3,48 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 const read = path => readFileSync(path, 'utf8');
 const locales = ['en', 'ja', 'zh', 'ko'];
+
+// Check the deployable files, including scripts added by Next and standalone pages.
+function verifyScriptPolicies(directory) {
+ for (const entry of readdirSync(directory, { withFileTypes: true })) {
+  const file = `${directory}/${entry.name}`;
+  if (entry.isDirectory()) { verifyScriptPolicies(file); continue; }
+  if (!entry.name.endsWith('.html')) continue;
+  const html = read(file);
+  const policy = html.match(/<meta http-equiv="Content-Security-Policy" content="([^"]+)"/i)?.[1];
+  assert.ok(policy?.includes("'strict-dynamic'"), `${file}: static script policy`);
+  assert.ok(html.indexOf('Content-Security-Policy') < html.indexOf('<script'), `${file}: CSP precedes scripts`);
+  for (const [,attributes,content] of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+   const src = attributes.match(/\bsrc="([^"]+)"/i)?.[1];
+   const bytes = src ? readFileSync('out' + decodeURIComponent(new URL(src, 'https://takeruf.com').pathname)) : content;
+   const hash = 'sha256-' + createHash('sha256').update(bytes).digest('base64');
+   assert.ok(policy.includes(`'${hash}'`), `${file}: authorized script hash`);
+   if (src) assert.ok(attributes.includes(`integrity="${hash}"`), `${file}: script integrity`);
+  }
+  for (const [tag] of html.matchAll(/<link\b[^>]*>/gi)) {
+   if (!/\bas="script"/i.test(tag) && !/\brel="modulepreload"/i.test(tag)) continue;
+   const src = tag.match(/\bhref="([^"]+)"/i)[1];
+   const hash = 'sha256-' + createHash('sha256').update(readFileSync('out' + decodeURIComponent(new URL(src, 'https://takeruf.com').pathname))).digest('base64');
+   assert.ok(tag.includes(`integrity="${hash}"`) && policy.includes(`'${hash}'`), `${file}: authorized script preload`);
+  }
+ }
+}
+verifyScriptPolicies('out');
+const imageManifest = JSON.parse(read('src/lib/responsive-images.json'));
+for (const locale of locales) {
+ for (const image of Object.values(imageManifest)) {
+  for (const variant of image.variants) {
+   assert.ok(existsSync(`out/${locale}${variant.src}`), `${locale}: responsive asset ${variant.src}`);
+  }
+ }
+ const home = read(`out/${locale}/index.html`);
+ assert.ok(home.includes('srcSet=') || home.includes('srcset='), `${locale}: responsive HTML`);
+ assert.ok(!home.includes('role="menuitem"'), `${locale}: navigation uses native links`);
+ const racing = read(`out/${locale}/projects/f1-harmony.html`);
+ for (const [tag] of racing.matchAll(/<img\b[^>]*>/g)) {
+  assert.ok(/\bwidth="\d+"/.test(tag) && /\bheight="\d+"/.test(tag), `${locale}: F1 reserved image dimensions`);
+ }
+}
 const policyIntro = {
  en: 'Per-App Language is developed by TakeruF.',
  ja: 'Per-App Language は TakeruF が開発しています。',

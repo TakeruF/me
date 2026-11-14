@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { useLayoutEffect, useRef, useState } from "react";
+import Image from "@/components/responsive-image";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { StoryImage } from "@/lib/product-stories";
 
@@ -18,6 +18,8 @@ export function GalleryInteractive({
   const drag = useRef<{ x: number; scroll: number } | null>(null);
   const [active, setActive] = useState(0);
   const [dragging, setDragging] = useState(false);
+  const pending = useRef<number | null>(null);
+  const [announced, setAnnounced] = useState<number | null>(null);
 
   useLayoutEffect(() => {
     const el = viewport.current;
@@ -34,15 +36,59 @@ export function GalleryInteractive({
     return () => observer.disconnect();
   }, [active]);
 
-  function closest() {
+  const closest = useCallback(() => {
     const el = viewport.current;
-    if (!el) return 0;
-    const left = el.getBoundingClientRect().left;
-    const distances = Array.from(el.children).map((child) =>
-      Math.abs(child.getBoundingClientRect().left - left),
-    );
-    return distances.indexOf(Math.min(...distances));
-  }
+    const first = el?.firstElementChild;
+    if (!el || !first) return 0;
+    const stride = first.getBoundingClientRect().width +
+      (parseFloat(getComputedStyle(el).columnGap) || 0);
+    return Math.max(0, Math.min(images.length - 1, Math.round(el.scrollLeft / stride)));
+  }, [images.length]);
+
+  useEffect(() => {
+    const el = viewport.current;
+    if (!el) return;
+    let frame = 0;
+    let timer: ReturnType<typeof setTimeout>;
+    let lastSettled = 0;
+    const nativeScrollEnd = "onscrollend" in el;
+    const settle = () => {
+      const index = closest();
+      // A previous scroll can finish after the user has already requested the next one.
+      if (pending.current !== null && index !== pending.current) return;
+      pending.current = null;
+      setActive(index);
+      if (index !== lastSettled) {
+        lastSettled = index;
+        setAnnounced(index);
+      }
+    };
+    const scroll = () => {
+      if (pending.current === null && !frame) {
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          if (pending.current === null) setActive(closest());
+        });
+      }
+      if (!nativeScrollEnd) {
+        clearTimeout(timer);
+        timer = setTimeout(settle, 150);
+      }
+    };
+    const interrupt = () => { pending.current = null; };
+    el.addEventListener("scroll", scroll, { passive: true });
+    if (nativeScrollEnd) el.addEventListener("scrollend", settle);
+    el.addEventListener("wheel", interrupt, { passive: true });
+    el.addEventListener("pointerdown", interrupt, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timer);
+      el.removeEventListener("scroll", scroll);
+      el.removeEventListener("scrollend", settle);
+      el.removeEventListener("wheel", interrupt);
+      el.removeEventListener("pointerdown", interrupt);
+    };
+  }, [closest]);
   function goTo(index: number, instant = false) {
     const el = viewport.current;
     if (!el) return;
@@ -54,6 +100,13 @@ export function GalleryInteractive({
     const reduce = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
+    if (Math.abs(el.scrollLeft - left) < 1) {
+      pending.current = null;
+      setActive(next);
+      return;
+    }
+    pending.current = next;
+    setActive(next);
     el.scrollTo({ left, behavior: instant || reduce ? "instant" : "smooth" });
   }
   function endDrag() {
@@ -82,11 +135,10 @@ export function GalleryInteractive({
         tabIndex={0}
         role="group"
         aria-label={labels.keys}
-        onScroll={() => setActive(closest())}
         onKeyDown={(event) => {
           const targets: Record<string, number> = {
-            ArrowLeft: active - 1,
-            ArrowRight: active + 1,
+            ArrowLeft: (pending.current ?? closest()) - 1,
+            ArrowRight: (pending.current ?? closest()) + 1,
             Home: 0,
             End: images.length - 1,
           };
@@ -144,13 +196,13 @@ export function GalleryInteractive({
         <button
           type="button"
           className="screen-arrow"
-          onClick={() => goTo(active - 1)}
+          onClick={() => goTo((pending.current ?? closest()) - 1)}
           disabled={active === 0}
           aria-label={labels.previous}
         >
           <ArrowLeft size={20} aria-hidden="true" />
         </button>
-        <div className="screen-dots" aria-label={labels.select}>
+        <div className="screen-dots" role="group" aria-label={labels.select}>
           {images.map((shot, index) => (
             <button
               key={shot.src}
@@ -166,14 +218,17 @@ export function GalleryInteractive({
         <button
           type="button"
           className="screen-arrow"
-          onClick={() => goTo(active + 1)}
+          onClick={() => goTo((pending.current ?? closest()) + 1)}
           disabled={active === images.length - 1}
           aria-label={labels.next}
         >
           <ArrowRight size={20} aria-hidden="true" />
         </button>
-        <span className="screen-counter" aria-live="polite" aria-atomic="true">
+        <span className="screen-counter" aria-hidden="true">
           {active + 1} / {images.length}
+        </span>
+        <span className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+          {announced === null ? "" : `${announced + 1} / ${images.length}`}
         </span>
       </div>
     </section>

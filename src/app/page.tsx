@@ -1,7 +1,7 @@
 import { SiteHeader } from "@/components/site-chrome";
 import { currentLocale, localize, t } from "@/lib/i18n";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/components/responsive-image";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -306,7 +306,6 @@ export default function Page() {
                 <a
                   className="project-visual"
                   href={project.url}
-                  aria-label={`${project.name}の紹介ページ`}
                 >
                   <div className="visual-topline">
                     <span>
@@ -366,6 +365,7 @@ export default function Page() {
                       height={project.height}
                       sizes="(max-width: 760px) 100vw, 50vw"
                       loading={project.number === "01" ? "eager" : "lazy"}
+                      fetchPriority={project.number === "01" ? "high" : undefined}
                     />
                   )}
                   <div className="visual-bottomline">

@@ -1,5 +1,5 @@
 import { localize } from "@/lib/i18n";
-import Image from "next/image";
+import Image from "@/components/responsive-image";
 import { ResourceLink } from "@/components/resource-link";
 import type { ProductStory as Story } from "@/lib/product-stories";
 

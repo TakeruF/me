@@ -1,6 +1,9 @@
 import { execFileSync } from 'node:child_process';
 import { cpSync, mkdirSync, readFileSync, writeFileSync, rmSync, readdirSync } from 'node:fs';
 import path from 'node:path';
+import { prepareImages } from './prepare-images.mjs';
+import { secureExport } from './secure-export.mjs';
+await prepareImages();
 const root = process.cwd();
 const staging = path.join(root, '.locale-export');
 rmSync(staging, { recursive: true, force: true });
@@ -17,6 +20,7 @@ for (const locale of locales) cpSync(path.join(staging, locale), `out/${locale}`
 // available alongside the locale-specific static exports.
 cpSync('out/ja/opengraph-image', 'out/opengraph-image');
 const f1 = readFileSync('public/projects/f1-harmony.html', 'utf8');
+const imageManifest = JSON.parse(readFileSync('src/lib/responsive-images.json', 'utf8'));
 const translations = JSON.parse(readFileSync('src/lib/i18n/f1.json', 'utf8'));
 const escape = value => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const paths = ['/', '/work', ...readdirSync('out/ja/projects').filter(x => x.endsWith('.html') && x !== 'hanlu.html').map(x => `/projects/${x.slice(0, -5)}`),
@@ -45,7 +49,18 @@ for (const locale of locales) {
  const languageLabel = { en: 'Language', ja: '言語', zh: '语言', ko: '언어' }[locale];
  const switches = locales.map(l => `<a lang="${l === 'zh' ? 'zh-CN' : l}" hreflang="${l === 'zh' ? 'zh-CN' : l}" href="/${l}/projects/f1-harmony" ${l === locale ? 'aria-current="true"' : ''}>${languageNames[l]}</a>`).join('');
  html = html.replace('</head>', `${locales.map(l => `<link rel="alternate" hreflang="${l === 'zh' ? 'zh-CN' : l}" href="https://takeruf.com/${l}/projects/f1-harmony">`).join('')}<link rel="alternate" hreflang="x-default" href="https://takeruf.com/en/projects/f1-harmony"><style>.locale-nav{position:fixed;top:calc(4px + env(safe-area-inset-top));right:max(20px,calc((100vw - 1200px)/2));z-index:101;display:flex;justify-content:flex-end;padding:0;background:transparent;color:var(--text);font:12px system-ui}@media(max-width:560px){.locale-nav{top:calc(var(--nav) + env(safe-area-inset-top) + 4px);right:var(--inset)}}.locale-nav details{position:relative}.locale-nav summary{display:flex;align-items:center;min-height:44px;list-style:none;cursor:pointer;border-bottom:1px solid currentColor}.locale-nav summary::-webkit-details-marker{display:none}.locale-nav summary:after{width:5px;height:5px;margin:-3px 0 0 7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;content:'';transform:rotate(45deg)}.locale-nav details[open] summary:after{margin-top:3px;transform:rotate(225deg)}.locale-nav .language-menu{position:absolute;right:0;top:calc(100% + 8px);display:grid;min-width:112px;padding:5px;background:#17171a;color:#ddd;border:1px solid #39393f;box-shadow:0 12px 28px rgba(0,0,0,.35)}.locale-nav a{display:flex;align-items:center;min-height:40px;padding:0 10px;color:inherit;text-decoration:none}.locale-nav a:hover,.locale-nav a:focus-visible,.locale-nav a[aria-current]{color:#fff;background:#29292d;outline:none}</style></head>`)
- .replace(/(<body[^>]*>)/, `$1<nav class="locale-nav" aria-label="${languageLabel}"><details><summary aria-label="${languageLabel}">${languageNames[locale]}</summary><div class="language-menu">${switches}</div></details></nav>`);
+ .replace(/(<body[^>]*>)/, `$1<nav class="locale-nav" aria-label="${languageLabel}"><details><summary aria-label="${languageNames[locale]}: ${languageLabel}">${languageNames[locale]}</summary><div class="language-menu">${switches}</div></details></nav>`)
+ .replace('</head>', `<script src="/${locale}/site-disclosures.js" defer></script></head>`);
+ // Keep the standalone page's layout while reserving image space and serving real size variants.
+ html = html.replace(/<img\b([^>]*?)\bsrc="([^"]+)"([^>]*)>/g, (tag, before, src, after) => {
+  const image = imageManifest[src.replace(/^\/(en|ja|zh|ko)(?=\/)/, '')];
+  if (!image) return tag;
+  const variants = image.variants.map(v => `/${locale}${v.src} ${v.width}w`).join(', ');
+  const sizes = /class="hero-mark"/.test(tag) ? '(max-width: 560px) 66px, 78px'
+   : /class="device /.test(tag) ? '(max-width: 560px) 210px, (max-width: 860px) 36vw, 288px'
+   : /assets\/app-icon/.test(src) ? '30px' : '(max-width: 860px) 42vw, 285px';
+  return `<img${before}src="/${locale}${image.variants.at(-1).src}"${after} width="${image.width}" height="${image.height}" srcset="${variants}" sizes="${sizes}" decoding="async">`;
+ });
  writeFileSync(`out/${locale}/projects/f1-harmony.html`, html);
 }
 function redirect(target) {
@@ -76,4 +91,5 @@ writeFileSync('out/androp.html', redirect('/en/projects/androp'));
 cpSync('public/nagi', 'out/nagi', { recursive: true });
 cpSync('out/ja/404.html', 'out/404.html');
 writeFileSync('out/robots.txt', 'User-agent: *\nAllow: /\nSitemap: https://takeruf.com/sitemap.xml\n');
+secureExport();
 rmSync(staging, { recursive: true, force: true });
