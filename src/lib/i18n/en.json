@@ -495,7 +495,7 @@
   "対応WebViewではCookie・サイトデータを分離したプライベートブラウジングを利用できます。ホームに戻ったり画面が再作成されたりしても作業を保ち、プライベートブラウジングを明示的に閉じるかタスクを終了するとデータを消去します。": "Supported WebView versions isolate private cookies and website storage. Keep the workspace when returning Home or when Android recreates the screen; explicitly closing private browsing or removing its task clears the data.",
   "つながらないときも、分かりやすく。": "Clearer when a page cannot load.",
   "接続・タイムアウト・証明書などのエラーを専用画面で案内し、再試行できます。Webサイトのアイコンはライト・ダークのテーマに合わせて表示します。": "Dedicated error screens explain connection, timeout and certificate problems and offer Retry. Website icons adapt to light and dark themes.",
-  "2026年11月19日時点では1.4.0を配信中。アップデート時にカスタム設定が失われる問題を修正した1.4.1はGoogle Playの審査中です。": "As of November 19, 2026, version 1.4.0 is available. Version 1.4.1, which fixes custom settings being lost during app updates, is under Google Play review.",
+  "2026年11月19日、1.4.1をGoogle Playで配信開始。スマートフォンの操作画面とキーボード表示時の改善に加え、アップデート時にカスタム設定が失われる問題を修正しました。": "Version 1.4.1 is available on Google Play as of November 19, 2026. It includes the phone UI and on-screen keyboard improvements, plus a fix for custom settings being lost during app updates.",
   "GoogleログインがPC表示で拒否された場合は、モバイル表示を試せます。ログインの成功を保証するものではありません。": "If Google rejects sign-in in desktop view, try mobile view. Successful sign-in is not guaranteed.",
   "ページの拡大率はWebサイトの制限を受ける場合があります。ウィンドウのサイズ変更中の入力保持は、アプリやプロセスの終了後の復元を保証するものではありません。": "Page zoom may be limited by the website. Keeping a live page while resizing does not guarantee that forms are restored after the app or its process ends."
 }
