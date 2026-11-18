@@ -139,7 +139,7 @@ const projects = [
   "kind": "ANDROID WORKSPACE BROWSER",
   "theme": "token",
   "headline": "タブを整えて、ブラウジングを穏やかに。",
-  "description": "Androidタブレットのためのワークスペースブラウザ。サイドバーでタブを整理し、Spaceで作業を切り替え、分割表示で2つのページを並べられます。",
+  "description": "Androidスマートフォンとタブレット向けのワークスペースブラウザ。スマートフォンでは下部アドレスバー、広い画面ではサイドバーを使い、Space・分割表示・コマンドバーでブラウジングを整理できます。",
   "platforms": [
     "Android 8.0+"
   ],
