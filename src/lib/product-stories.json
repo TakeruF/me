@@ -206,11 +206,10 @@
         ]
       },
       {
-        "title": "公開後は、Google Play版を推奨します。",
+        "title": "Google Playで公開中。",
         "paragraphs": [
-          "Google Play版が公開された後は、Google Playによる更新を利用できるため、こちらの利用をおすすめします。",
-          "直接配布版から移行する場合は、1. 直接配布版をアンインストールします。 2. Google PlayからPer-App Languageをインストールします。 3. 求められた場合は、Google Play版にもShizukuの権限を許可します。",
-          "直接配布版をアンインストールしても、すでに設定したアプリごとの言語はAndroidに残ります。Play版を入れた後も、通常は設定し直す必要はありません。"
+          "Google Playからインストール・更新できます。GitHubでもAPKを配布しています。",
+          "GitHub版からの移行については、GitHubの案内をご確認ください。"
         ]
       },
       {
