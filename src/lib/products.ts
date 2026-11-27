@@ -676,12 +676,16 @@ export const products: Product[] = [
     headline: "このアプリは、この言語で。",
     description:
       "端末全体の言語を変えずに、アプリごとの表示言語を設定するAndroidユーティリティ。標準の「アプリの言語」に出てこないアプリも選べます。",
-    platforms: "Android 13+ · Shizuku",
+    platforms: "Android 13+ · Shizuku · Google Play",
     primary: {
-      label: "ダウンロード",
-      href: "https://github.com/TakeruF/android-perapp-language-selector/releases/latest",
+      label: "Google Play",
+      href: "https://play.google.com/store/apps/details?id=com.takeruf.perapplocale",
     },
     links: [
+      {
+        label: "GitHub APK",
+        href: "https://github.com/TakeruF/android-perapp-language-selector/releases/latest",
+      },
       {
         label: "GitHub・使い方",
         href: "https://github.com/TakeruF/android-perapp-language-selector",

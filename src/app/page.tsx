@@ -124,8 +124,8 @@ const projects = [
     height: 1200,
     links: [
       {
-        label: "Download",
-        url: "https://github.com/TakeruF/android-perapp-language-selector/releases/latest",
+        label: "Google Play",
+        url: "https://play.google.com/store/apps/details?id=com.takeruf.perapplocale",
       },
       {
         label: "GitHub",
